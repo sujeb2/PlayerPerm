@@ -26,6 +26,7 @@ public class FriendHandler implements CommandExecutor {
                 RegisteredServiceProvider<LuckPerms> provider = Bukkit.getServicesManager().getRegistration(LuckPerms.class);
                 if (provider != null) {
                     LuckPerms api = provider.getProvider();
+
                 }
 
                 Player player = (Player) sender;

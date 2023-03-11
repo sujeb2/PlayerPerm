@@ -9,5 +9,9 @@ depend: [LuckPerms]
 commands:
   friend:
     usage: /<command>
-    description: gives the player a custom item.
+    description: 친구목록을 보여줍니다.
     aliases: [fl, ㅊ, 친구, friend]
+  join:
+    usage: /<command>
+    description: 접속 메세지를 변경합니다.
+    aliases: [jm, j, ㅈ, 접속]
