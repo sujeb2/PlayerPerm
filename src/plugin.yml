@@ -8,10 +8,10 @@ depend: [LuckPerms]
 
 commands:
   friend:
-    usage: /<command>
-    description: 친구목록을 보여줍니다.
-    aliases: [fl, ㅊ, 친구, friend]
-  join:
-    usage: /<command>
-    description: 접속 메세지를 변경합니다.
-    aliases: [jm, j, ㅈ, 접속]
+    usage: /<command> (추가) (ㅊ) (add) (거절)
+    description: 친구 추가
+    aliases: [fl, ㅊ, 친구, friend, f]
+  playerinfo:
+    usage: /<command> (이름)
+    description: 플레이어 정보
+    aliases: [p, ㅈ, pi, plyi]
