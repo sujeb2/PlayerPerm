@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class PlayerInfo implements CommandExecutor {
+public class PlayerInfoNormal implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender send, @NotNull Command command, @NotNull String s, @NotNull String[] args) {
         if (send.isOp()) {
@@ -44,15 +44,16 @@ public class PlayerInfo implements CommandExecutor {
                         isOnline = Bukkit.getOnlinePlayers().contains(target);
                         player.sendMessage(ChatColor.GREEN + "[PlayerPerms] " + target.getDisplayName() + " 님의 정보");
                         player.sendMessage(ChatColor.DARK_GRAY + "===============================");
-                        if (!isOnline) player.sendMessage( ChatColor.DARK_GRAY + ": " + ChatColor.DARK_GRAY + "오프라인 ⏺");
-                        else player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.GREEN + "온라인 ⏺");
+                        if (!isOnline) player.sendMessage( ChatColor.DARK_GRAY + ": " + ChatColor.DARK_GRAY + "⏺ 오프라인");
+                        else player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.GREEN + "⏺ 온라인");
                         player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.RED + "♥ 체력: " + target.getHealth());
                         player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.AQUA + "✧ 경험치: " + target.getExp());
-                        if(target.getBedSpawnLocation() == null) {
-                            player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.DARK_GRAY + "스폰 위치: 존재하지 않음");
-                        } else player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.GREEN + "스폰 위치: X: " + target.getBedSpawnLocation().getX() + " ,Y: " + target.getBedSpawnLocation().getY() + " ,Z: " + target.getBedSpawnLocation().getZ());
+                        //if(target.getBedSpawnLocation() == null) {
+                        //    player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.DARK_GRAY + "스폰 위치: 존재하지 않음");
+                        //} else player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.GREEN + "스폰 위치: X: " + target.getBedSpawnLocation().getX() + " ,Y: " + target.getBedSpawnLocation().getY() + " ,Z: " + target.getBedSpawnLocation().getZ());
                         player.sendMessage(ChatColor.DARK_GRAY + ": " + chatcolor + "현재 핑: " + target.getPing() + "ms");
-                        player.sendMessage(ChatColor.DARK_GRAY + ": \uD83D\uDDE1 " + ChatColor.DARK_RED + "마지막으로 받은 데미지: " + (Math.round(target.getLastDamage())));
+                        //player.sendMessage(ChatColor.DARK_GRAY + ": \uD83D\uDDE1 " + ChatColor.DARK_RED + "마지막으로 받은 데미지: " + (Math.round(target.getLastDamage())));
+                        /*
                         if(pev == "오버월드") {
                             player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.GRAY + "현재 '" + ChatColor.GREEN + pev + ChatColor.GRAY + "' 에 있는중");
                         } else if(pev == "네더") {
@@ -61,8 +62,8 @@ public class PlayerInfo implements CommandExecutor {
                             player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.GRAY + "현재 '" + ChatColor.DARK_GRAY + pev + ChatColor.GRAY + "' 에 있는중");
                         }
                         player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.GRAY + "현재 위치: X: " + (Math.round(x)) + " ,Y: " + (Math.round(y)) + " ,Z: " + (Math.round(z)));
+                        */
                         String unixTimeStamp = String.valueOf(target.getLastPlayed());
-
                         long timestamp = Long.parseLong(unixTimeStamp);
                         SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
                         Date date = new Date();
@@ -70,7 +71,6 @@ public class PlayerInfo implements CommandExecutor {
 
                         String Datetime = sdf.format(date);
                         player.sendMessage(ChatColor.DARK_GRAY + ": " + "마지막 접속 시간: " + ChatColor.GRAY + Datetime);
-                        player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 현재 OP 상태로 " + target.getDisplayName() + "의 정보를 보고 있습니다.");
                     }
                 } else if (args[0].equals("info")){
                     if (target == null) {
@@ -79,15 +79,16 @@ public class PlayerInfo implements CommandExecutor {
                         isOnline = Bukkit.getOnlinePlayers().contains(target);
                         player.sendMessage(ChatColor.GREEN + "[PlayerPerms] " + target.getDisplayName() + " 님의 정보");
                         player.sendMessage(ChatColor.DARK_GRAY + "===============================");
-                        if (!isOnline) player.sendMessage( ChatColor.DARK_GRAY + ": " + ChatColor.DARK_GRAY + "오프라인 ⏺");
-                        else player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.GREEN + "온라인 ⏺");
+                        if (!isOnline) player.sendMessage( ChatColor.DARK_GRAY + ": " + ChatColor.DARK_GRAY + "⏺ 오프라인");
+                        else player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.GREEN + "⏺ 온라인");
                         player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.RED + "♥ 체력: " + target.getHealth());
                         player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.AQUA + "✧ 경험치: " + target.getExp());
-                        if(target.getBedSpawnLocation() == null) {
-                            player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.DARK_GRAY + "스폰 위치: 존재하지 않음");
-                        } else player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.GREEN + "스폰 위치: X: " + target.getBedSpawnLocation().getX() + " ,Y: " + target.getBedSpawnLocation().getY() + " ,Z: " + target.getBedSpawnLocation().getZ());
+                        //if(target.getBedSpawnLocation() == null) {
+                        //    player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.DARK_GRAY + "스폰 위치: 존재하지 않음");
+                        //} else player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.GREEN + "스폰 위치: X: " + target.getBedSpawnLocation().getX() + " ,Y: " + target.getBedSpawnLocation().getY() + " ,Z: " + target.getBedSpawnLocation().getZ());
                         player.sendMessage(ChatColor.DARK_GRAY + ": " + chatcolor + "현재 핑: " + target.getPing() + "ms");
-                        player.sendMessage(ChatColor.DARK_GRAY + ": \uD83D\uDDE1 " + ChatColor.DARK_RED + "마지막으로 받은 데미지: " + (Math.round(target.getLastDamage())));
+                        //player.sendMessage(ChatColor.DARK_GRAY + ": \uD83D\uDDE1 " + ChatColor.DARK_RED + "마지막으로 받은 데미지: " + (Math.round(target.getLastDamage())));
+                        /*
                         if(pev == "오버월드") {
                             player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.GRAY + "현재 '" + ChatColor.GREEN + pev + ChatColor.GRAY + "' 에 있는중");
                         } else if(pev == "네더") {
@@ -95,17 +96,16 @@ public class PlayerInfo implements CommandExecutor {
                         } else if(pev == "엔드") {
                             player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.GRAY + "현재 '" + ChatColor.DARK_GRAY + pev + ChatColor.GRAY + "' 에 있는중");
                         }
+                        player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.GRAY + "현재 위치: X: " + (Math.round(x)) + " ,Y: " + (Math.round(y)) + " ,Z: " + (Math.round(z)));
+                        */
                         String unixTimeStamp = String.valueOf(target.getLastPlayed());
-
                         long timestamp = Long.parseLong(unixTimeStamp);
                         SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
                         Date date = new Date();
                         date.setTime(timestamp);
 
                         String Datetime = sdf.format(date);
-                        player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.GRAY + "현재 위치: X: " + (Math.round(x)) + " ,Y: " + (Math.round(y)) + " ,Z: " + (Math.round(z)));
                         player.sendMessage(ChatColor.DARK_GRAY + ": " + "마지막 접속 시간: " + ChatColor.GRAY + Datetime);
-                        player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 현재 OP 상태로 " + target.getDisplayName() + "의 정보를 보고 있습니다.");
                     }
                 }
                 return true;

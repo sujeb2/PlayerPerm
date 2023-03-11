@@ -1,6 +1,5 @@
 package com.songro.data;
 
-import com.songro.Main;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.jetbrains.annotations.NotNull;
@@ -9,12 +8,10 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-import java.util.logging.Logger;
 
 public class FD {
     public static FileConfiguration friendData;
-    private static final File friend = new File("Data/fData.yml");
-
+    private static final File friend = new File("GameData/friendData.yml");
 
     public static void loadData() {
         friendData = YamlConfiguration.loadConfiguration(friend);

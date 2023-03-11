@@ -1,5 +1,6 @@
 package com.songro.commands;
 
+import com.songro.Main;
 import com.songro.data.FD;
 import com.songro.handler.Timer;
 import org.bukkit.Bukkit;
@@ -36,7 +37,7 @@ public class Friend implements CommandExecutor {
                     else if (f == null) {
                         player.sendMessage(ChatColor.RED + "[PlayerPerms] info is null");
                     } else if (f.equals(player)) {
-                        player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 자신에게 친구추가를 보낼수 없습니다!");
+                        player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 자신에게 친구추가를 보낼수 없습니다.");
                     } else {
                         req(player, f);
                     }
@@ -58,7 +59,7 @@ public class Friend implements CommandExecutor {
                     else if (f2 == null) {
                         player.sendMessage(ChatColor.RED + "[PlayerPerms] info is null");
                     } else if (f2.equals(player)) {
-                        player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 자신에게 친구추가를 보낼수 없습니다!");
+                        player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 자신에게 친구추가를 보낼수 없습니다.");
                     } else {
                         req2(player, f2);
                     }
@@ -72,7 +73,7 @@ public class Friend implements CommandExecutor {
                     온라인이 아닐때
                      */
                     else if (!Bukkit.getOnlinePlayers().contains(f3)) {
-                        player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 등록할 친구가 온라인이 아닙니다!");
+                        player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 등록할 친구가 온라인이 아닙니다.");
                     }
                     /*
                     null 일때
@@ -88,21 +89,19 @@ public class Friend implements CommandExecutor {
                 case "수락":
                     if (Timer.getPlayerInviteTime().containsKey(player)) {
                         FD.addFriend(player.getUniqueId(), Timer.getPlayerInviteOwner().get(player).getUniqueId());
-                        player.sendMessage("[PlayerPerms] 이제 " + Timer.getPlayerInviteOwner().get(player).getName() + "님과 친구가 되었습니다!");
-                        Timer.getPlayerInviteOwner().get(player).sendMessage("[PlayerPerms] 이제 " + player.getName() + "님과 친구입니다.");
+                        player.sendMessage(ChatColor.GREEN + "[PlayerPerms] 당신은 이제 " + Timer.getPlayerInviteOwner().get(player).getName() + "님과 친구입니다.");
+                        Timer.getPlayerInviteOwner().get(player).sendMessage( ChatColor.GREEN + "[PlayerPerms] 당신은 이제 " + player.getName() + "님과 친구입니다.");
                         Timer.getPlayerInviteTime().remove(player);
                         Timer.getPlayerInviteOwner().remove(player);
-                    } else player.sendMessage("[PlayerPerms] 받은 친구 요청이 존재하지 않습니다.");
-                    break;
+                    } else player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 받은 친구 요청이 존재하지 않습니다.");
                 case "거절":
                     if (Timer.getPlayerInviteTime().containsKey(player)) {
-                        player.sendMessage("[PlayerPerms] " + Timer.getPlayerInviteOwner().get(player).getName() + " 님의 친구 추가 요청을 거절했습니다.");
-                        Timer.getPlayerInviteOwner().get(player).sendMessage("[PlayerPerms] " + player.getName() + " 님이 친구 추가 요청을 거절했습니다.");
+                        player.sendMessage(ChatColor.GREEN + "[PlayerPerms] " + Timer.getPlayerInviteOwner().get(player).getName() + "님의 친구 추가 요청을 거절했습니다.");
+                        Timer.getPlayerInviteOwner().get(player).sendMessage(ChatColor.GREEN + "[PlayerPerms] " + player.getName() + "님이 친구 추가 요청을 거절했습니다.");
                         Timer.getPlayerInviteTime().remove(player);
                         Timer.getPlayerInviteOwner().remove(player);
-                    } else player.sendMessage("[PlayerPerms] 받은 친구 요청이 존재하지 않습니다.");
-                    break;
-                }
+                    } else player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 받은 친구 요청이 존재하지 않습니다.");
+            }
             return true;
         } catch (Exception e) {
             Player player = (Player) sender;
@@ -120,7 +119,7 @@ public class Friend implements CommandExecutor {
             f.sendMessage(ChatColor.GREEN + player.getName() + "님이 친구 추가 요청을 보냈습니다. 60초 이내에 응답해주세요. (/친구 수락/거절)");
         } catch (Exception e) {
             player.sendMessage(ChatColor.RED + "[PlayerPerm] 친구 추가 요청을 보내는중에 오류가 발생했습니다.");
-                player.sendMessage(ChatColor.YELLOW + "[PlayerPerm] 오류 로그: " + e + "\n[PlayerPerm] 오류 코드: 0x15");
+            player.sendMessage(ChatColor.YELLOW + "[PlayerPerm] 오류 로그: " + e + "\n[PlayerPerm] 오류 코드: 0x15");
         }
     }
 
