@@ -1,0 +1,13 @@
+main: com.songro.Main
+name: PlayerPerms
+version: 1.0
+author: notSongro
+api-version: 1.19
+description: A Simple Friend Plugin (Requires LuckPerms)
+depend: [LuckPerms]
+
+commands:
+  friend:
+    usage: /<command>
+    description: gives the player a custom item.
+    aliases: [fl, ㅊ, 친구, friend]
