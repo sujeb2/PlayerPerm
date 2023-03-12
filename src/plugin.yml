@@ -7,7 +7,7 @@ description: 대부분의 기능을 하나에 플러그인에서
 
 commands:
   friend:
-    usage: /<command> (추가/거절/차단)
+    usage: /<command> (추가/수락/거절/차단)
     description: 친구 추가
     aliases: [fl, ㅊ, 친구, friend, f]
   playerinfoop:
