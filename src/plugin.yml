@@ -8,18 +8,26 @@ depend: [LuckPerms]
 
 commands:
   friend:
-    usage: /<command> (추가) (거절)
+    usage: /<command> (추가/거절/차단)
     description: 친구 추가
     aliases: [fl, ㅊ, 친구, friend, f]
   playerinfoop:
-    usage: /<command> (정보) (info) <이름>
+    usage: /<command> (정보/info) <이름>
     description: 플레이어 정보
     aliases: [po, op정보, pi, plyi]
   targeth:
-    usage: /<command> (이름)
+    usage: /<command> (on/off) <이름>
     description: 해당 플레이어의 체력을 항상 표시해줍니다.
     aliases: [tg, 체력, targethealth]
   playerinfo:
-    usage: /<command> (정보) (info) <이름>
+    usage: /<command> (정보/info) <이름>
     description: 해당 플레이어의 정보를 보여줍니다.
     aliases: [p, pi, 정보]
+  ban:
+    usage: /<command> (normal/ip/list/unban) <이름>
+    description: 해당 플레이러를 밴 합니다.
+    aliases: [b, 밴, Ban, bn]
+  setting:
+    usage: /<command>
+    description: 설정 메뉴를 표시합니다.
+    aliases: [s, setting]

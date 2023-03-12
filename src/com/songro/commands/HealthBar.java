@@ -30,6 +30,9 @@ public class HealthBar implements CommandExecutor {
                 player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 플레이어 이름이 없습니다.");
                 player.sendMessage(ChatColor.GREEN + "[PlayerPerms] 명령어 사용 방법: /<commands> (on) (off) <Player>");
             }
+            if (target == null) {
+                player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 해당 플레이어는 존재하지 않거나, 서버에 들어온적이 없습니다.");
+            }
 
             switch (args[0]) {
                 case "on":
