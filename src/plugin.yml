@@ -3,8 +3,7 @@ name: PlayerPerms
 version: 1.0
 author: notSongro
 api-version: 1.19
-description: A Simple Friend Plugin (Requires LuckPerms)
-depend: [LuckPerms]
+description: 대부분의 기능을 하나에 플러그인에서
 
 commands:
   friend:
@@ -27,3 +26,7 @@ commands:
     usage: /<command> (normal/ip/list/unban) <이름>
     description: 해당 플레이러를 밴 합니다.
     aliases: [b, 밴, Ban, bn]
+  quiet:
+    usage: /<command> <이름> <메세지>
+    description: 해당 플레이어에게 귓속말을 보냅니다.
+    aliases: [q, 귓, ㄱ, qm]

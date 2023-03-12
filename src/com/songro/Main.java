@@ -1,6 +1,5 @@
 package com.songro;
 
-import com.songro.commands.GUI.SettingGUI;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.Plugin;
@@ -24,18 +23,20 @@ public class Main extends JavaPlugin implements WebSocket.Listener {
         Bukkit.getConsoleSender().sendMessage("P  E  R  M  S    " + ChatColor.DARK_GRAY + "-- FOR FRUIT NET EDITION");
         Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "Made by. songro_, License MIT");
         Bukkit.getConsoleSender().sendMessage("");
-        try {
+        //try {
             Objects.requireNonNull(getCommand("friend")).setExecutor(new Friend());
             Objects.requireNonNull(getCommand("playerinfoop")).setExecutor(new PlayerInfo());
             Objects.requireNonNull(getCommand("targethealth")).setExecutor(new HealthBar());
             Objects.requireNonNull(getCommand("playerinfo")).setExecutor(new PlayerInfoNormal());
-            Objects.requireNonNull(getCommand("quietmessage")).setExecutor(new Setting());
             Objects.requireNonNull(getCommand("ban")).setExecutor(new Ban());
+            getCommand("quiet").setExecutor(new QuietMessage());
             Bukkit.getConsoleSender().sendMessage("[PlayerPerms]" + ChatColor.GREEN + " 플러그인이 정상적으로 로드 되었습니다.");
-        } catch (Exception e) {
-            log.warning("플러그인을 로딩하던중에 오류가 발생했습니다.");
-            log.warning("플러그인이 제대로 설치되었는지 확인해주십시오. 오류 코드: 0x01");
-        }
+        //} catch (Exception e) {
+        //    log.warning("플러그인을 로딩하던중에 오류가 발생했습니다.");
+        //    log.warning("플러그인이 제대로 설치되었는지 확인해주십시오.");
+        //    log.warning("오류 로그: " + e);
+        //    log.warning("오류 코드: 0x01");
+        //}
     }
 
     @Override

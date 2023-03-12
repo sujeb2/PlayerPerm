@@ -70,7 +70,8 @@ public class PlayerInfo implements CommandExecutor {
 
                         String Datetime = sdf.format(date);
                         player.sendMessage(ChatColor.DARK_GRAY + ": " + "마지막 접속 시간: " + ChatColor.GRAY + Datetime);
-                        player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 현재 OP 상태로 " + target.getDisplayName() + "의 정보를 보고 있습니다.");
+                        player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.GRAY + "엔티티 ID " + target.getEntityId());
+                        player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 현재 OP 상태로 " + target.getDisplayName() + "의 정보를 보고 있습니다.\n[PlayerPerms] 이 정보는 오직 OP만 알고 있어야합니다.");
                     }
                 } else if (args[0].equals("info")){
                     if (target == null) {
@@ -105,7 +106,8 @@ public class PlayerInfo implements CommandExecutor {
                         String Datetime = sdf.format(date);
                         player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.GRAY + "현재 위치: X: " + (Math.round(x)) + " ,Y: " + (Math.round(y)) + " ,Z: " + (Math.round(z)));
                         player.sendMessage(ChatColor.DARK_GRAY + ": " + "마지막 접속 시간: " + ChatColor.GRAY + Datetime);
-                        player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 현재 OP 상태로 " + target.getDisplayName() + "의 정보를 보고 있습니다.");
+                        player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.GRAY + "엔티티 ID " + target.getEntityId());
+                        player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 현재 OP 상태로 " + target.getDisplayName() + "의 정보를 보고 있습니다.\n[PlayerPerms] 이 정보는 오직 OP만 알고 있어야합니다.");
                     }
                 }
                 return true;

@@ -6,6 +6,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.defaults.BukkitCommand;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
@@ -41,6 +42,7 @@ public class Ban implements CommandExecutor {
                         }
                         try {
                             assert target != null;
+                            Bukkit.banIP(player.getAddress().getHostName());
                             player.sendMessage(ChatColor.GREEN + "[PlayerPerms] " + target.getDisplayName() + "이(가) 성공적으로 " + reason + " 이유로 IP밴 당했습니다.");
                             ban++;
                             ipban++;
@@ -58,7 +60,7 @@ public class Ban implements CommandExecutor {
                     player.sendMessage(ChatColor.DARK_GRAY + "===============================");
 
                     player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.RED + "일반 밴 \n" + Bukkit.getBannedPlayers());
-                    player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.DARK_RED + "IP 밴 \n" + Bukkit.getBanList(BanList.Type.IP) + ", 이유:" + reason);
+                    player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.DARK_RED + "IP 밴 \n" + Bukkit.getIPBans() + ", 이유:" + reason);
                     player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.WHITE + "현재 총 " + ban + "명의 사람이 밴되고, " + ipban + "명의 사람들이 IP밴됨.");
                 }
                 if (args[0].equals("unban")) {
