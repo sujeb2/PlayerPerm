@@ -27,7 +27,3 @@ commands:
     usage: /<command> (normal/ip/list/unban) <이름>
     description: 해당 플레이러를 밴 합니다.
     aliases: [b, 밴, Ban, bn]
-  setting:
-    usage: /<command>
-    description: 설정 메뉴를 표시합니다.
-    aliases: [s, setting]
