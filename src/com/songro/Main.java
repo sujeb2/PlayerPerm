@@ -15,6 +15,7 @@ public class Main extends JavaPlugin implements WebSocket.Listener {
     Logger log = getLogger();
     Plugin playerperms = Bukkit.getPluginManager().getPlugin("PlayerPerms");
 
+
     @Override
     public void onEnable() {
         Bukkit.getConsoleSender().sendMessage("[PlayerPerms] Enabled.");
@@ -29,7 +30,7 @@ public class Main extends JavaPlugin implements WebSocket.Listener {
             Objects.requireNonNull(getCommand("targethealth")).setExecutor(new HealthBar());
             Objects.requireNonNull(getCommand("playerinfo")).setExecutor(new PlayerInfoNormal());
             Objects.requireNonNull(getCommand("ban")).setExecutor(new Ban());
-            getCommand("quiet").setExecutor(new QuietMessage());
+            Objects.requireNonNull(getCommand("quiet")).setExecutor(new QuietMessage());
             Bukkit.getConsoleSender().sendMessage("[PlayerPerms]" + ChatColor.GREEN + " 플러그인이 정상적으로 로드 되었습니다.");
         //} catch (Exception e) {
         //    log.warning("플러그인을 로딩하던중에 오류가 발생했습니다.");
