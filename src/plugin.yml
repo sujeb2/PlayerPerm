@@ -8,7 +8,7 @@ depend: [LuckPerms]
 
 commands:
   friend:
-    usage: /<command> (추가) (ㅊ) (add) (거절)
+    usage: /<command> (추가) (거절)
     description: 친구 추가
     aliases: [fl, ㅊ, 친구, friend, f]
   playerinfoop:

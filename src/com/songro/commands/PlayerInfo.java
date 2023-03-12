@@ -52,7 +52,7 @@ public class PlayerInfo implements CommandExecutor {
                             player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.DARK_GRAY + "스폰 위치: 존재하지 않음");
                         } else player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.GREEN + "스폰 위치: X: " + target.getBedSpawnLocation().getX() + " ,Y: " + target.getBedSpawnLocation().getY() + " ,Z: " + target.getBedSpawnLocation().getZ());
                         player.sendMessage(ChatColor.DARK_GRAY + ": " + chatcolor + "현재 핑: " + target.getPing() + "ms");
-                        player.sendMessage(ChatColor.DARK_GRAY + ": \uD83D\uDDE1 " + ChatColor.DARK_RED + "마지막으로 받은 데미지: " + (Math.round(target.getLastDamage())));
+                        player.sendMessage(ChatColor.DARK_GRAY + ": \uD83D\uDDE1 " + ChatColor.DARK_RED + "마지막으로 받은 데미지: " + (Math.round(target.getLastDamage())/100.0));
                         if(pev == "오버월드") {
                             player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.GRAY + "현재 '" + ChatColor.GREEN + pev + ChatColor.GRAY + "' 에 있는중");
                         } else if(pev == "네더") {
@@ -79,8 +79,8 @@ public class PlayerInfo implements CommandExecutor {
                         isOnline = Bukkit.getOnlinePlayers().contains(target);
                         player.sendMessage(ChatColor.GREEN + "[PlayerPerms] " + target.getDisplayName() + " 님의 정보");
                         player.sendMessage(ChatColor.DARK_GRAY + "===============================");
-                        if (!isOnline) player.sendMessage( ChatColor.DARK_GRAY + ": " + ChatColor.DARK_GRAY + "오프라인 ⏺");
-                        else player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.GREEN + "온라인 ⏺");
+                        if (!isOnline) player.sendMessage( ChatColor.DARK_GRAY + ": " + ChatColor.DARK_GRAY + "⏺ 오프라인");
+                        else player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.GREEN + "⏺ 온라인");
                         player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.RED + "♥ 체력: " + target.getHealth());
                         player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.AQUA + "✧ 경험치: " + target.getExp());
                         if(target.getBedSpawnLocation() == null) {
@@ -121,5 +121,4 @@ public class PlayerInfo implements CommandExecutor {
         }
         return false;
     }
-
 }
