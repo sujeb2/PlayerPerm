@@ -24,9 +24,21 @@ commands:
     aliases: [p, pi, 정보]
   ban:
     usage: /<command> (normal/ip/list/unban) <이름>
-    description: 해당 플레이러를 밴 합니다.
+    description: 해당 플레이어를 밴 합니다.
     aliases: [b, 밴, Ban, bn]
   quiet:
     usage: /<command> <이름> <메세지>
     description: 해당 플레이어에게 귓속말을 보냅니다.
     aliases: [q, 귓, ㄱ, qm]
+  changename:
+    usage: /<command> <바꿀이름>
+    description: 채팅 칠때 나오는 이름을 변경합니다.
+    aliases: [cn, c, 이름, 이름바꾸기]
+  isafk:
+    usage: /<command> <이름>
+    description: 해당 플레이어가 잠수 모드인지 확인합니다.
+    aliases: [ia, 잠수모드, 잠수확인]
+  afk:
+    usage: /<command>
+    description: 잠수모드에 들어갑니다.
+    aliases: [잠수, ㅈ, ㅈㅅ, a, afk, af]

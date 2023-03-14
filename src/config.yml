@@ -1,0 +1,9 @@
+#  P L A Y E R
+#  P E R M S  -- FOR FRUIT NET EDITION
+#  MADE BY. SONGRO_
+
+# onJoin
+playerJoinMessage: Input 1
+
+# onLeave
+playerLeaveMessage: Input 2
