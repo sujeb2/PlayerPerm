@@ -2,8 +2,4 @@
 #  P E R M S  -- FOR FRUIT NET EDITION
 #  MADE BY. SONGRO_
 
-# onJoin
-playerJoinMessage: Input 1
-
-# onLeave
-playerLeaveMessage: Input 2
+isAfkLogMessage: true

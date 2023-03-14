@@ -42,3 +42,7 @@ commands:
     usage: /<command>
     description: 잠수모드에 들어갑니다.
     aliases: [잠수, ㅈ, ㅈㅅ, a, afk, af]
+  reloadconfig:
+    usage: /<command>
+    description: 설정을 다시 로드합니다.
+    aliases: [r, ㄹ, 리로드, rel, rl]

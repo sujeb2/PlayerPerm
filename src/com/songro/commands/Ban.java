@@ -17,7 +17,7 @@ public class Ban implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender send, @NotNull Command command, @NotNull String s, @NotNull String[] args) {
         Logger log = getLogger();
-        String reason = args[3];
+        String reason = args[4];
         Player player = (Player) send;
         Player target = Bukkit.getPlayer(args[2]);
         int ban = 0;
@@ -36,7 +36,7 @@ public class Ban implements CommandExecutor {
                                     player.sendMessage(ChatColor.RED + "[PlayerPerms] " + target.getDisplayName() + "이라는 플레이어가 존재하지 않거나, 서버에 들어온적이 없습니다.");
                                 } catch (NullPointerException npe2) {
                                     player.sendMessage("[PlayerPerms] 오류가 발생했습니다");
-                                    player.sendMessage("[PlayerPerms] 오류 로그: " + npe2 + "\n[PlayerPerms] 오류 코드: 0x22");
+                                    player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 오류 로그: " + npe2 + "\n[PlayerPerms] 오류 코드: 0x22");
                                 }
                             }
                             try {
@@ -54,13 +54,13 @@ public class Ban implements CommandExecutor {
                             player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 오류 로그: " + e + "\n[PlayerPerms] 오류코드: 0x23");
                         }
                     }
-                    //if (args[0].equals("list")) {
-                    //    player.sendMessage("[PlayerPerms] 밴 리스트");
-                    //    player.sendMessage(ChatColor.DARK_GRAY + "===============================");
-                    //    player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.RED + "일반 밴 \n" + Bukkit.getBannedPlayers());
-                    //    player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.DARK_RED + "IP 밴 \n" + Bukkit.getIPBans() + ", 이유:" + reason);
-                    //    player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.WHITE + "현재 총 " + ban + "명의 사람이 밴되고, " + ipban + "명의 사람들이 IP밴됨.");
-                    //}
+                    if (args[0].equals("list")) {
+                        player.sendMessage("[PlayerPerms] 밴 리스트");
+                        player.sendMessage(ChatColor.DARK_GRAY + "===============================");
+                        player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.RED + "일반 밴 \n" + Bukkit.getBannedPlayers());
+                        player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.DARK_RED + "IP 밴 \n" + Bukkit.getIPBans() + ", 이유:" + reason);
+                        player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.WHITE + "현재 총 " + ban + "명의 사람이 밴되고, " + ipban + "명의 사람들이 IP밴됨.");
+                    }
                     if (args[0].equals("unban")) {
                         try {
                             if (!target.isBanned())

@@ -76,7 +76,7 @@ public class AFK {
                 if (wasAFK && !isAFK) {
                     previousData.put(player, false);
                     AFK.announceAFK(player, false);
-                    player.sendMessage(ChatColor.BLUE + "[PlayerPerms] 잠수모드에 들어갑니다");
+                    player.sendMessage(ChatColor.GREEN + "[PlayerPerms] 잠수가 풀렸습니다");
                 } else if (!wasAFK && isAFK) {
                     previousData.put(player, true);
                     AFK.announceAFK(player, true);

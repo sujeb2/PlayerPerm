@@ -13,23 +13,28 @@ public class IsAFK implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
 
+        Player player = (Player)sender;
 
-        if(sender instanceof Player player){
+        if (player.isOp()) {
+            if (sender instanceof Player) {
 
-            if(args.length == 0){
-                if(AFK.isAFK(player)){
-                    player.sendMessage(ChatColor.BLUE + "[PlayerPerms] 현재 잠수중입니다.");
-                }else{
-                    player.sendMessage(ChatColor.DARK_GRAY + "[PlayerPerms] 잠수중이 아닙니다.");
+                if (args.length == 0) {
+                    if (AFK.isAFK(player)) {
+                        player.sendMessage(ChatColor.BLUE + "[PlayerPerms] 현재 잠수중입니다.");
+                    } else {
+                        player.sendMessage(ChatColor.DARK_GRAY + "[PlayerPerms] 잠수중이 아닙니다.");
+                    }
+                } else {
+                    if (AFK.isAFK(Bukkit.getPlayerExact(args[0]))) {
+                        player.sendMessage(ChatColor.BLUE + "[PlayerPerms] 현재 " + args[0] + "님은 잠수중입니다");
+                    } else {
+                        player.sendMessage(ChatColor.DARK_GRAY + "[PlayerPerms] 현재 " + args[0] + "님은 잠수중이 아닙니다.");
+                    }
                 }
-            } else {
-                if(AFK.isAFK(Bukkit.getPlayerExact(args[0]))){
-                    player.sendMessage(ChatColor.BLUE + "[PlayerPerms] 현재 " + args[0] +"님은 잠수중입니다");
-                }else{
-                    player.sendMessage(ChatColor.DARK_GRAY + "[PlayerPerms] 현재 " + args[0] +"님은 잠수중이 아닙니다.");
-                }
+
             }
-
+        } else {
+            player.sendMessage(ChatColor.RED + "[PlayerPerms] 이 명령어는 OP만 사용가능합니다.");
         }
 
         return true;
