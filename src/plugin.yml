@@ -46,3 +46,16 @@ commands:
     usage: /<command>
     description: 설정을 다시 로드합니다.
     aliases: [r, ㄹ, 리로드, rel, rl]
+  # perks
+  #remoteanvil:
+  #  usage: /<command>
+  #  description: 원격으로 모루를 엽니다. (후원 전용)
+  #  aliases: [ra, anvil, 모루, 원격모루, ㅁㄹ]
+  remoteender:
+    usage: /<command>
+    description: 원격으로 엔더상자를 엽니다. (후원 전용)
+    aliases: [re, ender, 엔더상자, 원격엔더상자, ㅇㅅ]
+  #remotecrafting:
+  #  usage: /<command>
+  #  description: 원격으로 작업대를 엽니다. (후원 전용)
+  #  aliases: [rc, crafting, 작업대, 원격작업대, ㅇㅈ]

@@ -11,7 +11,7 @@ public class MoveMent implements Runnable {
 
         //if(config.get().getBoolean("isAfkLogMessage")) {
             var log = Bukkit.getLogger();
-            log.info("[PlayerPerms] 모든 플레이어 상태 확인중");
+            //log.info("[PlayerPerms] 모든 플레이어 상태 확인중");
         //}
 
         AFK.checkAllStatuses();
