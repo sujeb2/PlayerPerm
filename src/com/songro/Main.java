@@ -1,7 +1,7 @@
 package com.songro;
 
+import com.songro.commands.console.GivePlayerPermission;
 import com.songro.commands.perks.ChatName;
-import com.songro.commands.perks.RemoteAnvil;
 import com.songro.commands.perks.RemoteCrafting;
 import com.songro.commands.perks.RemoteEnderChest;
 import org.bukkit.Bukkit;
@@ -41,6 +41,7 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
             Objects.requireNonNull(getCommand("ban")).setExecutor(new Ban());
             Objects.requireNonNull(getCommand("quiet")).setExecutor(new QuietMessage());
             Objects.requireNonNull(getCommand("changename")).setExecutor(new ChatName());
+            getCommand("gpp").setExecutor(new GivePlayerPermission());
             try {
                 getServer().getPluginManager().registerEvents(new AFKListener(), this);
             } catch (Exception e) {
@@ -52,7 +53,7 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
             Objects.requireNonNull(getCommand("afk")).setExecutor(new Afk());
             Objects.requireNonNull(getCommand("reloadconfig")).setExecutor(new Reload());
             //Objects.requireNonNull(getCommand("remoteanvil")).setExecutor(new RemoteAnvil());
-            //Objects.requireNonNull(getCommand("remotecrafting")).setExecutor(new RemoteCrafting());
+            Objects.requireNonNull(getCommand("remotecrafting")).setExecutor(new RemoteCrafting());
             Objects.requireNonNull(getCommand("remoteender")).setExecutor(new RemoteEnderChest());
             try {
                 Bukkit.getScheduler().runTaskTimerAsynchronously(this, new MoveMent(), 0L, 30 * 20L);
