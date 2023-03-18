@@ -16,7 +16,7 @@ public class CheckBlockLog implements CommandExecutor {
         Logger log = Bukkit.getLogger();
         Player player = (Player)commandSender;
         if(commandSender instanceof Player) {
-            if(player.hasPermission("perks.plus")) {
+            if(player.hasPermission("perks.plus") || player.hasPermission("def.op") || player.hasPermission("perks.pp") || player.hasPermission("perks.ultra")) {
 
             } else {
                 player.sendMessage(ChatColor.RED + "[PlayerPerms] 권한이 없습니다, 이 명령어를 사용할려면, 'perks.plus' 보다 높거나 같은 권한이 필요합니다!");

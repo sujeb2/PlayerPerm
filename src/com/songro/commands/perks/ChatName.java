@@ -17,7 +17,7 @@ public class ChatName implements CommandExecutor {
 
         try {
             try {
-                if(player.hasPermission("perks.plus") || player.hasPermission("def.op")) {
+                if(player.hasPermission("perks.plus") || player.hasPermission("def.op") || player.hasPermission("perks.pp") || player.hasPermission("perks.ultra")) {
                     if (msg.equals(player.getDisplayName())) {
                         player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 변경된게 없습니다.");
                         return true;

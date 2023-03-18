@@ -20,7 +20,11 @@ public class RemoteAnvil implements CommandExecutor {
         try {
             if (commandSender instanceof Player) {
                 try {
-                    player.openInventory(Bukkit.createInventory(player, InventoryType.ANVIL));
+                    if(player.hasPermission("perks.plus") || player.hasPermission("def.op") || player.hasPermission("perks.pp") || player.hasPermission("perks.ultra")) {
+                        player.openInventory(Bukkit.createInventory(player, InventoryType.ANVIL));
+                    } else {
+                        player.sendMessage(ChatColor.RED + "[PlayerPerms] 권한이 없습니다, 이 명령어를 사용할려면, 'perks.plus' 보다 높거나 같은 권한이 필요합니다!");
+                    }
                 } catch (Exception e) {
                     player.sendMessage(org.bukkit.ChatColor.RED + "[PlayerPerms] 오류가 발생했습니다");
                     player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 오류 로그: " + e + "\n[PlayerPerms] 오류코드: 0x51");
