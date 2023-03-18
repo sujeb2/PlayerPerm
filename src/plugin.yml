@@ -11,7 +11,7 @@ commands:
   #  description: 친구 추가
   #  aliases: [fl, ㅊ, 친구, friend, f]
   playerinfoop:
-    usage: /<command> (정보/info) <이름>
+    usage: /<command> <이름>
     description: 플레이어 정보
     aliases: [po, op정보, pi, plyi]
   targeth:
@@ -19,7 +19,7 @@ commands:
     description: 해당 플레이어의 체력을 항상 표시해줍니다.
     aliases: [tg, 체력, targethealth]
   playerinfo:
-    usage: /<command> (정보/info) <이름>
+    usage: /<command> <이름>
     description: 해당 플레이어의 정보를 보여줍니다.
     aliases: [p, pi, 정보]
   ban:
