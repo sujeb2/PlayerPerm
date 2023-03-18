@@ -1,6 +1,7 @@
 package com.songro;
 
 import com.songro.commands.console.GivePlayerPermission;
+import com.songro.commands.console.RemovePlayerPermission;
 import com.songro.commands.perks.ChatName;
 import com.songro.commands.perks.RemoteCrafting;
 import com.songro.commands.perks.RemoteEnderChest;
@@ -34,20 +35,22 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
         Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "이 버전은 FRUIT NET 서버를 위한 전용 버전입니다. 배포금지");
         Bukkit.getConsoleSender().sendMessage("");
         try {
-            Objects.requireNonNull(getCommand("friend")).setExecutor(new Friend());
+            //Objects.requireNonNull(getCommand("friend")).setExecutor(new Friend());
             Objects.requireNonNull(getCommand("playerinfoop")).setExecutor(new PlayerInfo());
             Objects.requireNonNull(getCommand("targethealth")).setExecutor(new HealthBar());
             Objects.requireNonNull(getCommand("playerinfo")).setExecutor(new PlayerInfoNormal());
             Objects.requireNonNull(getCommand("ban")).setExecutor(new Ban());
             Objects.requireNonNull(getCommand("quiet")).setExecutor(new QuietMessage());
             Objects.requireNonNull(getCommand("changename")).setExecutor(new ChatName());
-            getCommand("gpp").setExecutor(new GivePlayerPermission());
+            Objects.requireNonNull(getCommand("gpp")).setExecutor(new GivePlayerPermission());
+            Objects.requireNonNull(getCommand("removepermission")).setExecutor(new RemovePlayerPermission());
             try {
                 getServer().getPluginManager().registerEvents(new AFKListener(), this);
             } catch (Exception e) {
                 log.severe("AFKListener 이벤트를 등록중에 오류가 발생했습니다.");
                 log.severe("오류 로그: " + e);
                 log.severe("오류 코드: 0x06");
+                plugin.setEnabled(false);
             }
             Objects.requireNonNull(getCommand("isafk")).setExecutor(new IsAFK());
             Objects.requireNonNull(getCommand("afk")).setExecutor(new Afk());
@@ -55,6 +58,7 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
             //Objects.requireNonNull(getCommand("remoteanvil")).setExecutor(new RemoteAnvil());
             Objects.requireNonNull(getCommand("remotecrafting")).setExecutor(new RemoteCrafting());
             Objects.requireNonNull(getCommand("remoteender")).setExecutor(new RemoteEnderChest());
+            Objects.requireNonNull(getCommand("playerattachment")).setExecutor(new CheckPlayerAttachments());
             try {
                 Bukkit.getScheduler().runTaskTimerAsynchronously(this, new MoveMent(), 0L, 30 * 20L);
                 log.info("MoveMent TaskTimer added.");
@@ -63,6 +67,7 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
                 log.severe("플레이어 움직임을 확인중에 오류가 발생했습니다.");
                 log.severe("오류 로그: " + e);
                 log.severe("오류 코드: 0x05");
+                plugin.setEnabled(false);
             }
             new Fly();
             Bukkit.getConsoleSender().sendMessage("[PlayerPerms]" + ChatColor.GREEN + " 플러그인이 정상적으로 로드 되었습니다.");
@@ -71,6 +76,7 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
             log.severe("플러그인이 제대로 설치되었는지 확인해주십시오.");
             log.severe("오류 로그: " + e);
             log.severe("오류 코드: 0x01");
+            plugin.setEnabled(false);
         }
     }
 
@@ -82,6 +88,4 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
     public static Main getPlugin(){
         return plugin;
     }
-
-
 }

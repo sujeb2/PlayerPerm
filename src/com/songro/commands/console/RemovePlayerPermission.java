@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.logging.Logger;
 
-public class GivePlayerPermission implements CommandExecutor {
+public class RemovePlayerPermission implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String s, @NotNull String[] args) {
         Logger log = Bukkit.getLogger();
@@ -32,7 +32,7 @@ public class GivePlayerPermission implements CommandExecutor {
                                 if(target != null) {
                                     target.addAttachment(Main.getPlugin(), "perks.pp", false);
                                     target.addAttachment(Main.getPlugin(), "perks.ultra", false);
-                                    target.addAttachment(Main.getPlugin(), "perks.plus", true);
+                                    target.addAttachment(Main.getPlugin(), "perks.plus", false);
                                     target.recalculatePermissions();
                                     target.setDisplayName(ChatColor.GREEN + "[FRUIT" + ChatColor.YELLOW + "+" + ChatColor.GREEN + "] " + target.getName() + ChatColor.WHITE);
                                     target.setCustomName(ChatColor.GREEN + "[FRUIT" + ChatColor.YELLOW + "+" + ChatColor.GREEN + "] " + target.getName() + ChatColor.WHITE);
@@ -64,7 +64,7 @@ public class GivePlayerPermission implements CommandExecutor {
                             player.sendMessage(ChatColor.GREEN + "[PlayerPerms] " + target.getDisplayName() + "님에게 " + ChatColor.GOLD + "'perks.plusplus'" + ChatColor.GREEN + " 권한을 주었습니다!");
                             try {
                                 if(target != null) {
-                                    target.addAttachment(Main.getPlugin(), "perks.pp", true);
+                                    target.addAttachment(Main.getPlugin(), "perks.pp", false);
                                     target.addAttachment(Main.getPlugin(), "perks.ultra", false);
                                     target.addAttachment(Main.getPlugin(), "perks.plus", false);
                                     target.recalculatePermissions();
@@ -99,7 +99,7 @@ public class GivePlayerPermission implements CommandExecutor {
                             try {
                                 if(target != null) {
                                     target.addAttachment(Main.getPlugin(), "perks.pp", false);
-                                    target.addAttachment(Main.getPlugin(), "perks.ultra", true);
+                                    target.addAttachment(Main.getPlugin(), "perks.ultra", false);
                                     target.addAttachment(Main.getPlugin(), "perks.plus", false);
                                     target.setDisplayName(ChatColor.GREEN + "[FRUIT" + ChatColor.DARK_GRAY + " U" + ChatColor.GREEN + "] " + target.getName() + ChatColor.WHITE);
                                     target.setCustomName(ChatColor.GREEN + "[FRUIT" + ChatColor.DARK_GRAY + " U" + ChatColor.GREEN + "] " + target.getName() + ChatColor.WHITE);

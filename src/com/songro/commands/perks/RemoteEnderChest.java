@@ -7,7 +7,6 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
 import org.jetbrains.annotations.NotNull;
 
@@ -22,12 +21,12 @@ public class RemoteEnderChest implements CommandExecutor {
         try {
             if (commandSender instanceof Player) {
                 try {
-                    if (player.hasPermission("perks.iron") || player.hasPermission("def.op")) {
+                    if (player.hasPermission("perks.plus") || player.hasPermission("def.op") || player.hasPermission("perks.pp") || player.hasPermission("perks.ultra")) {
                         Inventory ender = player.getEnderChest();
                         player.openInventory(ender);
                         player.playSound(player.getLocation(), Sound.BLOCK_ENDER_CHEST_OPEN, 10, 1);
                     } else {
-                        player.sendMessage(ChatColor.RED + "[PlayerPerms] 권한이 없습니다, 이 명령어를 사용할려면, 'perks.iron' 보다 높거나 같은 권한이 필요합니다!");
+                        player.sendMessage(ChatColor.RED + "[PlayerPerms] 권한이 없습니다, 이 명령어를 사용할려면, 'perks.plus' 보다 높거나 같은 권한이 필요합니다!");
                     }
                 } catch (Exception e) {
                     player.sendMessage(org.bukkit.ChatColor.RED + "[PlayerPerms] 오류가 발생했습니다");

@@ -6,10 +6,10 @@ api-version: 1.19
 description: 대부분의 기능을 하나에 플러그인에서
 
 commands:
-  friend:
-    usage: /<command> (추가/수락/거절/차단)
-    description: 친구 추가
-    aliases: [fl, ㅊ, 친구, friend, f]
+  #friend:
+  #  usage: /<command> (추가/수락/거절/차단)
+  #  description: 친구 추가
+  #  aliases: [fl, ㅊ, 친구, friend, f]
   playerinfoop:
     usage: /<command> (정보/info) <이름>
     description: 플레이어 정보
@@ -60,9 +60,19 @@ commands:
     description: 원격으로 작업대를 엽니다. (후원 전용)
     aliases: [rc, crafting, 작업대, 원격작업대, ㅇㅈ]
   gpp:
-    usage: /<command>
+    usage: /<command> <Player> (plus/plusplus/
     description: 해당 플레이어에게 권한을 줍니다.
     aliases: [gp, 권한추가, givepermission]
+  homecolor:
+    usage: /<command>
+  playerattachment:
+    usage: /<command>
+    description: 특정 플레이어의 권한을 확인합니다.
+    aliases: [pa, 권한확인]
+  removepermission:
+    usage: /<command>
+    description: 권한을 제거합니다.
+    aliases: [rmp, remove, 권한제거]
 
 permissons:
 
@@ -71,25 +81,25 @@ permissons:
     description: 후원 해택
     children:
       perks.normal: true
-      perks.iron: false
-      perks.gold: false
-      perks.diamond: false
-      perks.emerald: false
+      perks.plus: false
+      perks.pp: false
+      perks.ultra: false
+      perks.op: op
   perks.normal:
     description: 기본 유저 권한
     default: true
-  perks.iron:
+  perks.plus:
     description: 후원 Iron 권한
     default: false
-  perks.gold:
+  perks.pp:
     description: 후원 Gold 권한
     default: false
-  perks.diamond:
+  perks.ultra:
     description: 후원 Diamond 권한
     default: false
-  perks.emerald:
-    description: 후원 Emerald 권한
-    default: false
+  perks.op:
+    description: OP 권한
+    default: op
 
   # default
   def.*:

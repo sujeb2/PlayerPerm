@@ -20,7 +20,7 @@ public class RemoteCrafting implements CommandExecutor {
         try {
             if (commandSender instanceof Player) {
                 try {
-                    if(player.hasPermission("perks.iron") || player.hasPermission("def.op")) {
+                    if(player.hasPermission("perks.plus") || player.hasPermission("def.op")) {
                         player.openWorkbench(null, true);
                         player.playSound(player.getLocation(), Sound.ENTITY_VILLAGER_WORK_BUTCHER, 10, 1);
                     } else {
