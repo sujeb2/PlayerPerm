@@ -124,6 +124,35 @@ public class GivePlayerPermission implements CommandExecutor {
                             }
                         }
                     }
+                    if (args[1].equalsIgnoreCase("mutebypass")) {
+                        assert target != null;
+                        if (target.isPermissionSet("perks.mutebypass") || target.hasPermission("def.op")) {
+                            player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 이미 " + target.getDisplayName() + "님은 " + ChatColor.AQUA + "'def.mutebypass'" + ChatColor.YELLOW + " 권한을 가지고 있습니다.");
+                        } else {
+                            player.sendMessage(ChatColor.GREEN + "[PlayerPerms] " + target.getDisplayName() + "님에게 " + ChatColor.AQUA + "'def.mutebypass'" + ChatColor.GREEN + " 권한을 주었습니다!");
+                            try {
+                                if(target != null) {
+                                    target.addAttachment(Main.getPlugin(), "def.mutebypass", true);
+                                    target.recalculatePermissions();
+                                    player.sendMessage("1");
+                                } else {
+                                    player.sendMessage(ChatColor.RED + "[PlayerPerms] 해당 플레이어는 현재 온라인이 아닙니다");
+                                }
+                            } catch (Exception e) {
+                                log.severe("오류가 발생했습니다");
+                                log.severe("오류 로그: " + e);
+                                log.severe("오류 코드: 0x81");
+                                player.sendMessage(ChatColor.RED + "[PlayerPerms] 오류가 발생했습니다");
+                                player.sendMessage(ChatColor.YELLOW + "오류 로그: " + e + "\n[PlayerPerms] 오류 코드: 0x81");
+                            }
+                            if (target.isOnline()) {
+                                target.playSound(target.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 10, 1);
+                                target.sendMessage(ChatColor.GREEN + "[PlayerPerm] def.mutebypass 권한을 가지게 되었습니다.");
+                            } else {
+                                player.sendMessage("[PlayerPerms] 해당 플레이어가 온라인이 아니여 메세지를 보내지 못했습니다.");
+                            }
+                        }
+                    }
                     if (args[0].length() == 0) {
                         player.sendMessage(ChatColor.RED + "[PlayerPerms] 추가 명령어가 없습니다");
                         player.sendMessage(ChatColor.RED + "[PlayerPerms] 사용방법: /<command> <Player> (plus/plusplus/ultra");
@@ -133,7 +162,7 @@ public class GivePlayerPermission implements CommandExecutor {
                         player.sendMessage(ChatColor.RED + "[PlayerPerms] 사용방법: /<command> <Player> (plus/plusplus/ultra");
                     }
                 }
-                if (args.length == 0) {
+                if (args[0].length() == 0) {
                     player.sendMessage(ChatColor.RED + "[PlayerPerms] 추가 명령어가 없습니다");
                     player.sendMessage(ChatColor.RED + "[PlayerPerms] 사용방법: /<command> <Player> (plus/plusplus/ultra");
                 }

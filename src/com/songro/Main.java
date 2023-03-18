@@ -59,6 +59,16 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
             Objects.requireNonNull(getCommand("remotecrafting")).setExecutor(new RemoteCrafting());
             Objects.requireNonNull(getCommand("remoteender")).setExecutor(new RemoteEnderChest());
             Objects.requireNonNull(getCommand("playerattachment")).setExecutor(new CheckPlayerAttachments());
+            Objects.requireNonNull(getCommand("broadcast")).setExecutor(new Broadcast());
+            new Mute();
+            try {
+                getServer().getPluginManager().registerEvents(new MuteListener(), this);
+            } catch (Exception e) {
+                log.severe("MuteListener 이벤트를 등록중에 오류가 발생했습니다.");
+                log.severe("오류 로그: " + e);
+                log.severe("오류 코드: 0x07");
+                plugin.setEnabled(false);
+            }
             try {
                 Bukkit.getScheduler().runTaskTimerAsynchronously(this, new MoveMent(), 0L, 30 * 20L);
                 log.info("MoveMent TaskTimer added.");

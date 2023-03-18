@@ -21,7 +21,7 @@ public class RemoteEnderChest implements CommandExecutor {
         try {
             if (commandSender instanceof Player) {
                 try {
-                    if (player.hasPermission("perks.plus") || player.hasPermission("def.op") || player.hasPermission("perks.pp") || player.hasPermission("perks.ultra")) {
+                    if (player.hasPermission("def.op") || player.hasPermission("perks.pp") || player.hasPermission("perks.ultra")) {
                         Inventory ender = player.getEnderChest();
                         player.openInventory(ender);
                         player.playSound(player.getLocation(), Sound.BLOCK_ENDER_CHEST_OPEN, 10, 1);

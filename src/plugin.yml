@@ -1,6 +1,6 @@
 main: com.songro.Main
 name: PlayerPerms
-version: 1.0
+version: 3.18.1
 author: notSongro
 api-version: 1.19
 description: 대부분의 기능을 하나에 플러그인에서
@@ -73,6 +73,13 @@ commands:
     usage: /<command>
     description: 권한을 제거합니다.
     aliases: [rmp, remove, 권한제거]
+  #mute:
+  #  usage: /<command>
+  #  description: 모든 플레이어 메세지를 못 보내게 합니다.
+  #  aliases: [m, mute, 뮤트]
+  broadcast:
+    usage: /<command> (announce/patch/fix) <Message>
+    description: 모든 플레이어에게 공지를 올립니다.
 
 permissons:
 
@@ -106,9 +113,13 @@ permissons:
     description: 기본 권한
     def.normal: true
     def.op: op
+    def.mutebypass: false
   def.normal:
     description: 기본 유저 권한
     default: true
   def.op:
     description: OP 권한
     default: op
+  def.mutebypass:
+    description: 뮤트 건너뛰기
+    default: false
