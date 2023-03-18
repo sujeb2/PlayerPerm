@@ -10,7 +10,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
 public class Broadcast implements CommandExecutor {
     @Override
