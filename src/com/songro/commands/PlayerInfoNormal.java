@@ -55,7 +55,7 @@ public class PlayerInfoNormal implements CommandExecutor {
                     date.setTime(timestamp);
 
                     String Datetime = sdf.format(date);
-                    player.sendMessage(ChatColor.DARK_GRAY + ": " + "마지막 접속 시간: " + ChatColor.GRAY + Datetime);
+                    player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.GRAY + "마지막 접속 시간: " + Datetime);
                 }
                 return true;
             } catch (Exception e) {
