@@ -2,15 +2,11 @@ package com.songro;
 
 import com.songro.commands.console.GivePlayerPermission;
 import com.songro.commands.console.RemovePlayerPermission;
-import com.songro.commands.perks.ChatName;
-import com.songro.commands.perks.CheckBlockLog;
-import com.songro.commands.perks.RemoteCrafting;
-import com.songro.commands.perks.RemoteEnderChest;
+import com.songro.commands.perks.*;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
-import com.songro.ncpp.detect.*;
 import com.songro.commands.op.*;
 import com.songro.event.*;
 import com.songro.listener.*;
@@ -46,14 +42,6 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
             Objects.requireNonNull(getCommand("changename")).setExecutor(new ChatName());
             Objects.requireNonNull(getCommand("gpp")).setExecutor(new GivePlayerPermission());
             Objects.requireNonNull(getCommand("removepermission")).setExecutor(new RemovePlayerPermission());
-            try {
-                getServer().getPluginManager().registerEvents(new AFKListener(), this);
-            } catch (Exception e) {
-                log.severe("AFKListener 이벤트를 등록중에 오류가 발생했습니다.");
-                log.severe("오류 로그: " + e);
-                log.severe("오류 코드: 0x06");
-                plugin.setEnabled(false);
-            }
             Objects.requireNonNull(getCommand("isafk")).setExecutor(new IsAFK());
             Objects.requireNonNull(getCommand("afk")).setExecutor(new Afk());
             Objects.requireNonNull(getCommand("reloadconfig")).setExecutor(new Reload());
@@ -62,6 +50,7 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
             Objects.requireNonNull(getCommand("remoteender")).setExecutor(new RemoteEnderChest());
             Objects.requireNonNull(getCommand("playerattachment")).setExecutor(new CheckPlayerAttachments());
             Objects.requireNonNull(getCommand("broadcast")).setExecutor(new Broadcast());
+            Objects.requireNonNull(getCommand("blocklog")).setExecutor(new CheckBlockLog());
             new Mute();
             try {
                 getServer().getPluginManager().registerEvents(new MuteListener(), this);
@@ -81,8 +70,22 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
                 log.severe("오류 코드: 0x05");
                 plugin.setEnabled(false);
             }
-            new Fly();
-            Objects.requireNonNull(getCommand("blocklog")).setExecutor(new CheckBlockLog());
+            try {
+                getServer().getPluginManager().registerEvents(new AFKListener(), this);
+            } catch (Exception e) {
+                log.severe("AFKListener 이벤트를 등록중에 오류가 발생했습니다.");
+                log.severe("오류 로그: " + e);
+                log.severe("오류 코드: 0x06");
+                plugin.setEnabled(false);
+            }
+            try {
+                getServer().getPluginManager().registerEvents(new KillHeadDrop(), this);
+            } catch (Exception e) {
+                log.severe("KillHeadDrop 이벤트를 등록중에 오류가 발생했습니다.");
+                log.severe("오류 로그: " + e);
+                log.severe("오류 코드: 0x09");
+                plugin.setEnabled(false);
+            }
             Bukkit.getConsoleSender().sendMessage("[PlayerPerms]" + ChatColor.GREEN + " 플러그인이 정상적으로 로드 되었습니다.");
         } catch (Exception e) {
             log.severe("플러그인을 로딩하던중에 오류가 발생했습니다.");
