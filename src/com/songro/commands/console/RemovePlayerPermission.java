@@ -3,7 +3,6 @@ package com.songro.commands.console;
 import com.songro.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -24,20 +23,19 @@ public class RemovePlayerPermission implements CommandExecutor {
                 if (player.hasPermission("def.op") || player.getDisplayName().equals("CONSOLE")) {
                     if (args[1].equalsIgnoreCase("plus")) {
                         assert target != null;
-                        if (target.isPermissionSet("perks.p") || target.hasPermission("def.op")) {
-                            player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 이미 " + target.getDisplayName() + "님은  " + ChatColor.WHITE + "'perks.plus'" + ChatColor.YELLOW + " 권한을 가지고 있습니다.");
+                        if (!target.isPermissionSet("perks.p") || !target.hasPermission("def.op")) {
+                            player.sendMessage("already removed");
                         } else {
-                            player.sendMessage(ChatColor.GREEN + "[PlayerPerms] " + target.getDisplayName() + "님에게 " + ChatColor.AQUA + "'perks.plus'" + ChatColor.GREEN + " 권한을 주었습니다!");
+                            player.sendMessage("removed");
                             try {
                                 if(target != null) {
                                     target.addAttachment(Main.getPlugin(), "perks.pp", false);
                                     target.addAttachment(Main.getPlugin(), "perks.ultra", false);
                                     target.addAttachment(Main.getPlugin(), "perks.plus", false);
                                     target.recalculatePermissions();
-                                    target.setDisplayName(ChatColor.GREEN + "[FRUIT" + ChatColor.YELLOW + "+" + ChatColor.GREEN + "] " + target.getName() + ChatColor.WHITE);
-                                    target.setCustomName(ChatColor.GREEN + "[FRUIT" + ChatColor.YELLOW + "+" + ChatColor.GREEN + "] " + target.getName() + ChatColor.WHITE);
+                                    target.setDisplayName(target.getName());
+                                    target.setCustomName(target.getName());
                                     target.setCustomNameVisible(true);
-                                    player.sendMessage("3");
                                 } else {
                                     player.sendMessage(ChatColor.RED + "[PlayerPerms] 해당 플레이어는 현재 온라인이 아닙니다");
                                 }
@@ -48,30 +46,26 @@ public class RemovePlayerPermission implements CommandExecutor {
                                 player.sendMessage(ChatColor.RED + "[PlayerPerms] 오류가 발생했습니다");
                                 player.sendMessage(ChatColor.YELLOW + "오류 로그: " + e + "\n[PlayerPerms] 오류 코드: 0x81");
                             }
-                            if (target.isOnline()) {
-                                target.playSound(target.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 10, 1);
-                                target.sendMessage(ChatColor.GREEN + "[PlayerPerm] 축하합니다! 이제 " + ChatColor.GREEN + "'Fruit+'" + ChatColor.GREEN + " 해택을 경험할수 있습니다!");
-                            } else {
+                            if (!target.isOnline()) {
                                 player.sendMessage("[PlayerPerms] 해당 플레이어가 온라인이 아니여 메세지를 보내지 못했습니다.");
                             }
                         }
                     }
                     if (args[1].equalsIgnoreCase("plusplus")) {
                         assert target != null;
-                        if (target.isPermissionSet("perks.pp") || target.hasPermission("def.op")) {
-                            player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 이미 " + target.getDisplayName() + "님은 " + ChatColor.GOLD + "'perks.plusplus'" + ChatColor.YELLOW + " 권한을 가지고 있습니다.");
+                        if (!target.isPermissionSet("perks.pp") || !target.hasPermission("def.op")) {
+                            player.sendMessage("already removed");
                         } else {
-                            player.sendMessage(ChatColor.GREEN + "[PlayerPerms] " + target.getDisplayName() + "님에게 " + ChatColor.GOLD + "'perks.plusplus'" + ChatColor.GREEN + " 권한을 주었습니다!");
+                            player.sendMessage("removed");
                             try {
                                 if(target != null) {
                                     target.addAttachment(Main.getPlugin(), "perks.pp", false);
                                     target.addAttachment(Main.getPlugin(), "perks.ultra", false);
                                     target.addAttachment(Main.getPlugin(), "perks.plus", false);
                                     target.recalculatePermissions();
-                                    target.setDisplayName(ChatColor.GREEN + "[FRUIT" + ChatColor.AQUA + "++" + ChatColor.GREEN + "] " + target.getName() + ChatColor.WHITE);
-                                    target.setCustomName(ChatColor.GREEN + "[FRUIT" + ChatColor.AQUA + "++" + ChatColor.GREEN + "] " + target.getName() + ChatColor.WHITE);
+                                    target.setDisplayName(target.getName());
+                                    target.setCustomName(target.getName());
                                     target.setCustomNameVisible(true);
-                                    player.sendMessage("2");
                                 } else {
                                     player.sendMessage(ChatColor.RED + "[PlayerPerms] 해당 플레이어는 현재 온라인이 아닙니다");
                                 }
@@ -82,30 +76,26 @@ public class RemovePlayerPermission implements CommandExecutor {
                                 player.sendMessage(ChatColor.RED + "[PlayerPerms] 오류가 발생했습니다");
                                 player.sendMessage(ChatColor.YELLOW + "오류 로그: " + e + "\n[PlayerPerms] 오류 코드: 0x81");
                             }
-                            if (target.isOnline()) {
-                                target.playSound(target.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 10, 1);
-                                target.sendMessage(ChatColor.GREEN + "[PlayerPerm] 축하합니다! 이제 " + ChatColor.GOLD + "'Fruit++'" + ChatColor.GREEN + " 해택을 경험할수 있습니다!");
-                            } else {
+                            if (!target.isOnline()) {
                                 player.sendMessage("[PlayerPerms] 해당 플레이어가 온라인이 아니여 메세지를 보내지 못했습니다.");
                             }
                         }
                     }
                     if (args[1].equalsIgnoreCase("ultra")) {
                         assert target != null;
-                        if (target.isPermissionSet("perks.ultra") || target.hasPermission("def.op")) {
-                            player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 이미 " + target.getDisplayName() + "님은 " + ChatColor.AQUA + "'perks.ultra'" + ChatColor.YELLOW + " 권한을 가지고 있습니다.");
+                        if (!target.isPermissionSet("perks.ultra") || !target.hasPermission("def.op")) {
+                            player.sendMessage("already removed");
                         } else {
-                            player.sendMessage(ChatColor.GREEN + "[PlayerPerms] " + target.getDisplayName() + "님에게 " + ChatColor.AQUA + "'perks.ultra'" + ChatColor.GREEN + " 권한을 주었습니다!");
+                            player.sendMessage("removed");
                             try {
                                 if(target != null) {
                                     target.addAttachment(Main.getPlugin(), "perks.pp", false);
                                     target.addAttachment(Main.getPlugin(), "perks.ultra", false);
                                     target.addAttachment(Main.getPlugin(), "perks.plus", false);
-                                    target.setDisplayName(ChatColor.GREEN + "[FRUIT" + ChatColor.DARK_GRAY + " U" + ChatColor.GREEN + "] " + target.getName() + ChatColor.WHITE);
-                                    target.setCustomName(ChatColor.GREEN + "[FRUIT" + ChatColor.DARK_GRAY + " U" + ChatColor.GREEN + "] " + target.getName() + ChatColor.WHITE);
-                                    target.setCustomNameVisible(true);
                                     target.recalculatePermissions();
-                                    player.sendMessage("1");
+                                    target.setDisplayName(target.getName());
+                                    target.setCustomName(target.getName());
+                                    target.setCustomNameVisible(true);
                                 } else {
                                     player.sendMessage(ChatColor.RED + "[PlayerPerms] 해당 플레이어는 현재 온라인이 아닙니다");
                                 }
@@ -116,10 +106,7 @@ public class RemovePlayerPermission implements CommandExecutor {
                                 player.sendMessage(ChatColor.RED + "[PlayerPerms] 오류가 발생했습니다");
                                 player.sendMessage(ChatColor.YELLOW + "오류 로그: " + e + "\n[PlayerPerms] 오류 코드: 0x81");
                             }
-                            if (target.isOnline()) {
-                                target.playSound(target.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 10, 1);
-                                target.sendMessage(ChatColor.GREEN + "[PlayerPerm] 축하합니다! 이제 " + ChatColor.AQUA + "'Fruit U'" + ChatColor.GREEN + " 해택을 경험할수 있습니다!");
-                            } else {
+                            if (!target.isOnline()) {
                                 player.sendMessage("[PlayerPerms] 해당 플레이어가 온라인이 아니여 메세지를 보내지 못했습니다.");
                             }
                         }
