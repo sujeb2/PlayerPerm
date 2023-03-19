@@ -41,7 +41,7 @@ public class QuietMessage implements CommandExecutor {
                         if (target.equals(player)) {
                             player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 자기 자신에게 귓속말을 보낼수 없습니다.");
                         } else {
-                            target.sendMessage(ChatColor.GRAY + "[PlayerPerms] 새로운 메세지를 받았습니다.\n• " + player.getDisplayName() + "(이)가 보낸 메세지: " + msg);
+                            target.sendMessage(ChatColor.GRAY + "[PlayerPerms] " + ChatColor.DARK_PURPLE + player.getDisplayName() + ChatColor.DARK_GRAY +  " >> " + target.getDisplayName() + "\n• " + msg);
                             player.sendMessage(ChatColor.GREEN + "[PlayerPerms] " + target.getDisplayName() + "에게 성공적으로 " + msg + "라고 메세지를 보냈습니다.");
                             return true;
                         }
@@ -56,8 +56,8 @@ public class QuietMessage implements CommandExecutor {
                         if (target.equals(player)) {
                             player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 자기 자신에게 귓속말을 보낼수 없습니다.");
                         } else {
-                            target.sendMessage(ChatColor.GRAY + "[PlayerPerms] 새로운 메세지를 받았습니다.\n• " + player.getDisplayName() + "(이)가 보낸 메세지: " + finalMessage);
-                            player.sendMessage(ChatColor.GREEN + "[PlayerPerms] " + target.getDisplayName() + "에게 성공적으로 " + finalMessage + " 라고 메세지를 보냈습니다.");
+                            target.sendMessage(ChatColor.GRAY + "[PlayerPerms] " + ChatColor.DARK_PURPLE + player.getDisplayName() + ChatColor.DARK_GRAY +  " >> " + target.getDisplayName() + "\n• " + finalMessage);
+                            player.sendMessage(ChatColor.GREEN + "[PlayerPerms] " + target.getDisplayName() + ChatColor.GREEN + "에게 성공적으로 " + finalMessage + " 라고 메세지를 보냈습니다.");
                             return true;
                         }
                     }
@@ -77,6 +77,6 @@ public class QuietMessage implements CommandExecutor {
             Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + "[PlayerPerms] 해당 명령어는 콘솔에서 사용이 불가능합니다.");
             return false;
         }
-        return false;
+        return true;
     }
 }

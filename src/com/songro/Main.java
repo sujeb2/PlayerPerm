@@ -33,6 +33,7 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
         Bukkit.getConsoleSender().sendMessage("P  E  R  M  S    " + ChatColor.DARK_GRAY + "-- FOR FRUIT NET EDITION");
         Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "Made by. songro_, License MIT");
         Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "이 버전은 FRUIT NET 서버를 위한 전용 버전입니다. 배포금지");
+        Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "이 플러그인은 Bungeecord에서 사용을 추천드리지 않습니다.");
         Bukkit.getConsoleSender().sendMessage("");
         try {
             //Objects.requireNonNull(getCommand("friend")).setExecutor(new Friend());
