@@ -84,6 +84,6 @@ public class PlayerInfo implements CommandExecutor {
             Player player = (Player) send;
             player.sendMessage(ChatColor.RED + "[PlayerPerms] 이 명령어는 OP만 사용 가능합니다.");
         }
-        return false;
+        return true;
     }
 }
