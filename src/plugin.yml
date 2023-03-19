@@ -80,6 +80,9 @@ commands:
   broadcast:
     usage: /<command> (announce/patch/fix) <Message>
     description: 모든 플레이어에게 공지를 올립니다.
+  blocklog:
+    usage: /<command>
+    description: 보는 방향의 블럭에 대한 로그를 출력합니다.
 
 permissons:
 

@@ -3,6 +3,7 @@ package com.songro;
 import com.songro.commands.console.GivePlayerPermission;
 import com.songro.commands.console.RemovePlayerPermission;
 import com.songro.commands.perks.ChatName;
+import com.songro.commands.perks.CheckBlockLog;
 import com.songro.commands.perks.RemoteCrafting;
 import com.songro.commands.perks.RemoteEnderChest;
 import org.bukkit.Bukkit;
@@ -81,6 +82,7 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
                 plugin.setEnabled(false);
             }
             new Fly();
+            Objects.requireNonNull(getCommand("blocklog")).setExecutor(new CheckBlockLog());
             Bukkit.getConsoleSender().sendMessage("[PlayerPerms]" + ChatColor.GREEN + " 플러그인이 정상적으로 로드 되었습니다.");
         } catch (Exception e) {
             log.severe("플러그인을 로딩하던중에 오류가 발생했습니다.");
