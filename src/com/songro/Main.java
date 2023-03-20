@@ -3,6 +3,7 @@ package com.songro;
 import com.songro.commands.console.GivePlayerPermission;
 import com.songro.commands.console.RemovePlayerPermission;
 import com.songro.commands.perks.*;
+import com.songro.commands.perks.plusplus.Sit;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.event.Listener;
@@ -19,7 +20,7 @@ import com.songro.commands.*;
 
 public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
     Logger log = getLogger();
-    private static Main plugin;
+    public static Main plugin;
 
     @Override
     public void onEnable() {
@@ -51,6 +52,7 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
             Objects.requireNonNull(getCommand("playerattachment")).setExecutor(new CheckPlayerAttachments());
             Objects.requireNonNull(getCommand("broadcast")).setExecutor(new Broadcast());
             Objects.requireNonNull(getCommand("blocklog")).setExecutor(new CheckBlockLog());
+            Objects.requireNonNull(getCommand("sit")).setExecutor(new Sit());
             new Mute();
             try {
                 getServer().getPluginManager().registerEvents(new MuteListener(), this);

@@ -80,9 +80,15 @@ commands:
   broadcast:
     usage: /<command> (announce/patch/fix) <Message>
     description: 모든 플레이어에게 공지를 올립니다.
+    aliases: [broad, alarm, 알림]
   blocklog:
     usage: /<command>
     description: 보는 방향의 블럭에 대한 로그를 출력합니다.
+    aliases: [log, bl, block, 블럭로그, 블럭]
+  sit:
+    usage: /<command>
+    description: 앉습니다.
+    aliases: [s, st, 앉기, ㅇㄱ]
 
 permissons:
 
