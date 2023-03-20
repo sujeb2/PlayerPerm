@@ -1,5 +1,6 @@
 package com.songro.event;
 
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -20,9 +21,9 @@ public class KillHeadDrop implements Listener {
                 assert sm != null;
                 sm.setOwner((e.getEntity().getName()));
                 if (e.getEntity().getKiller() != null) {
-                    lore.add(e.getEntity().getKiller() + "(이)가 죽인 " + e.getEntity().getDisplayName() + "의 머리이다.");
+                    lore.add(e.getEntity().getKiller() + "(이)가 죽인 " + e.getEntity().getDisplayName() + ChatColor.GRAY + "의 머리이다.");
                 } else {
-                    lore.add(e.getEntity().getName() + "의 머리이다.");
+                    lore.add(ChatColor.GRAY + e.getEntity().getName() + ChatColor.GRAY +  "의 머리이다.");
                 }
                 sm.setLore(lore);
                 item.setItemMeta(sm);
@@ -35,7 +36,7 @@ public class KillHeadDrop implements Listener {
             ArrayList<String> lore = new ArrayList<>();
             assert sm != null;
             sm.setOwner((e.getEntity().getName()));
-            lore.add(e.getEntity().getDisplayName() + "의 머리이다.");
+            lore.add(e.getEntity().getDisplayName() + ChatColor.GRAY +  "의 머리이다.");
             sm.setLore(lore);
             item.setItemMeta(sm);
 
