@@ -53,6 +53,7 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
             Objects.requireNonNull(getCommand("broadcast")).setExecutor(new Broadcast());
             Objects.requireNonNull(getCommand("blocklog")).setExecutor(new CheckBlockLog());
             Objects.requireNonNull(getCommand("sit")).setExecutor(new Sit());
+            Objects.requireNonNull(getCommand("color")).setExecutor(new PlayerChatColor());
             new Mute();
             try {
                 getServer().getPluginManager().registerEvents(new MuteListener(), this);

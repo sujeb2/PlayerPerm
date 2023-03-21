@@ -89,6 +89,10 @@ commands:
     usage: /<command>
     description: 앉습니다.
     aliases: [s, st, 앉기, ㅇㄱ]
+  color:
+    usage: /<command>
+    description: 채팅 색상을 변경합니다.
+    aliases: [c, 색상, 채팅색상]
 
 permissons:
 
