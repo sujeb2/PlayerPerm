@@ -6,6 +6,7 @@ import com.songro.commands.perks.*;
 import com.songro.commands.perks.plusplus.Sit;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 import com.songro.commands.op.*;
@@ -85,6 +86,14 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
                 getServer().getPluginManager().registerEvents(new KillHeadDrop(), this);
             } catch (Exception e) {
                 log.severe("KillHeadDrop 이벤트를 등록중에 오류가 발생했습니다.");
+                log.severe("오류 로그: " + e);
+                log.severe("오류 코드: 0x09");
+                plugin.setEnabled(false);
+            }
+            try {
+                getServer().getPluginManager().registerEvents(new PlayerChatColorGUIListener(), this);
+            } catch (Exception e) {
+                log.severe("PlayerChatColorGUIListener 이벤트를 등록중에 오류가 발생했습니다.");
                 log.severe("오류 로그: " + e);
                 log.severe("오류 코드: 0x09");
                 plugin.setEnabled(false);
