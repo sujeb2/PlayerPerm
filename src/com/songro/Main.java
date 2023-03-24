@@ -35,7 +35,6 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
         Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "이 플러그인은 Bungeecord에서 사용을 추천드리지 않습니다.");
         Bukkit.getConsoleSender().sendMessage("");
         try {
-            //Objects.requireNonNull(getCommand("friend")).setExecutor(new Friend());
             Objects.requireNonNull(getCommand("playerinfoop")).setExecutor(new PlayerInfo());
             Objects.requireNonNull(getCommand("targethealth")).setExecutor(new HealthBar());
             Objects.requireNonNull(getCommand("playerinfo")).setExecutor(new PlayerInfoNormal());
