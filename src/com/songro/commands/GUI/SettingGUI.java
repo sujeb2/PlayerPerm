@@ -23,7 +23,7 @@ public class SettingGUI implements InventoryHolder {
     }
 
     /*
-    Function for making custom Item faster.
+    creating item
      */
     public ItemStack createItem(String name, Material mat, List<String> lore) {
         ItemStack item = new ItemStack(mat, 1);
