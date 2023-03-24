@@ -6,6 +6,6 @@ public enum cheats {
     AntiFall,
     KillAura,
     NoFall,
-    Sneak;
+    Sneak
 
 }

@@ -35,7 +35,7 @@ public class SettingGUI implements InventoryHolder {
     }
 
     public void Select() {
-        var inv = Bukkit.createInventory((InventoryHolder) this, 27, "설정");
+        var inv = Bukkit.createInventory(this, 27, "설정");
     }
 
     @NotNull

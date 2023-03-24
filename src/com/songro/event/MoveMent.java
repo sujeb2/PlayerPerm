@@ -1,6 +1,5 @@
 package com.songro.event;
 
-import com.songro.data.config;
 import com.songro.handler.AFK;
 import org.bukkit.Bukkit;
 

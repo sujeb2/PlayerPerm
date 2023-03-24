@@ -31,7 +31,7 @@ public class Mute implements CommandExecutor, Listener {
 
         try {
             if(sender instanceof ConsoleCommandSender || player.isOp()) {
-                if (muted == true) {
+                if (muted) {
                     muted = false;
                     Bukkit.broadcastMessage(ChatColor.GREEN + "[PlayerPerms] " + player.getDisplayName() + "에 의해 채팅이 풀어졌습니다.");
                 } else {
