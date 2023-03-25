@@ -92,6 +92,10 @@ commands:
   helloworld:
     usage: /<command>
     description: Hello, world!
+  floatingmessage:
+    usage: /<command> <Message>
+    description: 공중에서 메세지를 보여줍니다.
+    aliases: [floating, fm, display, 텍스트]
 
 permissons:
 
