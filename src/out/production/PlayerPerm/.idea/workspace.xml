@@ -11,8 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="74a2b4f2-ec91-42d6-8cab-b2e17abec495" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/songro/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlayerPerm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlayerPerm/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/event/KillHeadDrop.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/event/KillHeadDrop.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +33,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2NU6L66bGfCLkHJITkBgWnwCDF9" />
   <component name="ProjectViewState">
