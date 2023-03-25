@@ -23,6 +23,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.RecipeChoice;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -45,25 +46,51 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
     public void onEnable() {
 
 
-        // floating arrow
-        ItemStack tippedFloatingArrow = new ItemStack(Material.TIPPED_ARROW, 1);
-        PotionMeta tfap = (PotionMeta)tippedFloatingArrow.getItemMeta();
-        tfap.addCustomEffect(new PotionEffect(PotionEffectType.LEVITATION, 120, 0), true);
-        tfap.setDisplayName(ChatColor.GREEN + "" + ChatColor.BOLD + "공중부양의 화살");
-        tfap.setLore(List.of(ChatColor.AQUA + "화살을 맞으면 1분동안 공중부양 효과를 얻습니다."));
+        // floating arrow 30sec
+        try {
+            ItemStack tippedFloatingArrow = new ItemStack(Material.TIPPED_ARROW, 1);
+            PotionMeta tfap = (PotionMeta) tippedFloatingArrow.getItemMeta();
+            tfap.addCustomEffect(new PotionEffect(PotionEffectType.LEVITATION, 20 * 30, 0), true);
+            tfap.setDisplayName(ChatColor.GREEN + "" + ChatColor.BOLD + "공중 부양의 화살");
+            tfap.setLore(List.of(ChatColor.AQUA + "화살을 맞으면 30초 동안 공중부양 효과를 얻습니다."));
 
-        tippedFloatingArrow.setItemMeta(tfap);
-        {
-            NamespacedKey key = new NamespacedKey(this, "tfa");
-            ShapedRecipe recipe = new ShapedRecipe(key, tippedFloatingArrow);
-            recipe.shape(
-                    " Z ",
-                    " X ",
-                    " Z ");
-            recipe.setIngredient('X', Material.ARROW);
-            recipe.setIngredient('Z', Material.SHULKER_SHELL);
+            tippedFloatingArrow.setItemMeta(tfap);
+            {
+                NamespacedKey key = new NamespacedKey(this, "tfa");
+                ShapedRecipe recipe = new ShapedRecipe(key, tippedFloatingArrow);
+                recipe.shape(
+                        " Z ",
+                        " X ",
+                        " Z ");
+                recipe.setIngredient('X', Material.ARROW);
+                recipe.setIngredient('Z', Material.SHULKER_SHELL);
 
-            Bukkit.addRecipe(recipe);
+                Bukkit.addRecipe(recipe);
+            }
+
+            // floating arrow 10sec
+            ItemStack tfa10 = new ItemStack(Material.TIPPED_ARROW, 1);
+            PotionMeta tfap10 = (PotionMeta) tippedFloatingArrow.getItemMeta();
+            tfap10.addCustomEffect(new PotionEffect(PotionEffectType.LEVITATION, 20 * 10, 0), true);
+            tfap10.setDisplayName(ChatColor.GREEN + "" + ChatColor.BOLD + "공중 부양의 화살");
+            tfap10.setLore(List.of(ChatColor.AQUA + "화살을 맞으면 10초 동안 공중부양 효과를 얻습니다."));
+
+            tfa10.setItemMeta(tfap10);
+            {
+                NamespacedKey key = new NamespacedKey(this, "tfa10");
+                ShapedRecipe recipe = new ShapedRecipe(key, tfa10);
+                recipe.shape(
+                        " Z ",
+                        " X ",
+                        " Z ");
+                recipe.setIngredient('X', Material.ARROW);
+                recipe.setIngredient('Z', new RecipeChoice.MaterialChoice.ExactChoice(tippedFloatingArrow));
+
+                Bukkit.addRecipe(recipe);
+            }
+        } catch (NullPointerException e) {
+            log.severe("레시피를 등록하는중에 오류가 발생했습니다.");
+            log.severe("오류 로그: " + e);
         }
 
         plugin = this;
