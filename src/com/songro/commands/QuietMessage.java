@@ -8,8 +8,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.logging.Logger;
-
 public class QuietMessage implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String s, @NotNull String[] args) {
@@ -30,6 +28,11 @@ public class QuietMessage implements CommandExecutor {
                     }
                 }
                 if (args.length == 0) {
+                    player.sendMessage(ChatColor.RED + "[PlayerPerms] 플레이어 이름이 없거나, 메세지가 없습니다.");
+                    player.sendMessage(ChatColor.GREEN + "[PlayerPerms] 명령어 사용방법: /<command> <Message>");
+                    return false;
+                }
+                if(args[1].length() == 0) {
                     player.sendMessage(ChatColor.RED + "[PlayerPerms] 플레이어 이름이 없거나, 메세지가 없습니다.");
                     player.sendMessage(ChatColor.GREEN + "[PlayerPerms] 명령어 사용방법: /<command> <Message>");
                     return false;
