@@ -16,15 +16,23 @@ import com.songro.listener.MuteListener;
 import com.songro.listener.PlayerChatColorGUIListener;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.event.Listener;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.ShapedRecipe;
+import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.http.WebSocket;
+import java.util.List;
 import java.util.Objects;
 import java.util.logging.Logger;
 
@@ -35,6 +43,29 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
 
     @Override
     public void onEnable() {
+
+
+        // floating arrow
+        ItemStack tippedFloatingArrow = new ItemStack(Material.TIPPED_ARROW, 1);
+        PotionMeta tfap = (PotionMeta)tippedFloatingArrow.getItemMeta();
+        tfap.addCustomEffect(new PotionEffect(PotionEffectType.LEVITATION, 120, 0), true);
+        tfap.setDisplayName(ChatColor.GREEN + "" + ChatColor.BOLD + "공중부양의 화살");
+        tfap.setLore(List.of(ChatColor.AQUA + "화살을 맞으면 1분동안 공중부양 효과를 얻습니다."));
+
+        tippedFloatingArrow.setItemMeta(tfap);
+        {
+            NamespacedKey key = new NamespacedKey(this, "tfa");
+            ShapedRecipe recipe = new ShapedRecipe(key, tippedFloatingArrow);
+            recipe.shape(
+                    " Z ",
+                    " X ",
+                    " Z ");
+            recipe.setIngredient('X', Material.ARROW);
+            recipe.setIngredient('Z', Material.SHULKER_SHELL);
+
+            Bukkit.addRecipe(recipe);
+        }
+
         plugin = this;
         Bukkit.getConsoleSender().sendMessage("[PlayerPerms] Enabled.");
         Bukkit.getConsoleSender().sendMessage("");

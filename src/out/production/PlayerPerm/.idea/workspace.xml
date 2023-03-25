@@ -10,11 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74a2b4f2-ec91-42d6-8cab-b2e17abec495" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/com/songro/event/CustomEnchant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/com/songro/util/InventoryItemUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/com/songro/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/songro/commands/GUI/SettingGUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlayerPerm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlayerPerm/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +56,11 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sdbb2\GitHub\PlayerPerm\src" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
