@@ -1,11 +1,8 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="playerperm:jar">
-    <output-path>$USER_HOME$/바탕 화면/Folder/1.19 test server/plugins</output-path>
+    <output-path>$USER_HOME$/바탕 화면/1.19 test server/plugins</output-path>
     <root id="archive" name="playerperm.jar">
-      <element id="module-output" name="playerperm" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/api/spigot-api-1.19.3-R0.1-20230303.224617-54-shaded.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/annotations/23.0.0/annotations-23.0.0.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/api/api-5.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/api/spigot-api-1.19.3-R0.1-20230303.220921-53-shaded.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

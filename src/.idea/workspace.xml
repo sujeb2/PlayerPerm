@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="74a2b4f2-ec91-42d6-8cab-b2e17abec495" name="Changes" comment="" />
+    <list default="true" id="74a2b4f2-ec91-42d6-8cab-b2e17abec495" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/spigot_api_1_19_3_R0_1_20230303_220921_53_shaded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../playerperm.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/artifacts/playerperm_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/artifacts/playerperm_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/commands/Friend.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/data/FD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/handler/Timer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/plugin.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2NU6L66bGfCLkHJITkBgWnwCDF9" />
   <component name="ProjectViewState">
@@ -19,7 +35,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/sdbb2/GitHub/PlayerPerm/api/spigot-api-1.19.3-R0.1-20230303.220921-53-shaded.jar",
+    "last_opened_file_path": "C:/Users/sdbb2/GitHub/PlayerPerm/src",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2"
