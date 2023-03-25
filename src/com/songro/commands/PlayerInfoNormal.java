@@ -36,6 +36,10 @@ public class PlayerInfoNormal implements CommandExecutor {
                 if(target.getWorld().getEnvironment() == World.Environment.NETHER) pev = "네더";
                 if(target.getWorld().getEnvironment() == World.Environment.THE_END) pev = "엔드";
 
+                if(args[0] == null) {
+                    player.sendMessage(ChatColor.RED + "[PlayerPerms] 플레이어가 존재하지 않거나, 서버에 들어온적이 없습니다.");
+                }
+
                 if (target == null) {
                     player.sendMessage(ChatColor.RED + "[PlayerPerms] 플레이어가 존재하지 않거나, 서버에 들어온적이 없습니다.");
                 } else {

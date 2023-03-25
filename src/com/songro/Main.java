@@ -1,6 +1,7 @@
 package com.songro;
 
 import com.songro.commands.Afk;
+import com.songro.commands.HelloWorld;
 import com.songro.commands.PlayerInfoNormal;
 import com.songro.commands.QuietMessage;
 import com.songro.commands.console.GivePlayerPermission;
@@ -62,6 +63,7 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
             Objects.requireNonNull(getCommand("blocklog")).setExecutor(new CheckBlockLog());
             Objects.requireNonNull(getCommand("sit")).setExecutor(new Sit());
             Objects.requireNonNull(getCommand("color")).setExecutor(new PlayerChatColor());
+            Objects.requireNonNull(getCommand("helloworld")).setExecutor(new HelloWorld());
             new Mute();
             try {
                 getServer().getPluginManager().registerEvents(new MuteListener(), this);

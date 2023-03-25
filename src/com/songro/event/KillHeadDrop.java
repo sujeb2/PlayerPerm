@@ -29,7 +29,7 @@ public class KillHeadDrop implements Listener {
                     if (e.getEntity().getKiller() != null) {
                         lore.add(e.getEntity().getKiller() + "(이)가 죽인 " + e.getEntity().getDisplayName() + ChatColor.GRAY + "의 머리이다.");
                     } else {
-                        lore.add(ChatColor.GRAY + e.getEntity().getName() + ChatColor.GRAY + "의 머리이다.");
+                        lore.add(ChatColor.GRAY + e.getEntity().getDisplayName() + ChatColor.GRAY + "의 머리이다.");
                     }
                     sm.setLore(lore);
                     item.setItemMeta(sm);

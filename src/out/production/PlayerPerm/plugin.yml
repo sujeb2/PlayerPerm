@@ -1,6 +1,6 @@
 main: com.songro.Main
 name: PlayerPerms
-version: 3.20.1
+version: 3.25
 author: notSongro
 api-version: 1.19
 description: 대부분의 기능을 하나에 플러그인에서
@@ -89,6 +89,9 @@ commands:
     usage: /<command>
     description: 채팅 색상을 변경합니다.
     aliases: [c, 색상, 채팅색상]
+  helloworld:
+    usage: /<command>
+    description: Hello, world!
 
 permissons:
 
