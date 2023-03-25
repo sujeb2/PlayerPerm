@@ -15,9 +15,14 @@ import com.songro.listener.MuteListener;
 import com.songro.listener.PlayerChatColorGUIListener;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.configuration.InvalidConfigurationException;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.http.WebSocket;
 import java.util.Objects;
 import java.util.logging.Logger;
@@ -25,6 +30,7 @@ import java.util.logging.Logger;
 public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
     Logger log = getLogger();
     public static Main plugin;
+    private FileConfiguration customConfig;
 
     @Override
     public void onEnable() {
@@ -87,7 +93,8 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
                 getServer().getPluginManager().registerEvents(new KillHeadDrop(), this);
             } catch (Exception e) {
                 log.severe("KillHeadDrop 이벤트를 등록중에 오류가 발생했습니다.");
-                log.severe("오류 로그: " + e);                log.severe("오류 코드: 0x09");
+                log.severe("오류 로그: " + e);
+                log.severe("오류 코드: 0x09");
                 plugin.setEnabled(false);
             }
             try {
@@ -98,6 +105,8 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
                 log.severe("오류 코드: 0x09");
                 plugin.setEnabled(false);
             }
+            log.info("설정 확인중...");
+            createCustomConfig();
             Bukkit.getConsoleSender().sendMessage("[PlayerPerms]" + ChatColor.GREEN + " 플러그인이 정상적으로 로드 되었습니다.");
         } catch (Exception e) {
             log.severe("플러그인을 로딩하던중에 오류가 발생했습니다.");
@@ -115,5 +124,28 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
 
     public static Main getPlugin(){
         return plugin;
+    }
+
+    private void createCustomConfig() {
+        File customConfigFile = new File(getDataFolder(), "config.yml");
+        if (!customConfigFile.exists()) {
+            log.warning("config.yml 파일이 존재하지 않아, 만드는중...");
+            customConfigFile.getParentFile().mkdirs();
+            saveResource("config.yml", false);
+        } else {
+            log.info("파일 확인됨.");
+        }
+
+        customConfig = new YamlConfiguration();
+        try {
+            customConfig.load(customConfigFile);
+        } catch (IOException | InvalidConfigurationException e) {
+            log.severe("설정을 불러오는중에 오류가 발생했습니다.");
+            log.severe("오류 로그: " + e);
+        }
+    }
+
+    public FileConfiguration getCustomConfig() {
+        return this.customConfig;
     }
 }
