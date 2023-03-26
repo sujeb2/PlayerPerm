@@ -19,7 +19,7 @@ public class RemoteEnderChest implements CommandExecutor {
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
         Player player = (Player)commandSender;
         Logger log = Bukkit.getLogger();
-        boolean isOn = plugin.getCustomConfig().getBoolean("perks.normal.remoteEnderChest");
+        boolean isOn = plugin.getCustomConfig().getBoolean("perks.remoteEnderChest");
 
         if(isOn) {
             try {

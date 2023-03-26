@@ -18,7 +18,7 @@ public class RemoteCrafting implements CommandExecutor {
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
         Player player = (Player)commandSender;
         Logger log = Bukkit.getLogger();
-        boolean isOn = plugin.getCustomConfig().getBoolean("perks.normal.remoteCrafting");
+        boolean isOn = plugin.getCustomConfig().getBoolean("perks.remoteCrafting");
 
         if(isOn) {
             try {

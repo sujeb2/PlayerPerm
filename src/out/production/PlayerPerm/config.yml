@@ -7,6 +7,12 @@
 # | DO NOT USE THIS FILE FOR ANY OTHER PLUGIN!! | #
 ###################################################
 
+# Perks feature
+perks:
+    dropHeadOnKill: true
+    remoteEnderChest: true
+    remoteCrafting: true
+
 # Output the event log.
 log:
   isPlayerAfkLog: false
