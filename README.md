@@ -1,10 +1,9 @@
 # PlayerPerms
-한개의 플러그인에서 다양한 기능을. ![logo.png](..%2F..%2F%B9%D9%C5%C1%20%C8%AD%B8%E9%2Flogo.png)
+![logo](https://user-images.githubusercontent.com/89384053/227765337-2f4700fb-5d22-4d31-adf6-ba2669b2d626.png)
+
+한개의 플러그인에서 다양한 기능을.
 
 ---
-
-## Contributing
-
 
 ## Tested Versions
 > 1.19.x
