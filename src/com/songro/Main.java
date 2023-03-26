@@ -46,6 +46,8 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
         Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "이 플러그인은 Bungeecord에서 사용을 추천드리지 않습니다.");
         Bukkit.getConsoleSender().sendMessage("");
         try {
+            log.info("설정 확인중...");
+            createCustomConfig();
             Objects.requireNonNull(getCommand("playerinfoop")).setExecutor(new PlayerInfo());
             Objects.requireNonNull(getCommand("targethealth")).setExecutor(new HealthBar());
             Objects.requireNonNull(getCommand("playerinfo")).setExecutor(new PlayerInfoNormal());
@@ -116,8 +118,6 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
                 log.severe("오류 로그: " + e);
                 plugin.setEnabled(false);
             }
-            log.info("설정 확인중...");
-            createCustomConfig();
             boolean isOnDebug = plugin.getCustomConfig().getBoolean("debug.showDebugLog");
             boolean isOnExperimentalGui = plugin.getCustomConfig().getBoolean("experimental.bangui");
             boolean isOnExperimentalBar = plugin.getCustomConfig().getBoolean("experimental.healthbar");
@@ -152,7 +152,7 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
         return plugin;
     }
 
-    private void createCustomConfig() {
+    public void createCustomConfig() {
         File customConfigFile = new File(getDataFolder(), "config.yml");
         if (!customConfigFile.exists()) {
             log.warning("config.yml 파일이 존재하지 않아, 만드는중...");
