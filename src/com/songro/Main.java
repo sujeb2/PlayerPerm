@@ -119,13 +119,20 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
             }
             log.info("설정 확인중...");
             createCustomConfig();
-            boolean isOn = plugin.getCustomConfig().getBoolean("debug.showDebugLog");
-            if(isOn) {
+            boolean isOnDebug = plugin.getCustomConfig().getBoolean("debug.showDebugLog");
+            boolean isOnExperimentalGui = plugin.getCustomConfig().getBoolean("experimental.bangui");
+            boolean isOnExperimentalBar = plugin.getCustomConfig().getBoolean("experimental.healthbar");
+            if(isOnDebug) {
                 log.info("Available processors (cores): " + Runtime.getRuntime().availableProcessors());
                 log.info("Free memory (bytes): " + Runtime.getRuntime().freeMemory());
                 long maxMemory = Runtime.getRuntime().maxMemory();
                 log.info("Maximum memory (bytes): " + (maxMemory == Long.MAX_VALUE ? "no limit" : maxMemory));
                 log.info("Total memory available to JVM (bytes): " + Runtime.getRuntime().totalMemory());
+            }
+            if(isOnExperimentalGui) {
+                log.warning("현재 실험적 기능인 BanGui를 사용하고 있습니다, 이 기능은 불안정하고, 버그가 자주 일어날수 있습니다.");
+            } else if(isOnExperimentalBar) {
+                log.warning("현재 실험적 기능인 TargetHealthbar를 사용하고 있습니다, 불안정하고, 버그가 자주 일어날수 있습니다.");
             }
             Bukkit.getConsoleSender().sendMessage("[PlayerPerms]" + ChatColor.GREEN + " 플러그인이 정상적으로 로드 되었습니다.");
         } catch (Exception e) {

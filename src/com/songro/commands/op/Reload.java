@@ -7,8 +7,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-import static com.songro.Main.plugin;
-
 public class Reload implements CommandExecutor {
 
     @Override
@@ -20,7 +18,7 @@ public class Reload implements CommandExecutor {
             try {
                 player.sendMessage(ChatColor.YELLOW + "Reloading PlayerPerms...");
                 try {
-                    plugin.reloadConfig();
+
                     player.sendMessage(ChatColor.GREEN + "Reloaded!");
                 } catch (Exception e) {
                     player.sendMessage(ChatColor.RED + "[PlayerPerms] 설정을 불러오는 중에 오류가 발생했습니다.");
