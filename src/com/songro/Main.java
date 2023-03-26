@@ -119,6 +119,14 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
             }
             log.info("설정 확인중...");
             createCustomConfig();
+            boolean isOn = plugin.getCustomConfig().getBoolean("debug.showDebugLog");
+            if(isOn) {
+                log.info("Available processors (cores): " + Runtime.getRuntime().availableProcessors());
+                log.info("Free memory (bytes): " + Runtime.getRuntime().freeMemory());
+                long maxMemory = Runtime.getRuntime().maxMemory();
+                log.info("Maximum memory (bytes): " + (maxMemory == Long.MAX_VALUE ? "no limit" : maxMemory));
+                log.info("Total memory available to JVM (bytes): " + Runtime.getRuntime().totalMemory());
+            }
             Bukkit.getConsoleSender().sendMessage("[PlayerPerms]" + ChatColor.GREEN + " 플러그인이 정상적으로 로드 되었습니다.");
         } catch (Exception e) {
             log.severe("플러그인을 로딩하던중에 오류가 발생했습니다.");

@@ -7,6 +7,15 @@
 # | DO NOT USE THIS FILE FOR ANY OTHER PLUGIN!! | #
 ###################################################
 
+# Output the event log.
+log:
+  isPlayerAfkLog: false
+
 # This is an experimental feature, may contain bugs and is not stable.
 experimental:
   bangui: false
+  healthbar: false
+
+# This is for debugging. It is not recommended to increase it unless there is a bug.
+debug:
+  showDebugLog: false
