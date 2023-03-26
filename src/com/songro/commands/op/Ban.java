@@ -21,7 +21,7 @@ public class Ban implements CommandExecutor {
         boolean isOn = plugin.getCustomConfig().getBoolean("experimental.bangui");
         Player p = (Player)sender;
 
-        if(isOn == true) {
+        if(isOn) {
             Logger log = Bukkit.getLogger();
 
             if (sender instanceof Player player) {
