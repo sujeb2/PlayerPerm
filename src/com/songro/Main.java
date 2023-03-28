@@ -123,9 +123,11 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
             try {
                 svname = plugin.getCustomConfig().getString("svname");
             } catch (Exception e) {
-                log.severe("오류가 발생하였습니다.");
+                log.severe("설정에서 이름을 지정하는중에 오류가 발생하였습니다.");
                 log.severe("오류 로그: " + e);
                 log.severe("오류 코드: 0x09");
+                svname = "[PlayerPerms]";
+                log.warning("오류가 발생해 이름이 기본설정으로 지정되었습니다.");
             }
             Bukkit.getConsoleSender().sendMessage("[PlayerPerms]" + ChatColor.GREEN + " 플러그인이 정상적으로 로드 되었습니다.");
         } catch (Exception e) {

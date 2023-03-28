@@ -19,7 +19,13 @@ public class Reload implements CommandExecutor {
             try {
                 player.sendMessage(ChatColor.YELLOW + "Reloading PlayerPerms...");
                 try {
-                    Main.plugin.createCustomConfig();
+                    try {
+                        Main.plugin.getCustomConfig();
+                    } catch (Exception e) {
+                        player.sendMessage(ChatColor.RED + Main.plugin.svname + " 설정을 불러오는 중에 오류가 발생했습니다.");
+                        player.sendMessage(ChatColor.YELLOW + Main.plugin.svname + " 오류 로그: " + e);
+                        player.sendMessage(ChatColor.YELLOW + Main.plugin.svname + " 오류 코드: 0x120");
+                    }
                     player.sendMessage(ChatColor.GREEN + "Reloaded!");
                 } catch (Exception e) {
                     player.sendMessage(ChatColor.RED + Main.plugin.svname + " 설정을 불러오는 중에 오류가 발생했습니다.");

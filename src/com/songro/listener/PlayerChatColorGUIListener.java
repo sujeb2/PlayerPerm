@@ -70,7 +70,7 @@ public class PlayerChatColorGUIListener implements Listener {
                         e.setCancelled(true);
                     }
                     // null
-                    if (clicked.getType().equals(null)) {
+                    if (clicked.getType() == null) {
                         player.sendMessage("null");
                         e.setCancelled(true);
                     }
