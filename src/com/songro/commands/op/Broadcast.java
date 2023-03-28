@@ -1,5 +1,6 @@
 package com.songro.commands.op;
 
+import com.songro.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -22,8 +23,8 @@ public class Broadcast implements CommandExecutor {
 
         try {
             if(args[0].length() == 0) {
-                player.sendMessage(ChatColor.RED + "[PlayerPerms] 추가 명령어가 없습니다");
-                player.sendMessage(ChatColor.RED + "[PlayerPerms] 명령어 사용방법: /<command> (announce/patch/fix) <Message>");
+                player.sendMessage(ChatColor.RED + Main.plugin.svname + " 추가 명령어가 없습니다");
+                player.sendMessage(ChatColor.RED + Main.plugin.svname + " 명령어 사용방법: /<command> (announce/patch/fix) <Message>");
             } else {
                 try {
                     if(args[1].length() == 1) {
@@ -37,8 +38,8 @@ public class Broadcast implements CommandExecutor {
                             Bukkit.broadcastMessage(ChatColor.GRAY + " : 서버 점검 " + ChatColor.DARK_GRAY + ChatColor.ITALIC + "(Upload: " + dtf.format(now) + ") " + ChatColor.RESET + ChatColor.DARK_GRAY + ">> " + ChatColor.WHITE + "서버 점검이 일어날 예정입니다\n" + ChatColor.DARK_GRAY + " : " + "서버 점검 날짜: " + ChatColor.AQUA + msg);
                         }
                         if (args[0].equalsIgnoreCase(msg)) {
-                            player.sendMessage(ChatColor.RED + "[PlayerPerms] 명령어 사용방법이 잘못됐습니다.");
-                            player.sendMessage(ChatColor.RED + "[PlayerPerms] 명령어 사용방법: /<command> (announce/patch/fix) <Message>");
+                            player.sendMessage(ChatColor.RED + Main.plugin.svname + " 명령어 사용방법이 잘못됐습니다.");
+                            player.sendMessage(ChatColor.RED + Main.plugin.svname + " 명령어 사용방법: /<command> (announce/patch/fix) <Message>");
                         }
                     } else {
                         for (int i = 1; i < args.length; i++) {
@@ -58,22 +59,22 @@ public class Broadcast implements CommandExecutor {
                             Bukkit.broadcastMessage(ChatColor.GRAY + " : 서버 점검 " + ChatColor.DARK_GRAY + ChatColor.ITALIC + "(Upload: " + dtf.format(now) + ") " + ChatColor.RESET + ChatColor.DARK_GRAY + ">> " + ChatColor.WHITE + "서버 점검이 일어날 예정입니다\n" + ChatColor.DARK_GRAY + " : " + "서버 점검 날짜: " + ChatColor.AQUA + finalMessage);
                         }
                         if (args[0].equalsIgnoreCase(msg)) {
-                            player.sendMessage(ChatColor.RED + "[PlayerPerms] 명령어 사용방법이 잘못됐습니다.");
-                            player.sendMessage(ChatColor.RED + "[PlayerPerms] 명령어 사용방법: /<command> (announce/patch/fix) <Message>");
+                            player.sendMessage(ChatColor.RED + Main.plugin.svname + " 명령어 사용방법이 잘못됐습니다.");
+                            player.sendMessage(ChatColor.RED + Main.plugin.svname + " 명령어 사용방법: /<command> (announce/patch/fix) <Message>");
                         }
                     }
                 } catch (Exception e) {
-                    player.sendMessage(ChatColor.RED + "[PlayerPerms] 오류가 발생했습니다");
-                    player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 오류 로그: " + e + "\n[PlayerPerms] 오류 코드: 0x112");
+                    player.sendMessage(ChatColor.RED + Main.plugin.svname + " 오류가 발생했습니다");
+                    player.sendMessage(ChatColor.YELLOW + Main.plugin.svname + " 오류 로그: " + e + Main.plugin.svname + "\n 오류 코드: 0x112");
                 }
             }
             if(args[1].length() == 0) {
-                player.sendMessage(ChatColor.RED + "[PlayerPerms] 추가 명령어가 없습니다");
-                player.sendMessage(ChatColor.RED + "[PlayerPerms] 명령어 사용방법: /<command> (announce/patch/fix) <Message>");
+                player.sendMessage(ChatColor.RED + Main.plugin.svname + " 추가 명령어가 없습니다");
+                player.sendMessage(ChatColor.RED + Main.plugin.svname + " 명령어 사용방법: /<command> (announce/patch/fix) <Message>");
             }
         } catch (Exception e) {
-            player.sendMessage(ChatColor.RED + "[PlayerPerms] 오류가 발생했습니다");
-            player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 오류 로그: " + e + "\n[PlayerPerms] 오류 코드: 0x110");
+            player.sendMessage(ChatColor.RED + Main.plugin.svname + " 오류가 발생했습니다");
+            player.sendMessage(ChatColor.YELLOW + Main.plugin.svname + " 오류 로그: " + e + Main.plugin.svname + "\n 오류 코드: 0x110");
         }
 
         return true;

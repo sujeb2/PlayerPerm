@@ -1,6 +1,6 @@
 package com.songro.handler;
 
-import org.bukkit.Bukkit;
+import com.songro.Main;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
@@ -80,7 +80,7 @@ public class AFK {
                 } else if (!wasAFK && isAFK) {
                     previousData.put(player, true);
                     AFK.announceAFK(player, true);
-                    player.sendMessage(ChatColor.GREEN + "[PlayerPerms] 잠수가 풀렸습니다");
+                    player.sendMessage(ChatColor.BLUE + Main.plugin.svname +" 잠수모드에 들어갑니다");
                 }
 
             }else{

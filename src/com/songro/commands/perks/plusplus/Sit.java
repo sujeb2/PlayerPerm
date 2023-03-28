@@ -1,5 +1,6 @@
 package com.songro.commands.perks.plusplus;
 
+import com.songro.Main;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
@@ -19,8 +20,8 @@ public class Sit implements CommandExecutor {
         try {
 
         } catch(Exception e) {
-            player.sendMessage(ChatColor.RED + "[PlayerPerms] 오류가 발생했습니다");
-            player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 오류 로그: " + e + "\n[PlayerPerms] 오류 코드: 0x120");
+            player.sendMessage(ChatColor.RED + Main.plugin.svname + " 오류가 발생했습니다");
+            player.sendMessage(ChatColor.YELLOW + Main.plugin.svname + " 오류 로그: " + e + "\n[PlayerPerms] 오류 코드: 0x120");
         }
 
         return true;

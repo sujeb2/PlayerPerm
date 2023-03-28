@@ -1,5 +1,6 @@
 package com.songro.commands.op;
 
+import com.songro.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -24,8 +25,8 @@ public class CheckPlayerAttachments implements CommandExecutor {
             if(player.isOp()) {
                 assert target != null;
                 if (args[1].length() == 0) {
-                    player.sendMessage(ChatColor.RED + "[PlayerPerms] 플레이어 이름이 없습니다.");
-                    player.sendMessage(ChatColor.RED + "[PlayerPerms] 명령어 사용방법: /<command> <Player>");
+                    player.sendMessage(ChatColor.RED + Main.plugin.svname + " 플레이어 이름이 없습니다.");
+                    player.sendMessage(ChatColor.RED + Main.plugin.svname + " 명령어 사용방법: /<command> <Player>");
                 } else {
                     Set<String> permissions = target.getEffectivePermissions().stream()
                             .map(PermissionAttachmentInfo::getPermission)
@@ -33,7 +34,7 @@ public class CheckPlayerAttachments implements CommandExecutor {
                     player.sendMessage("attribute list: " + permissions);
                 }
             } else {
-                player.sendMessage(ChatColor.RED + "[PlayerPerms] 이 명령어는 OP만 사용 가능합니다!");
+                player.sendMessage(ChatColor.RED + Main.plugin.svname + " 이 명령어는 OP만 사용 가능합니다!");
             }
         } catch (Exception e) {
             log.severe("오류가 발생했습니다");

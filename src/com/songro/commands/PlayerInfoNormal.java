@@ -1,5 +1,6 @@
 package com.songro.commands;
 
+import com.songro.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.World;
@@ -37,14 +38,14 @@ public class PlayerInfoNormal implements CommandExecutor {
                 if(target.getWorld().getEnvironment() == World.Environment.THE_END) pev = "엔드";
 
                 if(args[0] == null) {
-                    player.sendMessage(ChatColor.RED + "[PlayerPerms] 플레이어가 존재하지 않거나, 서버에 들어온적이 없습니다.");
+                    player.sendMessage(ChatColor.RED + Main.plugin.svname + " 플레이어가 존재하지 않거나, 서버에 들어온적이 없습니다.");
                 }
 
                 if (target == null) {
-                    player.sendMessage(ChatColor.RED + "[PlayerPerms] 플레이어가 존재하지 않거나, 서버에 들어온적이 없습니다.");
+                    player.sendMessage(ChatColor.RED + Main.plugin.svname + " 플레이어가 존재하지 않거나, 서버에 들어온적이 없습니다.");
                 } else {
                     isOnline = Bukkit.getOnlinePlayers().contains(target);
-                    player.sendMessage(ChatColor.GREEN + "[PlayerPerms] " + target.getDisplayName() + " 님의 정보");
+                    player.sendMessage(ChatColor.GREEN + Main.plugin.svname + target.getDisplayName() + " 님의 정보");
                     player.sendMessage(ChatColor.DARK_GRAY + "===============================");
                     if (!isOnline) player.sendMessage( ChatColor.DARK_GRAY + ": " + ChatColor.DARK_GRAY + "⏺ 오프라인");
                     else player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.GREEN + "⏺ 온라인");
@@ -67,8 +68,8 @@ public class PlayerInfoNormal implements CommandExecutor {
                 return true;
             } catch (Exception e) {
                 Player player = (Player) send;
-                player.sendMessage(ChatColor.RED + "[PlayerPerms] 오류가 발생했습니다");
-                player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 오류 로그: " + e + "\n[PlayerPerms] 오류코드: 0x13");
+                player.sendMessage(ChatColor.RED + Main.plugin.svname + " 오류가 발생했습니다");
+                player.sendMessage(ChatColor.YELLOW + Main.plugin.svname + " 오류 로그: " + e + Main.plugin.svname + "\n 오류코드: 0x13");
                 return false;
             }
     }

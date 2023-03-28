@@ -1,5 +1,6 @@
 package com.songro.commands.perks;
 
+import com.songro.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -154,9 +155,9 @@ public class PlayerChatColor implements CommandExecutor {
             inv.setItem(8, orange);
             player.openInventory(inv);
         } catch (Exception e) {
-            player.sendMessage(ChatColor.RED + "[PlayerPerms] 오류가 발생했습니다.");
-            player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 오류 로그: " + e);
-            player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 오류 코드: 0x09");
+            player.sendMessage(ChatColor.RED + Main.plugin.svname + " 오류가 발생했습니다.");
+            player.sendMessage(ChatColor.YELLOW + Main.plugin.svname + " 오류 로그: " + e);
+            player.sendMessage(ChatColor.YELLOW + Main.plugin.svname + " 오류 코드: 0x09");
         }
         return true;
     }

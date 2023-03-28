@@ -1,5 +1,6 @@
 package com.songro.commands.perks;
 
+import com.songro.Main;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -19,23 +20,23 @@ public class ChatName implements CommandExecutor {
             try {
                 if(player.hasPermission("perks.plus") || player.hasPermission("def.op") || player.hasPermission("perks.pp") || player.hasPermission("perks.ultra")) {
                     if (msg.equals(player.getDisplayName())) {
-                        player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 변경된게 없습니다.");
+                        player.sendMessage(ChatColor.YELLOW + Main.plugin.svname + " 변경된게 없습니다.");
                         return true;
                     }
                     if (s.length() == 0) {
-                        player.sendMessage(ChatColor.RED + "[PlayerPerms] 추가 명령어가 없습니다. 공백인경우 다른걸로 해주세요.");
-                        player.sendMessage(ChatColor.GREEN + "[PlayerPerms] 명령어 사용방법: /<command> <바꿀 이름>");
+                        player.sendMessage(ChatColor.RED + Main.plugin.svname + " 추가 명령어가 없습니다. 공백인경우 다른걸로 해주세요.");
+                        player.sendMessage(ChatColor.GREEN + Main.plugin.svname + " 명령어 사용방법: /<command> <바꿀 이름>");
                         return true;
                     } else if (args.length == 1) {
                         try {
                             player.setCustomName(msg);
                             player.setCustomNameVisible(true);
                             player.setDisplayName(msg);
-                            player.sendMessage(ChatColor.GREEN + "[PlayerPerms] 성공적으로 이름을 " + changedName + "으로 바꾸었습니다.");
+                            player.sendMessage(ChatColor.GREEN + Main.plugin.svname + " 성공적으로 이름을 " + changedName + "으로 바꾸었습니다.");
                             return true;
                         } catch (Exception e) {
-                            player.sendMessage(ChatColor.RED + "[PlayerPerms] 오류가 발생했습니다");
-                            player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 오류 로그: " + e + "\n[PlayerPerms] 오류코드: 0x33");
+                            player.sendMessage(ChatColor.RED + Main.plugin.svname + " 오류가 발생했습니다");
+                            player.sendMessage(ChatColor.YELLOW + Main.plugin.svname + " 오류 로그: " + e + "\n[PlayerPerms] 오류코드: 0x33");
                             return false;
                         }
                     } else {
@@ -48,25 +49,25 @@ public class ChatName implements CommandExecutor {
                             finalMessage = finalMessage.stripTrailing();
                             player.setCustomName(finalMessage);
                             player.setCustomNameVisible(true);
-                            player.sendMessage(ChatColor.GREEN + "[PlayerPerms] 성공적으로 이름을 " + changedName + "으로 바꾸었습니다.");
+                            player.sendMessage(ChatColor.GREEN + Main.plugin.svname + " 성공적으로 이름을 " + changedName + "으로 바꾸었습니다.");
                             return true;
                         } catch (Exception e) {
-                            player.sendMessage(ChatColor.RED + "[PlayerPerms] 오류가 발생했습니다");
-                            player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 오류 로그: " + e + "\n[PlayerPerms] 오류코드: 0x31");
+                            player.sendMessage(ChatColor.RED + Main.plugin.svname + " 오류가 발생했습니다");
+                            player.sendMessage(ChatColor.YELLOW + Main.plugin.svname + " 오류 로그: " + e + Main.plugin.svname + "\n 오류코드: 0x31");
                             return false;
                         }
                     }
                 } else {
-                    player.sendMessage(ChatColor.RED + "[PlayerPerms] 권한이 없습니다, 이 명령어를 사용할려면, 'perks.iron' 보다 높거나 같은 권한이 필요합니다!");
+                    player.sendMessage(ChatColor.RED + Main.plugin.svname + " 권한이 없습니다, 이 명령어를 사용할려면, 'perks.plus' 보다 높거나 같은 권한이 필요합니다!");
                 }
             } catch (Exception e) {
-                player.sendMessage(ChatColor.RED + "[PlayerPerms] 오류가 발생했습니다");
-                player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 오류 로그: " + e + "\n[PlayerPerms] 오류코드: 0x32");
+                player.sendMessage(ChatColor.RED + Main.plugin.svname + " 오류가 발생했습니다");
+                player.sendMessage(ChatColor.YELLOW + Main.plugin.svname + " 오류 로그: " + e + Main.plugin.svname + "\n 오류코드: 0x32");
                 return false;
             }
         } catch (Exception e) {
-            player.sendMessage(ChatColor.RED + "[PlayerPerms] 오류를 보내는중에 오류가 발생했습니다");
-            player.sendMessage(ChatColor.YELLOW + "[PlayerPerms] 오류 로그: " + e + "\n[PlayerPerms] 오류코드: 0x30");
+            player.sendMessage(ChatColor.RED + Main.plugin.svname + " 오류를 보내는중에 오류가 발생했습니다");
+            player.sendMessage(ChatColor.YELLOW + Main.plugin.svname + " 오류 로그: " + e + Main.plugin.svname + "\n 오류코드: 0x30");
             return false;
         }
         return true;

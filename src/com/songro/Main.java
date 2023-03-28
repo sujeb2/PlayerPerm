@@ -1,7 +1,6 @@
 package com.songro;
 
 import com.songro.commands.Afk;
-import com.songro.commands.HelloWorld;
 import com.songro.commands.PlayerInfoNormal;
 import com.songro.commands.QuietMessage;
 import com.songro.commands.console.GivePlayerPermission;
@@ -13,7 +12,6 @@ import com.songro.event.KillHeadDrop;
 import com.songro.event.MoveMent;
 import com.songro.item.tippedFloatingArrow;
 import com.songro.listener.AFKListener;
-import com.songro.listener.MuteListener;
 import com.songro.listener.PlayerChatColorGUIListener;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -33,6 +31,7 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
     Logger log = getLogger();
     public static Main plugin;
     private FileConfiguration customConfig;
+    public String svname;
 
     @Override
     public void onEnable() {
@@ -41,7 +40,7 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
         Bukkit.getConsoleSender().sendMessage("[PlayerPerms] Enabled.");
         Bukkit.getConsoleSender().sendMessage("");
         Bukkit.getConsoleSender().sendMessage("P  L  A  Y  E  R");
-        Bukkit.getConsoleSender().sendMessage("P  E  R  M  S    " + ChatColor.DARK_GRAY + "-- FOR FRUIT NET EDITION");
+        Bukkit.getConsoleSender().sendMessage("P  E  R  M  S   ");
         Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "Made by. songro_, License MIT");
         Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "이 플러그인은 Bungeecord에서 사용을 추천드리지 않습니다.");
         Bukkit.getConsoleSender().sendMessage("");
@@ -51,7 +50,6 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
             Objects.requireNonNull(getCommand("playerinfoop")).setExecutor(new PlayerInfo());
             Objects.requireNonNull(getCommand("targethealth")).setExecutor(new HealthBar());
             Objects.requireNonNull(getCommand("playerinfo")).setExecutor(new PlayerInfoNormal());
-            Objects.requireNonNull(getCommand("ban")).setExecutor(new Ban());
             Objects.requireNonNull(getCommand("quiet")).setExecutor(new QuietMessage());
             Objects.requireNonNull(getCommand("changename")).setExecutor(new ChatName());
             Objects.requireNonNull(getCommand("gpp")).setExecutor(new GivePlayerPermission());
@@ -63,20 +61,9 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
             Objects.requireNonNull(getCommand("remoteender")).setExecutor(new RemoteEnderChest());
             Objects.requireNonNull(getCommand("playerattachment")).setExecutor(new CheckPlayerAttachments());
             Objects.requireNonNull(getCommand("broadcast")).setExecutor(new Broadcast());
-            Objects.requireNonNull(getCommand("blocklog")).setExecutor(new CheckBlockLog());
             Objects.requireNonNull(getCommand("sit")).setExecutor(new Sit());
             Objects.requireNonNull(getCommand("color")).setExecutor(new PlayerChatColor());
-            Objects.requireNonNull(getCommand("helloworld")).setExecutor(new HelloWorld());
             Objects.requireNonNull(getCommand("floatingmessage")).setExecutor(new FloatingTitle());
-            new Mute();
-            try {
-                getServer().getPluginManager().registerEvents(new MuteListener(), this);
-            } catch (Exception e) {
-                log.severe("MuteListener 이벤트를 등록중에 오류가 발생했습니다.");
-                log.severe("오류 로그: " + e);
-                log.severe("오류 코드: 0x07");
-                plugin.setEnabled(false);
-            }
             try {
                 Bukkit.getScheduler().runTaskTimerAsynchronously(this, new MoveMent(), 0L, 30 * 20L);
                 log.info("MoveMent TaskTimer added.");
@@ -132,6 +119,13 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
                 log.warning("현재 실험적 기능인 BanGui를 사용하고 있습니다, 이 기능은 불안정하고, 버그가 자주 일어날수 있습니다.");
             } else if(isOnExperimentalBar) {
                 log.warning("현재 실험적 기능인 TargetHealthbar를 사용하고 있습니다, 불안정하고, 버그가 자주 일어날수 있습니다.");
+            }
+            try {
+                svname = plugin.getCustomConfig().getString("svname");
+            } catch (Exception e) {
+                log.severe("오류가 발생하였습니다.");
+                log.severe("오류 로그: " + e);
+                log.severe("오류 코드: 0x09");
             }
             Bukkit.getConsoleSender().sendMessage("[PlayerPerms]" + ChatColor.GREEN + " 플러그인이 정상적으로 로드 되었습니다.");
         } catch (Exception e) {

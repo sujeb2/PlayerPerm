@@ -1,5 +1,6 @@
 package com.songro.commands;
 
+import com.songro.Main;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -12,8 +13,14 @@ public class Setting implements CommandExecutor {
         if(!(commandSender instanceof Player player)) {
             commandSender.sendMessage("[PlayerPerms] 플레이어만 이 명령어를 사용할수 있습니다.");
             return true;
+        } else {
+            try {
+
+            } catch (Exception e) {
+                player.sendMessage(Main.plugin.svname + "오류가 발생했습니다.");
+            }
         }
-        player.sendMessage("hi");
+
 
         return true;
     }

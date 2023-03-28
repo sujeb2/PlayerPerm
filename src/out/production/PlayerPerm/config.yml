@@ -2,10 +2,14 @@
 # |  █▀▀█ █   █▀▀█ █  █ █▀▀ █▀▀█  █▀▀█ █▀▀ █▀▀█ █▀▄▀█ █▀▀ | #
 # |  █▄▄█ █   █▄▄█ █▄▄█ █▀▀ █▄▄▀  █▄▄█ █▀▀ █▄▄▀ █ ▀ █ ▀▀█ | #
 # |  █    ▀▀▀ ▀  ▀ ▄▄▄█ ▀▀▀ ▀ ▀▀  █    ▀▀▀ ▀ ▀▀ ▀   ▀ ▀▀▀ | #
-#                  - FOR FRUIT NET EDITION                | #
+#                  - V. 230327                            | #
 #############################################################
 # | DO NOT USE THIS FILE FOR ANY OTHER PLUGIN!! | #
 ###################################################
+
+# The server name that will be displayed in plugin messages.
+# Default = [PlayerPerms]
+svname: "[PlayerPerms]"
 
 # Perks feature
 perks:
