@@ -61,7 +61,7 @@ public class CustomRecipeFileConfiguration {
             if (itemLore1.length() == 0 || itemLore2.length() == 0) {
                 itemMeta.setLore(List.of(""));
             } else if (itemLore1.length() == 0) {
-                itemMeta.setLore(List.of("", itemLore2));
+                itemMeta.setLore(List.of(itemLore2));
             } else if (itemLore2.length() == 0) {
                 itemMeta.setLore(List.of(itemLore1));
             }
