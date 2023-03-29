@@ -17,9 +17,6 @@ import static com.songro.Main.plugin;
 
 public class CustomRecipeFileConfiguration {
 
-    private String itemName;
-    private String itemLore1;
-    private String itemLore2;
     public String item;
     Logger log = Bukkit.getLogger();
     ItemStack customItem;
@@ -40,9 +37,9 @@ public class CustomRecipeFileConfiguration {
     private String line9;
 
     public void createItem() throws NullPointerException {
-        itemName = Main.plugin.getCustomRecipe().getString("*.main.name");
-        itemLore1 = Main.plugin.getCustomRecipe().getString("*.main.lore");
-        itemLore2 = Main.plugin.getCustomRecipe().getString("*.main.lore2");
+        String itemName = Main.plugin.getCustomRecipe().getString("*.main.name");
+        String itemLore1 = Main.plugin.getCustomRecipe().getString("*.main.lore");
+        String itemLore2 = Main.plugin.getCustomRecipe().getString("*.main.lore2");
         item = Main.plugin.getCustomRecipe().getString("*.recipeSetting.item");
         try {
             customItem = new ItemStack(Material.getMaterial(item), 1);
@@ -58,6 +55,7 @@ public class CustomRecipeFileConfiguration {
             log.severe("오류 로그: " + np2);
         }
         try {
+            assert itemLore1 != null;
             if (itemLore1.length() == 0 || itemLore2.length() == 0) {
                 itemMeta.setLore(List.of(""));
             } else if (itemLore1.length() == 0) {
