@@ -6,12 +6,15 @@ import com.songro.commands.QuietMessage;
 import com.songro.commands.console.GivePlayerPermission;
 import com.songro.commands.console.RemovePlayerPermission;
 import com.songro.commands.op.*;
-import com.songro.commands.perks.*;
+import com.songro.commands.perks.ChatName;
+import com.songro.commands.perks.PlayerChatColor;
+import com.songro.commands.perks.RemoteCrafting;
+import com.songro.commands.perks.RemoteEnderChest;
 import com.songro.commands.perks.plusplus.Sit;
 import com.songro.event.KillHeadDrop;
 import com.songro.event.MoveMent;
-import com.songro.item.tippedFloatingArrow;
 import com.songro.listener.AFKListener;
+import com.songro.item.CustomRecipeFileConfiguration;
 import com.songro.listener.PlayerChatColorGUIListener;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -30,8 +33,13 @@ import java.util.logging.Logger;
 public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
     Logger log = getLogger();
     public static Main plugin;
+
+    // config
     private FileConfiguration customConfig;
     public String svname;
+
+    // recipe
+    private FileConfiguration recipeFile;
 
     @Override
     public void onEnable() {
@@ -47,6 +55,8 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
         try {
             log.info("설정 확인중...");
             createCustomConfig();
+            log.info("레시피 파일 확인중...");
+            createCustomRecipe();
             Objects.requireNonNull(getCommand("playerinfoop")).setExecutor(new PlayerInfo());
             Objects.requireNonNull(getCommand("targethealth")).setExecutor(new HealthBar());
             Objects.requireNonNull(getCommand("playerinfo")).setExecutor(new PlayerInfoNormal());
@@ -64,6 +74,12 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
             Objects.requireNonNull(getCommand("sit")).setExecutor(new Sit());
             Objects.requireNonNull(getCommand("color")).setExecutor(new PlayerChatColor());
             Objects.requireNonNull(getCommand("floatingmessage")).setExecutor(new FloatingTitle());
+            //try {
+                new CustomRecipeFileConfiguration().createItem();
+            //} catch (Exception e) {
+            //    log.severe("레시피를 등록중에 오류가 발생했습니다.");
+            //    log.severe("오류 로그: " + e);
+            //}
             try {
                 Bukkit.getScheduler().runTaskTimerAsynchronously(this, new MoveMent(), 0L, 30 * 20L);
                 log.info("MoveMent TaskTimer added.");
@@ -96,13 +112,6 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
                 log.severe("PlayerChatColorGUIListener 이벤트를 등록중에 오류가 발생했습니다.");
                 log.severe("오류 로그: " + e);
                 log.severe("오류 코드: 0x09");
-                plugin.setEnabled(false);
-            }
-            try {
-                new tippedFloatingArrow().tippedFloatingArrow();
-            } catch (Exception e) {
-                log.severe("레시피를 등록중에 오류가 발생했습니다.");
-                log.severe("오류 로그: " + e);
                 plugin.setEnabled(false);
             }
             boolean isOnDebug = plugin.getCustomConfig().getBoolean("debug.showDebugLog");
@@ -168,7 +177,31 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
         }
     }
 
+    public void createCustomRecipe() {
+        File recipefile = new File(getDataFolder(), "recipe.yml");
+        if (!recipefile.exists()) {
+            log.warning("recipe.yml 파일이 존재하지 않아, 만드는중...");
+            recipefile.getParentFile().mkdirs();
+            saveResource("recipe.yml", false);
+        } else {
+            log.info("파일 확인됨.");
+        }
+
+        recipeFile = new YamlConfiguration();
+        try {
+            customConfig.load(recipefile);
+        } catch (IOException | InvalidConfigurationException e) {
+            log.severe("레시피를 불러오는중에 오류가 발생했습니다.");
+            log.severe("오류 로그: " + e);
+            plugin.setEnabled(false);
+        }
+    }
+
     public FileConfiguration getCustomConfig() {
         return this.customConfig;
+    }
+
+    public FileConfiguration getCustomRecipe() {
+        return this.recipeFile;
     }
 }

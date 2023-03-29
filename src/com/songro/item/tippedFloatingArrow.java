@@ -17,6 +17,7 @@ import static com.songro.Main.plugin;
 
 public class tippedFloatingArrow {
 
+    // this one is not going to use it rn
     public void tippedFloatingArrow() {
         Logger log = Bukkit.getLogger();
 
