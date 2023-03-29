@@ -7,28 +7,29 @@
 # | DO NOT USE THIS FILE FOR ANY OTHER PLUGIN!! | #
 ###################################################
 
-# sample
-tippedFloatingArrow:
-  main:
-    name: "공중부양의 화살"
-    lore: "화살을 맞으면 공중부양 효과를 30초동안 얻습니다."
-    lore2: ""
-  recipeSetting:
-    # item list
-    #
-    item: "TIPPED_ARROW"
-    # Line = "1" "2" "3"
-    #        "4" "5" "6"
-    #        "7" "8" "9"
-    line1: "AIR"
-    line2: "AIR"
-    line3: "AIR"
-    line4: "AIR"
-    line5: "TIPPED_ARROW"
-    line6: "AIR"
-    line7: "AIR"
-    line8: "SHULKER_SHELL"
-    line9: "AIR"
-  config:
-    lore1_color: AQUA
-    lore2_color: WHITE
+items:
+  # sample
+  tippedFloatingArrow:
+    main:
+      name: "공중부양의 화살"
+      lore: "화살을 맞으면 공중부양 효과를 30초동안 얻습니다."
+      lore2: ""
+    recipeSetting:
+      # item list
+      #
+      item: "TIPPED_ARROW"
+      # Line = "1" "2" "3"
+      #        "4" "5" "6"
+      #        "7" "8" "9"
+      line1: "AIR"
+      line2: "AIR"
+      line3: "AIR"
+      line4: "AIR"
+      line5: "TIPPED_ARROW"
+      line6: "AIR"
+      line7: "AIR"
+      line8: "SHULKER_SHELL"
+      line9: "AIR"
+    config:
+      lore1_color: AQUA
+      lore2_color: WHITE

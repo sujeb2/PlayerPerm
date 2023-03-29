@@ -1,21 +1,13 @@
 package com.songro;
 
-import com.songro.commands.Afk;
-import com.songro.commands.PlayerInfoNormal;
-import com.songro.commands.QuietMessage;
-import com.songro.commands.console.GivePlayerPermission;
-import com.songro.commands.console.RemovePlayerPermission;
+import com.songro.commands.*;
+import com.songro.commands.console.*;
 import com.songro.commands.op.*;
-import com.songro.commands.perks.ChatName;
-import com.songro.commands.perks.PlayerChatColor;
-import com.songro.commands.perks.RemoteCrafting;
-import com.songro.commands.perks.RemoteEnderChest;
-import com.songro.commands.perks.plusplus.Sit;
-import com.songro.event.KillHeadDrop;
-import com.songro.event.MoveMent;
-import com.songro.listener.AFKListener;
+import com.songro.commands.perks.*;
+import com.songro.commands.perks.plusplus.*;
+import com.songro.event.*;
 import com.songro.item.CustomRecipeFileConfiguration;
-import com.songro.listener.PlayerChatColorGUIListener;
+import com.songro.listener.*;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.InvalidConfigurationException;
@@ -26,11 +18,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.http.WebSocket;
 import java.util.Objects;
 import java.util.logging.Logger;
 
-public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
+public class Main extends JavaPlugin implements Listener {
     Logger log = getLogger();
     public static Main plugin;
 
@@ -74,12 +65,12 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
             Objects.requireNonNull(getCommand("sit")).setExecutor(new Sit());
             Objects.requireNonNull(getCommand("color")).setExecutor(new PlayerChatColor());
             Objects.requireNonNull(getCommand("floatingmessage")).setExecutor(new FloatingTitle());
-            //try {
+            try {
                 new CustomRecipeFileConfiguration().createItem();
-            //} catch (Exception e) {
-            //    log.severe("레시피를 등록중에 오류가 발생했습니다.");
-            //    log.severe("오류 로그: " + e);
-            //}
+            } catch (Exception e) {
+                log.severe("레시피를 등록중에 오류가 발생했습니다.");
+                log.severe("오류 로그: " + e);
+            }
             try {
                 Bukkit.getScheduler().runTaskTimerAsynchronously(this, new MoveMent(), 0L, 30 * 20L);
                 log.info("MoveMent TaskTimer added.");
@@ -123,6 +114,9 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
                 long maxMemory = Runtime.getRuntime().maxMemory();
                 log.info("Maximum memory (bytes): " + (maxMemory == Long.MAX_VALUE ? "no limit" : maxMemory));
                 log.info("Total memory available to JVM (bytes): " + Runtime.getRuntime().totalMemory());
+                String test = recipeFile.getKeys(true).toString();
+                log.info(test);
+                log.warning("현재 디버그 기능을 사용중입니다 이 기능은 오직 디버그 용도로만 사용되며, 다른 용도로 사용되지 않습니다.");
             }
             if(isOnExperimentalGui) {
                 log.warning("현재 실험적 기능인 BanGui를 사용하고 있습니다, 이 기능은 불안정하고, 버그가 자주 일어날수 있습니다.");
@@ -163,6 +157,7 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
             log.warning("config.yml 파일이 존재하지 않아, 만드는중...");
             customConfigFile.getParentFile().mkdirs();
             saveResource("config.yml", false);
+            log.info("파일 만들어짐.");
         } else {
             log.info("파일 확인됨.");
         }
@@ -183,6 +178,7 @@ public class Main extends JavaPlugin implements WebSocket.Listener, Listener {
             log.warning("recipe.yml 파일이 존재하지 않아, 만드는중...");
             recipefile.getParentFile().mkdirs();
             saveResource("recipe.yml", false);
+            log.info("파일 만들어짐.");
         } else {
             log.info("파일 확인됨.");
         }
