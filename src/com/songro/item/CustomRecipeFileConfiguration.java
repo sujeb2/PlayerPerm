@@ -62,7 +62,7 @@ public class CustomRecipeFileConfiguration {
         try {
             assert itemLore1 != null;
             if (itemLore1.length() == 0 || itemLore2.length() == 0) {
-                itemMeta.setLore(List.of(""));
+                itemMeta.setLore(List.of("설명 없음"));
             } else if (itemLore1.length() == 0) {
                 itemMeta.setLore(List.of(itemLore2));
             } else if (itemLore2.length() == 0) {
