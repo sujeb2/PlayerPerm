@@ -114,8 +114,6 @@ public class Main extends JavaPlugin implements Listener {
                 long maxMemory = Runtime.getRuntime().maxMemory();
                 log.info("Maximum memory (bytes): " + (maxMemory == Long.MAX_VALUE ? "no limit" : maxMemory));
                 log.info("Total memory available to JVM (bytes): " + Runtime.getRuntime().totalMemory());
-                String test = recipeFile.getKeys(true).toString();
-                log.info(test);
                 log.warning("현재 디버그 기능을 사용중입니다 이 기능은 오직 디버그 용도로만 사용되며, 다른 용도로 사용되지 않습니다.");
             }
             if(isOnExperimentalGui) {
