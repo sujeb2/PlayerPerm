@@ -48,7 +48,7 @@ public class CustomRecipeFileConfiguration {
         String line9 = Main.plugin.getCustomRecipe().getString(loc + ".recipeSetting.line9");
 
         try {
-            customItem = new ItemStack(Material.getMaterial(item), 1);
+            customItem = new ItemStack(Objects.requireNonNull(Material.getMaterial(item)), 1);
             if(customItem == null) {
                 customItem = new ItemStack(Material.BARRIER, 1);
             }
