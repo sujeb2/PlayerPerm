@@ -11,6 +11,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 import java.util.logging.Logger;
 
 import static com.songro.Main.plugin;
@@ -23,11 +24,13 @@ public class CustomRecipeFileConfiguration {
     ItemMeta itemMeta;
 
     public void createItem() throws NullPointerException {
+        Set<String> locdef = Objects.requireNonNull(plugin.getCustomRecipe().getConfigurationSection("items")).getKeys(true);
+        // 밥 먹고 옴
         String loc = "";
-
-        for(String itemEntry : Main.getPlugin().getCustomRecipe().getStringList("items")){
-            loc = plugin.getCustomRecipe().getString(itemEntry);
+        for (String s : locdef) {
+            loc = s;
         }
+
         String itemName = Main.plugin.getCustomRecipe().getString(loc + ".main.name");
         String itemLore1 = Main.plugin.getCustomRecipe().getString(loc +".main.lore");
         String itemLore2 = Main.plugin.getCustomRecipe().getString(loc + ".main.lore2");
