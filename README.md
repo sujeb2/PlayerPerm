@@ -10,3 +10,5 @@
 > > 1.19.3
 ---
 Made by. notSongro_ (aka. songro_)
+
+Docs (KR). https://docs.songro.kro.kr/
