@@ -34,7 +34,6 @@ public class Main extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
-
         plugin = this;
         Bukkit.getConsoleSender().sendMessage("[PlayerPerms] Enabled.");
         Bukkit.getConsoleSender().sendMessage("");
@@ -69,7 +68,7 @@ public class Main extends JavaPlugin implements Listener {
                 new CustomRecipeFileConfiguration().createItem();
             //} catch (Exception e) {
             //    log.severe("레시피를 등록중에 오류가 발생했습니다.");
-            //    log.severe("오류 로그: " + e);
+            //   log.severe("오류 로그: " + e);
             //}
             try {
                 Bukkit.getScheduler().runTaskTimerAsynchronously(this, new MoveMent(), 0L, 30 * 20L);
@@ -135,7 +134,7 @@ public class Main extends JavaPlugin implements Listener {
         //    log.severe("플러그인을 로딩하던중에 오류가 발생했습니다.");
         //    log.severe("플러그인이 제대로 설치되었는지 확인해주십시오.");
         //    log.severe("오류 로그: " + e);
-        //    log.severe("오류 코드: 0x01");
+        //  log.severe("오류 코드: 0x01");
         //    plugin.setEnabled(false);
         //}
     }

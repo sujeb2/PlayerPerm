@@ -2,7 +2,7 @@
 # |  █▀▀█ █   █▀▀█ █  █ █▀▀ █▀▀█  █▀▀█ █▀▀ █▀▀█ █▀▄▀█ █▀▀ | #
 # |  █▄▄█ █   █▄▄█ █▄▄█ █▀▀ █▄▄▀  █▄▄█ █▀▀ █▄▄▀ █ ▀ █ ▀▀█ | #
 # |  █    ▀▀▀ ▀  ▀ ▄▄▄█ ▀▀▀ ▀ ▀▀  █    ▀▀▀ ▀ ▀▀ ▀   ▀ ▀▀▀ | #
-#                  - V. 230327                            | #
+#                  - V. 230407                            | #
 #############################################################
 # | DO NOT USE THIS FILE FOR ANY OTHER PLUGIN!! | #
 ###################################################
@@ -28,4 +28,7 @@ experimental:
 
 # This is for debugging. It is not recommended to increase it unless there is a bug.
 debug:
+  # Shows servers debug info.
   showDebugLog: false
+  # Disable all NullPointExceptions, Exceptions. We recommend using this feature only for code debugging.
+  removeAllExceptions: false

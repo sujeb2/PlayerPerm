@@ -11,7 +11,6 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 import java.util.logging.Logger;
 
 import static com.songro.Main.plugin;
@@ -24,31 +23,27 @@ public class CustomRecipeFileConfiguration {
     ItemMeta itemMeta;
 
     public void createItem() throws NullPointerException {
-        Set<String> locdef = Objects.requireNonNull(plugin.getCustomRecipe().getConfigurationSection("items")).getKeys(true);
-        // 밥 먹고 옴
-        String loc = "";
-        for (String s : locdef) {
-            loc = s;
-        }
+        var getLoc = Main.plugin.getCustomRecipe().getConfigurationSection("items");
+        String loc = String.valueOf(getLoc);
 
-        String itemName = Main.plugin.getCustomRecipe().getString(loc + ".main.name");
-        String itemLore1 = Main.plugin.getCustomRecipe().getString(loc +".main.lore");
-        String itemLore2 = Main.plugin.getCustomRecipe().getString(loc + ".main.lore2");
-        item = Main.plugin.getCustomRecipe().getString(loc + "*.recipeSetting.item");
+        String itemName = Main.plugin.getCustomRecipe().getString("items." + getLoc + ".main.name");
+        String itemLore1 = Main.plugin.getCustomRecipe().getString("items." + getLoc + ".main.lore");
+        String itemLore2 = Main.plugin.getCustomRecipe().getString("items." + getLoc + ".main.lore2");
+        item = Main.plugin.getCustomRecipe().getString("items." + getLoc + "*.recipeSetting.item");
 
         // line
         // "LINE1", "LINE2", "LINE3",
         // "LINE4", "LINE5", "LINE6",
         // "LINE7", "LINE8", "LINE9"
-        String line1 = Main.plugin.getCustomRecipe().getString(loc + ".recipeSetting.line1");
-        String line2 = Main.plugin.getCustomRecipe().getString(loc + ".recipeSetting.line2");
-        String line3 = Main.plugin.getCustomRecipe().getString(loc + ".recipeSetting.line3");
-        String line4 = Main.plugin.getCustomRecipe().getString(loc + ".recipeSetting.line4");
-        String line5 = Main.plugin.getCustomRecipe().getString(loc + ".recipeSetting.line5");
-        String line6 = Main.plugin.getCustomRecipe().getString(loc + ".recipeSetting.line6");
-        String line7 = Main.plugin.getCustomRecipe().getString(loc + ".recipeSetting.line7");
-        String line8 = Main.plugin.getCustomRecipe().getString(loc + ".recipeSetting.line8");
-        String line9 = Main.plugin.getCustomRecipe().getString(loc + ".recipeSetting.line9");
+        String line1 = Main.plugin.getCustomRecipe().getString("items." + getLoc + ".recipeSetting.line1");
+        String line2 = Main.plugin.getCustomRecipe().getString("items." + getLoc + ".recipeSetting.line2");
+        String line3 = Main.plugin.getCustomRecipe().getString("items." + getLoc + ".recipeSetting.line3");
+        String line4 = Main.plugin.getCustomRecipe().getString("items." + getLoc + ".recipeSetting.line4");
+        String line5 = Main.plugin.getCustomRecipe().getString("items." + getLoc + ".recipeSetting.line5");
+        String line6 = Main.plugin.getCustomRecipe().getString("items." + getLoc + ".recipeSetting.line6");
+        String line7 = Main.plugin.getCustomRecipe().getString("items." + getLoc + ".recipeSetting.line7");
+        String line8 = Main.plugin.getCustomRecipe().getString("items." + getLoc + ".recipeSetting.line8");
+        String line9 = Main.plugin.getCustomRecipe().getString("items." + getLoc + ".recipeSetting.line9");
 
         try {
             customItem = new ItemStack(Objects.requireNonNull(Material.getMaterial(item)), 1);
