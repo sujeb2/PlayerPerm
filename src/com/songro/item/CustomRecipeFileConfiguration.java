@@ -23,27 +23,26 @@ public class CustomRecipeFileConfiguration {
     ItemMeta itemMeta;
 
     public void createItem() throws NullPointerException {
-        var getLoc = Main.plugin.getCustomRecipe().getConfigurationSection("items");
-        String loc = String.valueOf(getLoc);
-
-        String itemName = Main.plugin.getCustomRecipe().getString("items." + getLoc + ".main.name");
-        String itemLore1 = Main.plugin.getCustomRecipe().getString("items." + getLoc + ".main.lore");
-        String itemLore2 = Main.plugin.getCustomRecipe().getString("items." + getLoc + ".main.lore2");
-        item = Main.plugin.getCustomRecipe().getString("items." + getLoc + "*.recipeSetting.item");
+        var configRecipe = Main.plugin.getCustomRecipe();
+        var getLoc = configRecipe.getConfigurationSection("items");
+        String itemName = configRecipe.getString("items." + getLoc + ".main.name");
+        String itemLore1 = configRecipe.getString("items." + getLoc + ".main.lore");
+        String itemLore2 = configRecipe.getString("items." + getLoc + ".main.lore2");
+        item = configRecipe.getString("items." + getLoc + "*.recipeSetting.item");
 
         // line
         // "LINE1", "LINE2", "LINE3",
         // "LINE4", "LINE5", "LINE6",
         // "LINE7", "LINE8", "LINE9"
-        String line1 = Main.plugin.getCustomRecipe().getString("items." + getLoc + ".recipeSetting.line1");
-        String line2 = Main.plugin.getCustomRecipe().getString("items." + getLoc + ".recipeSetting.line2");
-        String line3 = Main.plugin.getCustomRecipe().getString("items." + getLoc + ".recipeSetting.line3");
-        String line4 = Main.plugin.getCustomRecipe().getString("items." + getLoc + ".recipeSetting.line4");
-        String line5 = Main.plugin.getCustomRecipe().getString("items." + getLoc + ".recipeSetting.line5");
-        String line6 = Main.plugin.getCustomRecipe().getString("items." + getLoc + ".recipeSetting.line6");
-        String line7 = Main.plugin.getCustomRecipe().getString("items." + getLoc + ".recipeSetting.line7");
-        String line8 = Main.plugin.getCustomRecipe().getString("items." + getLoc + ".recipeSetting.line8");
-        String line9 = Main.plugin.getCustomRecipe().getString("items." + getLoc + ".recipeSetting.line9");
+        String line1 = configRecipe.getString("items." + getLoc + ".recipeSetting.line1");
+        String line2 = configRecipe.getString("items." + getLoc + ".recipeSetting.line2");
+        String line3 = configRecipe.getString("items." + getLoc + ".recipeSetting.line3");
+        String line4 = configRecipe.getString("items." + getLoc + ".recipeSetting.line4");
+        String line5 = configRecipe.getString("items." + getLoc + ".recipeSetting.line5");
+        String line6 = configRecipe.getString("items." + getLoc + ".recipeSetting.line6");
+        String line7 = configRecipe.getString("items." + getLoc + ".recipeSetting.line7");
+        String line8 = configRecipe.getString("items." + getLoc + ".recipeSetting.line8");
+        String line9 = configRecipe.getString("items." + getLoc + ".recipeSetting.line9");
 
         try {
             customItem = new ItemStack(Objects.requireNonNull(Material.getMaterial(item)), 1);
@@ -69,11 +68,12 @@ public class CustomRecipeFileConfiguration {
                 itemMeta.setLore(List.of(itemLore2));
             } else if (itemLore2.length() == 0) {
                 itemMeta.setLore(List.of(itemLore1));
+            } else {
+                itemMeta.setLore(List.of(ChatColor.WHITE + itemLore1, itemLore2));
             }
         } catch (NullPointerException nullpointer) {
             log.severe(String.valueOf(nullpointer));
         }
-        itemMeta.setLore(List.of(ChatColor.WHITE + itemLore1, itemLore2));
 
         customItem.setItemMeta(itemMeta);
         {
