@@ -13,11 +13,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74a2b4f2-ec91-42d6-8cab-b2e17abec495" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/PlayerPerm_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/PlayerPerm_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/songro/commands/PlayerInfoNormal.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/commands/PlayerInfoNormal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/songro/item/CustomRecipeFileConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/item/CustomRecipeFileConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/songro/util/InventoryItemUtil.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
