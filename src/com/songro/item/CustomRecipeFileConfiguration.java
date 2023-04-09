@@ -22,7 +22,11 @@ public class CustomRecipeFileConfiguration {
     ItemStack customItem;
     ItemMeta itemMeta;
 
+    /*
+    why tf this won’t work
+     */
     public void createItem() throws NullPointerException {
+        boolean isRemovedRecipeExceptions = plugin.getCustomConfig().getBoolean("debug.removeRecipeExceptions");
         var configRecipe = Main.plugin.getCustomRecipe();
         var getLoc = configRecipe.getConfigurationSection("items");
         String itemName = configRecipe.getString("items." + getLoc + ".main.name");
@@ -43,24 +47,52 @@ public class CustomRecipeFileConfiguration {
         String line7 = configRecipe.getString("items." + getLoc + ".recipeSetting.line7");
         String line8 = configRecipe.getString("items." + getLoc + ".recipeSetting.line8");
         String line9 = configRecipe.getString("items." + getLoc + ".recipeSetting.line9");
-
-        try {
+        if(!isRemovedRecipeExceptions) {
+            try {
+                customItem = new ItemStack(Objects.requireNonNull(Material.getMaterial(item)), 1);
+                if (customItem == null) {
+                    customItem = new ItemStack(Material.BARRIER, 1);
+                }
+                itemMeta = customItem.getItemMeta();
+                assert itemMeta != null;
+                if (itemMeta.getDisplayName() == null) {
+                    itemMeta.setDisplayName(ChatColor.RED + "설정되지 않음");
+                } else {
+                    itemMeta.setDisplayName(itemName);
+                }
+            } catch (NullPointerException np2) {
+                log.severe("아이템을 설정하는중에 오류가 발생했습니다.");
+                log.severe("오류 로그: " + np2);
+            }
+        } else {
             customItem = new ItemStack(Objects.requireNonNull(Material.getMaterial(item)), 1);
-            if(customItem == null) {
+            if (customItem == null) {
                 customItem = new ItemStack(Material.BARRIER, 1);
             }
             itemMeta = customItem.getItemMeta();
             assert itemMeta != null;
-            if(itemMeta.getDisplayName() == null) {
+            if (itemMeta.getDisplayName() == null) {
                 itemMeta.setDisplayName(ChatColor.RED + "설정되지 않음");
             } else {
                 itemMeta.setDisplayName(itemName);
             }
-        } catch (NullPointerException np2) {
-            log.severe("아이템을 설정하는중에 오류가 발생했습니다.");
-            log.severe("오류 로그: " + np2);
         }
-        try {
+        if(!isRemovedRecipeExceptions) {
+            try {
+                assert itemLore1 != null;
+                if (itemLore1.length() == 0 || itemLore2.length() == 0) {
+                    itemMeta.setLore(List.of("설명 없음"));
+                } else if (itemLore1.length() == 0) {
+                    itemMeta.setLore(List.of(itemLore2));
+                } else if (itemLore2.length() == 0) {
+                    itemMeta.setLore(List.of(itemLore1));
+                } else {
+                    itemMeta.setLore(List.of(ChatColor.WHITE + itemLore1, itemLore2));
+                }
+            } catch (NullPointerException nullpointer) {
+                log.severe(String.valueOf(nullpointer));
+            }
+        } else {
             assert itemLore1 != null;
             if (itemLore1.length() == 0 || itemLore2.length() == 0) {
                 itemMeta.setLore(List.of("설명 없음"));
@@ -71,8 +103,6 @@ public class CustomRecipeFileConfiguration {
             } else {
                 itemMeta.setLore(List.of(ChatColor.WHITE + itemLore1, itemLore2));
             }
-        } catch (NullPointerException nullpointer) {
-            log.severe(String.valueOf(nullpointer));
         }
 
         customItem.setItemMeta(itemMeta);

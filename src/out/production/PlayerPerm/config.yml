@@ -30,5 +30,5 @@ experimental:
 debug:
   # Shows servers debug info.
   showDebugLog: false
-  # Disable all NullPointExceptions, Exceptions. We recommend using this feature only for code debugging.
-  removeAllExceptions: false
+  # Disable CustomRecipe Exceptions, NullPointerException. Please use this feature for only debugging.
+  removeRecipeExceptions: false
