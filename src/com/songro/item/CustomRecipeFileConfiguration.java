@@ -28,7 +28,7 @@ public class CustomRecipeFileConfiguration {
     public void createItem() throws NullPointerException {
         boolean isRemovedRecipeExceptions = plugin.getCustomConfig().getBoolean("debug.removeRecipeExceptions");
         var configRecipe = Main.plugin.getCustomRecipe();
-        var getLoc = configRecipe.getConfigurationSection("items").getKeys(false);
+        var getLoc = Objects.requireNonNull(configRecipe.getConfigurationSection("items")).getKeys(false);
         String itemName = configRecipe.getString("items." + getLoc + ".main.name");
         String itemLore1 = configRecipe.getString("items." + getLoc + ".main.lore");
         String itemLore2 = configRecipe.getString("items." + getLoc + ".main.lore2");
