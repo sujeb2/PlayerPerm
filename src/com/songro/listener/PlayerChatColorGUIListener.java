@@ -23,7 +23,7 @@ public class PlayerChatColorGUIListener implements Listener {
                     if (clicked.getType().equals(inv2.getItem(0))) {
                         if (player.hasPermission("def.op") || player.hasPermission("perks.op")) {
                             player.setDisplayName(ChatColor.DARK_RED + "[STAFF] " + player.getName());
-                            player.sendMessage("opred");
+                            player.sendMessage("oped");
                         }
                         e.setCancelled(true);
                     }
@@ -76,7 +76,7 @@ public class PlayerChatColorGUIListener implements Listener {
                     }
 
                     } catch (NullPointerException npe) {
-                    player.sendMessage("error");
+                    player.sendMessage("error" + npe);
                 }
                 e.setCancelled(true);
             } catch (Exception ex) {

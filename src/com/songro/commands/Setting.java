@@ -19,6 +19,9 @@ public class Setting implements CommandExecutor {
             try {
                 Inventory settingInv = Bukkit.createInventory(null, 9, "설정");
 
+                // player setting
+
+
                 player.openInventory(settingInv);
             } catch (Exception e) {
                 player.sendMessage(Main.plugin.svname + "오류가 발생했습니다.");

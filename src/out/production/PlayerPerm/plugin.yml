@@ -77,6 +77,10 @@ commands:
     usage: /<command> <Message>
     description: 공중에서 메세지를 보여줍니다.
     aliases: [floating, fm, display, 텍스트]
+  admin:
+    usage: /<command>
+    description: 관리자를 위한 메뉴
+    aliases: [adm, am, ㅇㄷㅁ, 관리자]
 
 permissons:
 

@@ -34,7 +34,7 @@ public class PlayerChatColor implements CommandExecutor {
             ArrayList<String> na_lore = new ArrayList<>();
 
             // colors
-            ItemStack red = new ItemStack(Material.RED_CONCRETE);
+            ItemStack red = new ItemStack(Material.RED_WOOL);
             ItemMeta op_meta = red.getItemMeta();
             assert op_meta != null;
             op_meta.setDisplayName(ChatColor.DARK_RED + "어두운 빨강색");
@@ -161,8 +161,9 @@ public class PlayerChatColor implements CommandExecutor {
                 player.sendMessage(ChatColor.YELLOW + Main.plugin.svname + " 오류 로그: " + e);
                 player.sendMessage(ChatColor.YELLOW + Main.plugin.svname + " 오류 코드: 0x09");
             }
-        } catch (Exception e) {
+        } catch (Exception e2) {
             player.sendMessage(ChatColor.RED + Main.plugin.svname + " 오류가 발생했습니다.");
+            player.sendMessage(ChatColor.YELLOW + Main.plugin.svname + " 오류 로그: " + e2);
         }
         return true;
     }
