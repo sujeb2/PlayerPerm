@@ -53,7 +53,7 @@ public class Main extends JavaPlugin implements Listener {
             log.info("설정 확인중...");
             createCustomConfig();
             log.info("레시피 파일 확인중...");
-            createCustomRecipe();
+            //createCustomRecipe();
             boolean isRemovedRecipeExceptions = plugin.getCustomConfig().getBoolean("debug.removeRecipeExceptions");
             Objects.requireNonNull(getCommand("playerinfoop")).setExecutor(new PlayerInfo());
             Objects.requireNonNull(getCommand("targethealth")).setExecutor(new HealthBar());
@@ -64,6 +64,7 @@ public class Main extends JavaPlugin implements Listener {
             Objects.requireNonNull(getCommand("removepermission")).setExecutor(new RemovePlayerPermission());
             Objects.requireNonNull(getCommand("isafk")).setExecutor(new IsAFK());
             Objects.requireNonNull(getCommand("afk")).setExecutor(new Afk());
+            Objects.requireNonNull(getCommand("reloadconfig")).setExecutor(new Reload());
             Objects.requireNonNull(getCommand("remotecrafting")).setExecutor(new RemoteCrafting());
             Objects.requireNonNull(getCommand("remoteender")).setExecutor(new RemoteEnderChest());
             Objects.requireNonNull(getCommand("playerattachment")).setExecutor(new CheckPlayerAttachments());
@@ -83,7 +84,7 @@ public class Main extends JavaPlugin implements Listener {
             } else {
                 new CustomRecipeFileConfiguration().createItem();
             }
-            */
+             */
             try {
                 Bukkit.getScheduler().runTaskTimerAsynchronously(this, new MoveMent(), 0L, 30 * 20L);
                 log.info("MoveMent TaskTimer added.");

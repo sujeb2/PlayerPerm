@@ -25,7 +25,7 @@ public class tippedFloatingArrow {
             ItemStack tippedFloatingArrow = new ItemStack(Material.TIPPED_ARROW, 1);
             PotionMeta tfap = (PotionMeta) tippedFloatingArrow.getItemMeta();
             tfap.addCustomEffect(new PotionEffect(PotionEffectType.LEVITATION, 20 * 30, 0), true);
-            tfap.setDisplayName(ChatColor.GREEN + String.valueOf(ChatColor.BOLD) + "공중 부양의 화살");
+            tfap.setDisplayName(ChatColor.GREEN + "" + ChatColor.BOLD + "공중 부양의 화살");
             tfap.setLore(List.of(ChatColor.AQUA + "화살을 맞으면 30초 동안 공중부양 효과를 얻습니다."));
 
             tippedFloatingArrow.setItemMeta(tfap);

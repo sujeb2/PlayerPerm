@@ -13,13 +13,61 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74a2b4f2-ec91-42d6-8cab-b2e17abec495" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/com/songro/commands/op/Reload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/PlayerPerm_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/PlayerPerm_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PlayerPerm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PlayerPerm.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/com/songro/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/songro/commands/op/ReloadConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/commands/op/ReloadConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/songro/commands/op/ReloadRecipeConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/commands/op/ReloadRecipeConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/commands/Afk.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/commands/Afk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/commands/HelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/commands/HelloWorld.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/commands/PlayerInfoNormal.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/commands/PlayerInfoNormal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/commands/QuietMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/commands/QuietMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/commands/Setting.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/commands/Setting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/commands/console/GivePlayerPermission.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/commands/console/GivePlayerPermission.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/commands/console/RemovePlayerPermission.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/commands/console/RemovePlayerPermission.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/commands/op/AdminMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/commands/op/AdminMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/commands/op/Broadcast.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/commands/op/Broadcast.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/commands/op/CheckPlayerAttachments.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/commands/op/CheckPlayerAttachments.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/commands/op/FloatingTitle.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/commands/op/FloatingTitle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/commands/op/HealthBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/commands/op/HealthBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/commands/op/IsAFK.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/commands/op/IsAFK.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/commands/op/PlayerInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/commands/op/PlayerInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/commands/op/ReloadConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/commands/op/ReloadRecipeConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/commands/perks/ChatName.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/commands/perks/ChatName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/commands/perks/PlayerChatColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/commands/perks/PlayerChatColor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/commands/perks/PlayerHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/commands/perks/PlayerHome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/commands/perks/RemoteAnvil.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/commands/perks/RemoteAnvil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/commands/perks/RemoteCrafting.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/commands/perks/RemoteCrafting.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/com/songro/commands/perks/RemoteEnderChest.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/commands/perks/RemoteEnderChest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/commands/perks/plusplus/ChangeHomeColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/commands/perks/plusplus/ChangeHomeColor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/commands/perks/plusplus/Sit.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/commands/perks/plusplus/Sit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/event/KillHeadDrop.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/event/KillHeadDrop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/event/MoveMent.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/event/MoveMent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/handler/AFK.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/handler/AFK.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/item/CustomRecipeFileConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/item/CustomRecipeFileConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/com/songro/item/tippedFloatingArrow.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/item/tippedFloatingArrow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/listener/AFKListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/listener/AFKListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/listener/PlayerChatColorGUIListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/listener/PlayerChatColorGUIListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/com/songro/util/CustomRecipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/util/CustomRecipe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/util/PermissionUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/util/PermissionUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlayerPerm/.idea/artifacts/PlayerPerm_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlayerPerm/.idea/artifacts/PlayerPerm_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlayerPerm/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlayerPerm/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlayerPerm/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlayerPerm/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlayerPerm/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlayerPerm/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlayerPerm/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlayerPerm/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlayerPerm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlayerPerm/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlayerPerm/PlayerPerm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlayerPerm/PlayerPerm.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlayerPerm/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlayerPerm/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlayerPerm/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlayerPerm/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlayerPerm/recipe.yml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlayerPerm/recipe.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe.yml" beforeDir="false" afterPath="$PROJECT_DIR$/recipe.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,9 +124,6 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\sdbb2\GitHub\PlayerPerm\src" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.songro.commands.op" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

@@ -13,12 +13,14 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.logging.Logger;
 
+import static com.songro.Main.plugin;
+
 public class RemoteEnderChest implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
         Player player = (Player)commandSender;
         Logger log = Bukkit.getLogger();
-        boolean isOn = Main.getPlugin().getCustomConfig().getBoolean("perks.remoteEnderChest");
+        boolean isOn = plugin.getCustomConfig().getBoolean("perks.remoteEnderChest");
 
         if(isOn) {
             try {

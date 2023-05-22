@@ -81,10 +81,6 @@ commands:
     usage: /<command>
     description: 관리자를 위한 메뉴
     aliases: [adm, am, ㅇㄷㅁ, 관리자]
-  reloadrecipe:
-    usage: /<command>
-    description: 레시피를 다시 불러옵니다.
-    aliases: [rr, 레시피불러오기]
 
 permissons:
 
