@@ -28,25 +28,26 @@ public class CustomRecipeFileConfiguration {
     public void createItem() throws NullPointerException {
         boolean isRemovedRecipeExceptions = plugin.getCustomConfig().getBoolean("debug.removeRecipeExceptions");
         var configRecipe = Main.plugin.getCustomRecipe();
-        var getLoc = Objects.requireNonNull(configRecipe.getConfigurationSection("items")).getKeys(false);
-        String itemName = configRecipe.getString("items." + getLoc + ".main.name");
-        String itemLore1 = configRecipe.getString("items." + getLoc + ".main.lore");
-        String itemLore2 = configRecipe.getString("items." + getLoc + ".main.lore2");
-        item = configRecipe.getString("items." + getLoc + "*.recipeSetting.item");
+        var getLoc = configRecipe.getStringList("item");
+        log.info(String.valueOf(getLoc));
+        String itemName = configRecipe.getString("item." + getLoc + ".name");
+        String itemLore1 = configRecipe.getString("item." + getLoc + ".lore");
+        String itemLore2 = configRecipe.getString(getLoc + ".lore2");
+        item = configRecipe.getString("item." + getLoc + ".item");
 
         // line
         // "LINE1", "LINE2", "LINE3",
         // "LINE4", "LINE5", "LINE6",
         // "LINE7", "LINE8", "LINE9"
-        String line1 = configRecipe.getString("items." + getLoc + ".recipeSetting.line1");
-        String line2 = configRecipe.getString("items." + getLoc + ".recipeSetting.line2");
-        String line3 = configRecipe.getString("items." + getLoc + ".recipeSetting.line3");
-        String line4 = configRecipe.getString("items." + getLoc + ".recipeSetting.line4");
-        String line5 = configRecipe.getString("items." + getLoc + ".recipeSetting.line5");
-        String line6 = configRecipe.getString("items." + getLoc + ".recipeSetting.line6");
-        String line7 = configRecipe.getString("items." + getLoc + ".recipeSetting.line7");
-        String line8 = configRecipe.getString("items." + getLoc + ".recipeSetting.line8");
-        String line9 = configRecipe.getString("items." + getLoc + ".recipeSetting.line9");
+        String line1 = configRecipe.getString(getLoc + ".line1");
+        String line2 = configRecipe.getString(getLoc + ".line2");
+        String line3 = configRecipe.getString(getLoc + ".line3");
+        String line4 = configRecipe.getString(getLoc + ".line4");
+        String line5 = configRecipe.getString(getLoc + ".line5");
+        String line6 = configRecipe.getString(getLoc + ".line6");
+        String line7 = configRecipe.getString(getLoc + ".line7");
+        String line8 = configRecipe.getString(getLoc + ".line8");
+        String line9 = configRecipe.getString(getLoc + ".line9");
         if(!isRemovedRecipeExceptions) {
             try {
                 customItem = new ItemStack(Objects.requireNonNull(Material.getMaterial(item)), 1);
