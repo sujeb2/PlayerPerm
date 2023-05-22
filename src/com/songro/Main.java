@@ -64,7 +64,6 @@ public class Main extends JavaPlugin implements Listener {
             Objects.requireNonNull(getCommand("removepermission")).setExecutor(new RemovePlayerPermission());
             Objects.requireNonNull(getCommand("isafk")).setExecutor(new IsAFK());
             Objects.requireNonNull(getCommand("afk")).setExecutor(new Afk());
-            Objects.requireNonNull(getCommand("reloadconfig")).setExecutor(new ReloadConfiguration());
             Objects.requireNonNull(getCommand("remotecrafting")).setExecutor(new RemoteCrafting());
             Objects.requireNonNull(getCommand("remoteender")).setExecutor(new RemoteEnderChest());
             Objects.requireNonNull(getCommand("playerattachment")).setExecutor(new CheckPlayerAttachments());
@@ -73,7 +72,6 @@ public class Main extends JavaPlugin implements Listener {
             Objects.requireNonNull(getCommand("color")).setExecutor(new PlayerChatColor());
             Objects.requireNonNull(getCommand("floatingmessage")).setExecutor(new FloatingTitle());
             Objects.requireNonNull(getCommand("admin")).setExecutor(new AdminMenu());
-            Objects.requireNonNull(getCommand("reloadrecipe")).setExecutor(new ReloadRecipeConfiguration());
             /*
             if(!isRemovedRecipeExceptions) {
                 try {
