@@ -11,8 +11,10 @@ import com.songro.commands.perks.PlayerChatColor;
 import com.songro.commands.perks.RemoteCrafting;
 import com.songro.commands.perks.RemoteEnderChest;
 import com.songro.commands.perks.plusplus.Sit;
+import com.songro.enchant.CustomEnchant;
 import com.songro.event.KillHeadDrop;
 import com.songro.event.MoveMent;
+import com.songro.event.enchant.Teleport;
 import com.songro.listener.AFKListener;
 import com.songro.listener.PlayerChatColorGUIListener;
 import org.bukkit.Bukkit;
@@ -73,6 +75,7 @@ public class Main extends JavaPlugin implements Listener {
             Objects.requireNonNull(getCommand("color")).setExecutor(new PlayerChatColor());
             Objects.requireNonNull(getCommand("floatingmessage")).setExecutor(new FloatingTitle());
             Objects.requireNonNull(getCommand("admin")).setExecutor(new AdminMenu());
+            Objects.requireNonNull(getCommand("ench")).setExecutor(new EnchantItem());
             /*
             if(!isRemovedRecipeExceptions) {
                 try {
@@ -144,6 +147,14 @@ public class Main extends JavaPlugin implements Listener {
                 svname = "[PlayerPerms]";
                 log.warning("오류가 발생해 이름이 기본설정으로 지정되었습니다.");
             }
+            try {
+                getServer().getPluginManager().registerEvents(new Teleport(), this);
+            } catch (Exception e) {
+                log.severe("Teleport 이벤트를 등록중에 오류가 발생했습니다.");
+                log.severe("오류 로그: " + e);
+                log.severe("오류 코드: 0x09");
+            }
+            CustomEnchant.register();
             Bukkit.getConsoleSender().sendMessage("[PlayerPerms]" + ChatColor.GREEN + " 플러그인이 정상적으로 로드 되었습니다.");
         } catch (Exception e) {
             log.severe("플러그인을 로딩하던중에 오류가 발생했습니다.");

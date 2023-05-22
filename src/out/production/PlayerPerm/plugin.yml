@@ -81,6 +81,10 @@ commands:
     usage: /<command>
     description: 관리자를 위한 메뉴
     aliases: [adm, am, ㅇㄷㅁ, 관리자]
+  ench:
+    usage: /<command>
+    description: 들고있는 아이템에 인첸트를 적용합니다.
+    aliases: [enchantitem, 인첸트, ㅇㅊㅌ]
 
 permissons:
 
