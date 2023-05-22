@@ -13,7 +13,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74a2b4f2-ec91-42d6-8cab-b2e17abec495" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/com/songro/event/enchant/Explosion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/commands/op/EnchantItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/commands/op/EnchantItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/enchant/CustomEnchant.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/enchant/CustomEnchant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/com/songro/event/enchant/Teleport.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/event/enchant/Teleport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/util/CustomEnchantWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/util/CustomEnchantWrapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/plugin.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
