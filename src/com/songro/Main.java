@@ -13,7 +13,6 @@ import com.songro.commands.perks.RemoteEnderChest;
 import com.songro.commands.perks.plusplus.Sit;
 import com.songro.event.KillHeadDrop;
 import com.songro.event.MoveMent;
-import com.songro.item.CustomRecipeFileConfiguration;
 import com.songro.listener.AFKListener;
 import com.songro.listener.PlayerChatColorGUIListener;
 import org.bukkit.Bukkit;
@@ -75,6 +74,7 @@ public class Main extends JavaPlugin implements Listener {
             Objects.requireNonNull(getCommand("floatingmessage")).setExecutor(new FloatingTitle());
             Objects.requireNonNull(getCommand("admin")).setExecutor(new AdminMenu());
             Objects.requireNonNull(getCommand("reloadrecipe")).setExecutor(new ReloadRecipeConfiguration());
+            /*
             if(!isRemovedRecipeExceptions) {
                 try {
                     new CustomRecipeFileConfiguration().createItem();
@@ -85,6 +85,7 @@ public class Main extends JavaPlugin implements Listener {
             } else {
                 new CustomRecipeFileConfiguration().createItem();
             }
+            */
             try {
                 Bukkit.getScheduler().runTaskTimerAsynchronously(this, new MoveMent(), 0L, 30 * 20L);
                 log.info("MoveMent TaskTimer added.");

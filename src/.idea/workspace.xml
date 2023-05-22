@@ -13,20 +13,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74a2b4f2-ec91-42d6-8cab-b2e17abec495" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/com/songro/commands/op/ReloadConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/com/songro/commands/op/ReloadRecipeConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/PlayerPerm_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/PlayerPerm_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlayerPerm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PlayerPerm.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/com/songro/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/songro/commands/op/Reload.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/songro/item/CustomRecipeFileConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/item/CustomRecipeFileConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlayerPerm/.idea/artifacts/PlayerPerm_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlayerPerm/.idea/artifacts/PlayerPerm_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlayerPerm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlayerPerm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlayerPerm/PlayerPerm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlayerPerm/PlayerPerm.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlayerPerm/recipe.yml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlayerPerm/recipe.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe.yml" beforeDir="false" afterPath="$PROJECT_DIR$/recipe.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/commands/op/ReloadConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/commands/op/ReloadConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/commands/op/ReloadRecipeConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/commands/op/ReloadRecipeConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/commands/perks/RemoteEnderChest.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/commands/perks/RemoteEnderChest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/item/tippedFloatingArrow.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/item/tippedFloatingArrow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/util/CustomRecipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/util/CustomRecipe.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

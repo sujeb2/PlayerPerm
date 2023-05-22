@@ -17,11 +17,11 @@ public class ReloadConfiguration implements CommandExecutor {
                 Main.plugin.getCustomConfig();
                 player.sendMessage(ChatColor.GREEN + "Reloaded!");
             } else {
-                player.sendMessage(ChatColor.YELLOW + Main.getPlugin().svname + " OP만 이 명령어를 사용할수 있습니다!");
+                player.sendMessage(ChatColor.YELLOW + Main.plugin.svname + " OP만 이 명령어를 사용할수 있습니다!");
             }
         } catch (Exception e) {
-            player.sendMessage(ChatColor.RED + Main.getPlugin().svname + " 설정을 다시 불러오는중에 오류가 발생하였습니다.");
-            player.sendMessage(ChatColor.RED + Main.getPlugin().svname + " 에러 로그: " + e);
+            player.sendMessage(ChatColor.RED + Main.plugin.svname + " 설정을 다시 불러오는중에 오류가 발생하였습니다.");
+            player.sendMessage(ChatColor.RED + Main.plugin.svname + " 에러 로그: " + e);
         }
 
         return true;

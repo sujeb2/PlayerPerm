@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomRecipe {
-    private List<String> recipeLines = new ArrayList<>();
+    private final List<String> recipeLines = new ArrayList<>();
 
     public CustomRecipe(File configFile) {
         FileConfiguration config = YamlConfiguration.loadConfiguration(configFile);
