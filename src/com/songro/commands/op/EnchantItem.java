@@ -26,32 +26,40 @@ public class EnchantItem implements CommandExecutor {
 
         if (!player.equals(Bukkit.getConsoleSender())) {
             if(player.isOp()) {
-                //if (playerMainHandItem.equals(Material.STICK)) {
-                    try {
-                        ItemStack item = playerMainHandItem;
-                        item.addUnsafeEnchantment(CustomEnchant.TELEPORT, 1);
+                // teleport
+                if(strings[0].equalsIgnoreCase("teleport")) {
+                    if (playerMainHandItem.getItemMeta() == null) {
+                        player.sendMessage(ChatColor.YELLOW + Main.plugin.svname + " 인첸트할 아이템을 손에 들어주세요.");
+                    } else {
+                        try {
+                            ItemStack item = playerMainHandItem;
+                            item.addUnsafeEnchantment(CustomEnchant.TELEPORT, 1);
 
-                        ItemMeta meta = item.getItemMeta();
-                        List<String> lore = new ArrayList<String>();
-                        lore.add(ChatColor.GOLD + "Teleport I");
+                            ItemMeta meta = item.getItemMeta();
+                            List<String> lore = new ArrayList<String>();
+                            lore.add(ChatColor.GRAY + "Teleport I");
 
-                        if (meta.hasLore()) {
-                            for (String l : meta.getLore()) {
-                                lore.add(l);
+                            if (meta.hasLore()) {
+                                for (String l : meta.getLore()) {
+                                    lore.add(l);
+                                }
                             }
-                        }
-                        meta.setLore(lore);
-                        item.setItemMeta(meta);
+                            meta.setLore(lore);
+                            item.setItemMeta(meta);
 
-                        player.sendMessage(ChatColor.GREEN + Main.plugin.svname + " " + playerMainHandItem + " 에 인첸트를 적용했습니다.");
-                        return true;
-                    } catch (Exception e) {
-                        player.sendMessage(ChatColor.RED + Main.plugin.svname + " 아이템에 인첸트를 적용하는중 오류가 발생했습니다.");
-                        player.sendMessage(ChatColor.YELLOW + Main.plugin.svname + " 오류 로그: " + e);
+                            player.sendMessage(ChatColor.GREEN + Main.plugin.svname + " " + playerMainHandItem + " 에 인첸트를 적용했습니다.");
+                            return true;
+                        } catch (Exception e) {
+                            player.sendMessage(ChatColor.RED + Main.plugin.svname + " 아이템에 인첸트를 적용하는중 오류가 발생했습니다.");
+                            player.sendMessage(ChatColor.YELLOW + Main.plugin.svname + " 오류 로그: " + e);
+                        }
                     }
-                //} else {
-                //    player.sendMessage(ChatColor.YELLOW + Main.plugin.svname + " 해당 아이템은 이 인첸트를 적용할수 없습니다!");
-                //}
+                }
+
+                // null
+                if(strings[0].length() == 0) {
+                    player.sendMessage(ChatColor.GRAY + Main.plugin.svname + " /<command> (teleport/explosion)");
+                }
             } else {
                 player.sendMessage(ChatColor.RED + Main.plugin.svname + " 이 명령어는 OP만 사용가능 합니다!");
             }
