@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="PlayerPerm:jar">
-    <output-path>$USER_HOME$/바탕 화면/1.19 test server/plugins</output-path>
+    <output-path>$USER_HOME$/바탕 화면/Folder/1.19 test server/plugins</output-path>
     <root id="archive" name="PlayerPerm.jar">
       <element id="module-output" name="PlayerPerm" />
       <element id="extracted-dir" path="$PROJECT_DIR$/../api/spigot-api-1.19.3-R0.1-20230303.220921-53-shaded.jar" path-in-jar="/" />
