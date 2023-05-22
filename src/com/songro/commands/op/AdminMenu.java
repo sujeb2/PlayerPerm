@@ -8,7 +8,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 import org.jetbrains.annotations.NotNull;
 
 public class AdminMenu implements CommandExecutor {
@@ -23,10 +22,6 @@ public class AdminMenu implements CommandExecutor {
         Barrier dummy item
          */
         ItemStack chkLog = new ItemStack(Material.BARRIER, 1);
-
-        // item meta
-        ItemMeta chkLogBtnMeta = chkLog.getItemMeta();
-        ItemMeta plyListBtnMeta = plyList.getItemMeta();
 
         try {
             if(!player.isOp()) {
