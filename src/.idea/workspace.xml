@@ -14,7 +14,6 @@
   <component name="ChangeListManager">
     <list default="true" id="74a2b4f2-ec91-42d6-8cab-b2e17abec495" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/songro/commands/op/EnchantItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/commands/op/EnchantItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/com/songro/event/enchant/Teleport.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/event/enchant/Teleport.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

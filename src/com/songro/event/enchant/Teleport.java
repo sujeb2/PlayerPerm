@@ -38,5 +38,4 @@ public class Teleport implements Listener {
     public void onBlockBreak(BlockBreakEvent e) {
 
     }
-
 }
