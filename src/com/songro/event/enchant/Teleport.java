@@ -10,11 +10,13 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 
+import java.util.Objects;
+
 public class Teleport implements Listener {
 
     @EventHandler
     public void onLeftClick(PlayerInteractEvent event) {
-        Player player = (Player)event.getPlayer();
+        Player player = event.getPlayer();
         Location eyeLocation = player.getEyeLocation();
 
         if(event.getAction() == Action.LEFT_CLICK_AIR || event.getAction() == Action.LEFT_CLICK_BLOCK) {
@@ -24,7 +26,7 @@ public class Teleport implements Listener {
             if (!player.getInventory().getItemInMainHand().hasItemMeta()) {
                 return;
             }
-            if (!player.getInventory().getItemInMainHand().getItemMeta().hasEnchant(CustomEnchant.TELEPORT)) {
+            if (!Objects.requireNonNull(player.getInventory().getItemInMainHand().getItemMeta()).hasEnchant(CustomEnchant.TELEPORT)) {
                 return;
             }
 
