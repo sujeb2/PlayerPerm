@@ -52,7 +52,7 @@ public class Main extends JavaPlugin implements Listener {
         Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "Made by. songro_, License MIT");
         Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "이 플러그인은 Bungeecord에서 사용을 추천드리지 않습니다.");
         Bukkit.getConsoleSender().sendMessage("");
-        //try {
+        try {
             log.info("설정 확인중...");
             createCustomConfig();
             log.info("레시피 파일 확인중...");
@@ -146,13 +146,13 @@ public class Main extends JavaPlugin implements Listener {
             }
             CustomEnchant.register();
             Bukkit.getConsoleSender().sendMessage("[PlayerPerms]" + ChatColor.GREEN + " 플러그인이 정상적으로 로드 되었습니다.");
-        //} catch (Exception e) {
-        //    log.severe("플러그인을 로딩하던중에 오류가 발생했습니다.");
-        //    log.severe("플러그인이 제대로 설치되었는지 확인해주십시오.");
-        //    log.severe("오류 로그: " + e);
-        //    log.severe("오류 코드: 0x01");
-        //    plugin.setEnabled(false);
-        //}
+        } catch (Exception e) {
+            log.severe("플러그인을 로딩하던중에 오류가 발생했습니다.");
+            log.severe("플러그인이 제대로 설치되었는지 확인해주십시오.");
+            log.severe("오류 로그: " + e);
+            log.severe("오류 코드: 0x01");
+            plugin.setEnabled(false);
+        }
     }
 
     @Override
