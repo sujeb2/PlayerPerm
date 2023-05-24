@@ -13,11 +13,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74a2b4f2-ec91-42d6-8cab-b2e17abec495" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/com/songro/item/CustomRecipeFileConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/item/CustomRecipeFileConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlayerPerm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlayerPerm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlayerPerm/recipe.yml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlayerPerm/recipe.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe.yml" beforeDir="false" afterPath="$PROJECT_DIR$/recipe.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,8 +62,9 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/sdbb2/바탕 화면/Folder/1.19 test server/plugins&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;jdk.selected.com.intellij.ui.dsl.builder.impl.RowImpl.sdk&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sdbb2/GitHub/PlayerPerm/api/json-20230227.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
@@ -76,6 +73,9 @@
   &quot;keyToStringList&quot;: {
     &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
       &quot;TEXT&quot;
+    ],
+    &quot;jdk.preference.com.intellij.ui.dsl.builder.impl.RowImpl.sdk&quot;: [
+      &quot;17=C:/Program Files/Eclipse Adoptium/jdk-17.0.6.10-hotspot&quot;
     ]
   }
 }</component>

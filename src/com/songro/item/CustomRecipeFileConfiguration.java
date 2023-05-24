@@ -10,7 +10,6 @@ import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.logging.Logger;
 
 import static com.songro.Main.plugin;
@@ -30,22 +29,22 @@ public class CustomRecipeFileConfiguration {
             log.severe("[PlayerPerms] 설정이 제대로 되어있는지 확인해주십시오.");
         } else {
             var loc = Main.getPlugin().getCustomRecipe().getConfigurationSection("item").getKeys(false);
-            log.info(String.valueOf(loc));
+            log.info("[PlayerPerms] 확인된 아이템: " + String.valueOf(loc));
             String itemName = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".name");
             String itemLore1 = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".lore");
             String itemLore2 = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".lore2");
             item = Main.getPlugin().getCustomRecipe().getItemStack("item." + loc + ".crafted_item");
 
             // line
-            String line1 = Objects.requireNonNull(Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line1"));
-            String line2 = Objects.requireNonNull(Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line2"));
-            String line3 = Objects.requireNonNull(Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line3"));
-            String line4 = Objects.requireNonNull(Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line4"));
-            String line5 = Objects.requireNonNull(Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line5"));
-            String line6 = Objects.requireNonNull(Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line6"));
-            String line7 = Objects.requireNonNull(Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line7"));
-            String line8 = Objects.requireNonNull(Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line8"));
-            String line9 = Objects.requireNonNull(Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line9"));
+            String line1 = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line1");
+            String line2 = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line2");
+            String line3 = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line3");
+            String line4 = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line4");
+            String line5 = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line5");
+            String line6 = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line6");
+            String line7 = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line7");
+            String line8 = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line8");
+            String line9 = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line9");
 
             log.info(line1);
             log.info(line2);
