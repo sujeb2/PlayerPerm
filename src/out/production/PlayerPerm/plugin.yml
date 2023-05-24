@@ -1,6 +1,6 @@
 main: com.songro.Main
 name: PlayerPerms
-version: 5.22.1
+version: 5.24
 author: notSongro
 api-version: 1.19
 description: 대부분의 기능을 하나에 플러그인에서

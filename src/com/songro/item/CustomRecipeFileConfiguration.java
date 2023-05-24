@@ -37,18 +37,26 @@ public class CustomRecipeFileConfiguration {
             item = Main.getPlugin().getCustomRecipe().getItemStack("item." + loc + ".crafted_item");
 
             // line
-            // "LINE1", "LINE2", "LINE3",
-            // "LINE4", "LINE5", "LINE6",
-            // "LINE7", "LINE8", "LINE9"
-            String line1 = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line1");
-            String line2 = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line2");
-            String line3 = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line3");
-            String line4 = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line4");
-            String line5 = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line5");
-            String line6 = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line6");
-            String line7 = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line7");
-            String line8 = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line8");
-            String line9 = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line9");
+            String line1 = Objects.requireNonNull(Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line1"));
+            String line2 = Objects.requireNonNull(Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line2"));
+            String line3 = Objects.requireNonNull(Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line3"));
+            String line4 = Objects.requireNonNull(Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line4"));
+            String line5 = Objects.requireNonNull(Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line5"));
+            String line6 = Objects.requireNonNull(Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line6"));
+            String line7 = Objects.requireNonNull(Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line7"));
+            String line8 = Objects.requireNonNull(Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line8"));
+            String line9 = Objects.requireNonNull(Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line9"));
+
+            log.info(line1);
+            log.info(line2);
+            log.info(line3);
+            log.info(line4);
+            log.info(line5);
+            log.info(line6);
+            log.info(line7);
+            log.info(line8);
+            log.info(line9);
+
             if (!isRemovedRecipeExceptions) {
                 try {
                     customItem = item;
@@ -110,15 +118,15 @@ public class CustomRecipeFileConfiguration {
                 NamespacedKey key = new NamespacedKey(plugin, "customItem");
                 ShapedRecipe recipe = new ShapedRecipe(key, customItem);
                 recipe.shape("ABC", "DEF", "GHI");
-                recipe.setIngredient('A', Objects.requireNonNull(Material.valueOf(line1.toUpperCase())));
-                recipe.setIngredient('B', Objects.requireNonNull(Material.valueOf(line2.toUpperCase())));
-                recipe.setIngredient('C', Objects.requireNonNull(Material.valueOf(line3.toUpperCase())));
-                recipe.setIngredient('D', Objects.requireNonNull(Material.valueOf(line4.toUpperCase())));
-                recipe.setIngredient('E', Objects.requireNonNull(Material.valueOf(line5.toUpperCase())));
-                recipe.setIngredient('F', Objects.requireNonNull(Material.valueOf(line6.toUpperCase())));
-                recipe.setIngredient('G', Objects.requireNonNull(Material.valueOf(line7.toUpperCase())));
-                recipe.setIngredient('H', Objects.requireNonNull(Material.valueOf(line8.toUpperCase())));
-                recipe.setIngredient('I', Objects.requireNonNull(Material.valueOf(line9.toUpperCase())));
+                recipe.setIngredient('A', Material.matchMaterial(line1));
+                recipe.setIngredient('B', Material.matchMaterial(line2));
+                recipe.setIngredient('C', Material.matchMaterial(line3));
+                recipe.setIngredient('D', Material.matchMaterial(line4));
+                recipe.setIngredient('E', Material.matchMaterial(line5));
+                recipe.setIngredient('F', Material.matchMaterial(line6));
+                recipe.setIngredient('G', Material.matchMaterial(line7));
+                recipe.setIngredient('I', Material.matchMaterial(line8));
+                recipe.setIngredient('I', Material.matchMaterial(line9));
 
                 Bukkit.addRecipe(recipe);
             }
