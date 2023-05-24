@@ -14,7 +14,11 @@
   <component name="ChangeListManager">
     <list default="true" id="74a2b4f2-ec91-42d6-8cab-b2e17abec495" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/songro/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/com/songro/item/CustomRecipeFileConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/songro/item/CustomRecipeFileConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlayerPerm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlayerPerm/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlayerPerm/recipe.yml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlayerPerm/recipe.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe.yml" beforeDir="false" afterPath="$PROJECT_DIR$/recipe.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +73,11 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;TEXT&quot;
+    ]
   }
 }</component>
   <component name="RecentsManager">

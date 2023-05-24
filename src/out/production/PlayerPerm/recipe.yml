@@ -13,18 +13,18 @@ item:
       lore: "화살을 맞으면 공중부양 효과를 30초동안 얻습니다."
       lore2: ""
         # item list
-      crafted_item: "TIPPED_ARROW"
+      crafted_item: TIPPED_ARROW
         # Line = "1" "2" "3"
         #        "4" "5" "6"
         #        "7" "8" "9"
-      line1: AIR
-      line2: AIR
-      line3: AIR
-      line4: AIR
-      line5: TIPPED_ARROW
-      line6: AIR
-      line7: AIR
-      line8: SHULKER_SHELL
-      line9: AIR
-      lore1_color: AQUA
-      lore2_color: WHITE
+      line1: 'AIR'
+      line2: 'AIR'
+      line3: 'AIR'
+      line4: 'AIR'
+      line5: 'TIPPED_ARROW'
+      line6: 'AIR'
+      line7: 'AIR'
+      line8: 'SHULKER_SHELL'
+      line9: 'AIR'
+      lore1_color: 'AQUA'
+      lore2_color: 'WHITE'

@@ -17,7 +17,7 @@ import static com.songro.Main.plugin;
 
 public class CustomRecipeFileConfiguration {
 
-    public String item;
+    public ItemStack item;
     Logger log = Bukkit.getLogger();
     ItemStack customItem;
     ItemMeta itemMeta;
@@ -34,7 +34,7 @@ public class CustomRecipeFileConfiguration {
             String itemName = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".name");
             String itemLore1 = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".lore");
             String itemLore2 = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".lore2");
-            item = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".crafted_item");
+            item = Main.getPlugin().getCustomRecipe().getItemStack("item." + loc + ".crafted_item");
 
             // line
             // "LINE1", "LINE2", "LINE3",
@@ -51,7 +51,7 @@ public class CustomRecipeFileConfiguration {
             String line9 = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line9");
             if (!isRemovedRecipeExceptions) {
                 try {
-                    customItem = new ItemStack(Objects.requireNonNull(Material.getMaterial(item)), 1);
+                    customItem = item;
                     if (customItem == null) {
                         customItem = new ItemStack(Material.BARRIER, 1);
                     }
@@ -67,7 +67,7 @@ public class CustomRecipeFileConfiguration {
                     log.severe("오류 로그: " + np2);
                 }
             } else {
-                customItem = new ItemStack(Objects.requireNonNull(Material.getMaterial(item)), 1);
+                customItem = item;
                 if (customItem == null) {
                     customItem = new ItemStack(Material.BARRIER, 1);
                 }
@@ -109,18 +109,16 @@ public class CustomRecipeFileConfiguration {
             {
                 NamespacedKey key = new NamespacedKey(plugin, "customItem");
                 ShapedRecipe recipe = new ShapedRecipe(key, customItem);
-                recipe.shape("A", "B", "C",
-                        "D", "E", "F",
-                        "G", "H", "I");
-                recipe.setIngredient('A', Objects.requireNonNull(Material.getMaterial(line1)));
-                recipe.setIngredient('B', Objects.requireNonNull(Material.getMaterial(line2)));
-                recipe.setIngredient('C', Objects.requireNonNull(Material.getMaterial(line3)));
-                recipe.setIngredient('D', Objects.requireNonNull(Material.getMaterial(line4)));
-                recipe.setIngredient('E', Objects.requireNonNull(Material.getMaterial(line5)));
-                recipe.setIngredient('F', Objects.requireNonNull(Material.getMaterial(line6)));
-                recipe.setIngredient('G', Objects.requireNonNull(Material.getMaterial(line7)));
-                recipe.setIngredient('H', Objects.requireNonNull(Material.getMaterial(line8)));
-                recipe.setIngredient('I', Objects.requireNonNull(Material.getMaterial(line9)));
+                recipe.shape("ABC", "DEF", "GHI");
+                recipe.setIngredient('A', Objects.requireNonNull(Material.valueOf(line1.toUpperCase())));
+                recipe.setIngredient('B', Objects.requireNonNull(Material.valueOf(line2.toUpperCase())));
+                recipe.setIngredient('C', Objects.requireNonNull(Material.valueOf(line3.toUpperCase())));
+                recipe.setIngredient('D', Objects.requireNonNull(Material.valueOf(line4.toUpperCase())));
+                recipe.setIngredient('E', Objects.requireNonNull(Material.valueOf(line5.toUpperCase())));
+                recipe.setIngredient('F', Objects.requireNonNull(Material.valueOf(line6.toUpperCase())));
+                recipe.setIngredient('G', Objects.requireNonNull(Material.valueOf(line7.toUpperCase())));
+                recipe.setIngredient('H', Objects.requireNonNull(Material.valueOf(line8.toUpperCase())));
+                recipe.setIngredient('I', Objects.requireNonNull(Material.valueOf(line9.toUpperCase())));
 
                 Bukkit.addRecipe(recipe);
             }
