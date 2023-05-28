@@ -4,7 +4,7 @@
     <option name="serverJarFile" value="D:\1.19 test server\server.jar" />
     <option name="pluginJarFile" value="D:\JavaProject\PlayerPerm\out\playerperm.jar" />
     <option name="pluginName" value="EX" />
-    <option name="host" value="localhost" />
-    <option name="port" value="9000" />
+    <option name="host" value="songrostd.kro.kr" />
+    <option name="port" value="25565" />
   </component>
 </project>
