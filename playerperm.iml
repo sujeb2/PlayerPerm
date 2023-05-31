@@ -22,5 +22,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="spigot-api-1.19.3-R0.1-20230303.220921-53-shaded" level="project" />
+    <orderEntry type="library" name="DiscordSRV-Build-1.26.2" level="project" />
   </component>
 </module>

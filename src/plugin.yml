@@ -121,6 +121,9 @@ permissons:
   def.normal:
     description: 기본 유저 권한
     default: true
+  def.linked:
+    description: 디스코드에 연결된 유저 권한
+    default: false
   def.op:
     description: OP 권한
     default: op

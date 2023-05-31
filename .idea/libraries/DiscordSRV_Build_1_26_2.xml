@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="DiscordSRV-Build-1.26.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/api/DiscordSRV-Build-1.26.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
