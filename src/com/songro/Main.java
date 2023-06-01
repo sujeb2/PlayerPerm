@@ -207,21 +207,6 @@ public class Main extends JavaPlugin implements Listener {
         }
     }
 
-    public boolean checkDiscordSrv() {
-        try {
-            if(this.getServer().getPluginManager().getPlugin("DiscordSRV").equals(null)) {
-                log.severe("'DiscordSRV' 플러그인이 없습니다!");
-                log.severe("플러그인을 설치후 다시 실행해주세요.");
-                return false;
-            }
-            RegisteredServiceProvider<> dsrvRsp = getServer().getServicesManager().getRegistration();
-            return true;
-        } catch (Exception e) {
-            log.severe("");
-            return false;
-        }
-    }
-
     public FileConfiguration getCustomConfig() {
         return this.customConfig;
     }
