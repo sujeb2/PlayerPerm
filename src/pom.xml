@@ -1,17 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<pyf:project xmlns:pyf="http://maven.apache.org/POM/4.0.0"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <pyf:modelVersion>4.0.0</pyf:modelVersion>
 
-    <groupId>groupId</groupId>
-    <artifactId>PlayerPerm</artifactId>
-    <version>v6.1</version>
+    <pyf:groupId>groupId</pyf:groupId>
+    <pyf:artifactId>PlayerPerm</pyf:artifactId>
+    <pyf:version>v6.1</pyf:version>
 
-    <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
-    
-</project>
+    <pyf:properties>
+        <pyf:maven.compiler.source>17</pyf:maven.compiler.source>
+        <pyf:maven.compiler.target>17</pyf:maven.compiler.target>
+        <pyf:project.build.sourceEncoding>UTF-8</pyf:project.build.sourceEncoding>
+    </pyf:properties>
+    <pyf:dependencies>
+        <pyf:dependency>
+            <pyf:groupId>org.jetbrains</pyf:groupId>
+            <pyf:artifactId>annotations</pyf:artifactId>
+            <pyf:version>RELEASE</pyf:version>
+            <pyf:scope>compile</pyf:scope>
+        </pyf:dependency>
+        <pyf:dependency>
+            <pyf:groupId>com.discordsrv</pyf:groupId>
+            <pyf:artifactId>discordsrv</pyf:artifactId>
+            <pyf:version>1.26.0</pyf:version>
+            <pyf:scope>provided</pyf:scope>
+        </pyf:dependency>
+    </pyf:dependencies>
+
+</pyf:project>

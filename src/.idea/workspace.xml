@@ -61,8 +61,8 @@
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "17",
     "jdk.selected.com.intellij.ui.dsl.builder.impl.RowImpl.sdk": "17",
-    "last_opened_file_path": "D:/JavaProject/PlayerPerm",
-    "project.structure.last.edited": "Problems",
+    "last_opened_file_path": "D:/JavaProject/PlayerPerm/api/spigot-api-1.19.3-R0.1-20230303.220921-53-shaded.jar",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
@@ -93,6 +93,21 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.songro.enchant" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Run Server after build" type="BatchConfigurationType" factoryName="Batch">
+      <module name="PlayerPerm" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../../1.19 test server" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../../1.19 test server/server-run.cmd" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="PlayerPerm:jar" />
+        </option>
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

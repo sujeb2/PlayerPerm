@@ -1,0 +1,129 @@
+main: com.songro.Main
+name: PlayerPerms
+version: 5.24
+author: notSongro
+api-version: 1.19
+description: 대부분의 기능을 하나에 플러그인에서
+
+commands:
+  playerinfoop:
+    usage: /<command> <이름>
+    description: 플레이어 정보
+    aliases: [po, op정보, pi, plyi]
+  targeth:
+    usage: /<command> (on/off) <이름>
+    description: 해당 플레이어의 체력을 항상 표시해줍니다.
+    aliases: [tg, 체력, targethealth]
+  playerinfo:
+    usage: /<command> <이름>
+    description: 해당 플레이어의 정보를 보여줍니다.
+    aliases: [p, pi, 정보]
+  quiet:
+    usage: /<command> <이름> <메세지>
+    description: 해당 플레이어에게 귓속말을 보냅니다.
+    aliases: [q, 귓, ㄱ, qm]
+  changename:
+    usage: /<command> <바꿀이름>
+    description: 채팅 칠때 나오는 이름을 변경합니다.
+    aliases: [cn, c, 이름, 이름바꾸기]
+  isafk:
+    usage: /<command> <이름>
+    description: 해당 플레이어가 잠수 모드인지 확인합니다.
+    aliases: [ia, 잠수모드, 잠수확인]
+  afk:
+    usage: /<command>
+    description: 잠수모드에 들어갑니다.
+    aliases: [잠수, ㅈ, ㅈㅅ, a, afk, af]
+  reloadconfig:
+    usage: /<command>
+    description: 설정을 다시 로드합니다.
+    aliases: [r, ㄹ, 리로드, rel, rl]
+  remoteender:
+    usage: /<command>
+    description: 원격으로 엔더상자를 엽니다. (후원 전용)
+    aliases: [re, ender, 엔더상자, 원격엔더상자, ㅇㅅ]
+  remotecrafting:
+    usage: /<command>
+    description: 원격으로 작업대를 엽니다. (후원 전용)
+    aliases: [rc, crafting, 작업대, 원격작업대, ㅇㅈ]
+  gpp:
+    usage: /<command> <Player> (plus/plusplus/ultra)
+    description: 해당 플레이어에게 권한을 줍니다.
+    aliases: [gp, 권한추가, givepermission]
+  playerattachment:
+    usage: /<command>
+    description: 특정 플레이어의 권한을 확인합니다.
+    aliases: [pa, 권한확인]
+  removepermission:
+    usage: /<command>
+    description: 권한을 제거합니다.
+    aliases: [rmp, remove, 권한제거]
+  broadcast:
+    usage: /<command> (announce/patch/fix) <Message>
+    description: 모든 플레이어에게 공지를 올립니다.
+    aliases: [broad, alarm, 알림]
+  sit:
+    usage: /<command>
+    description: 앉습니다.
+    aliases: [s, st, 앉기, ㅇㄱ]
+  color:
+    usage: /<command>
+    description: 채팅 색상을 변경합니다.
+    aliases: [c, 색상, 채팅색상]
+  helloworld:
+    usage: /<command>
+    description: Hello, world!
+  floatingmessage:
+    usage: /<command> <Message>
+    description: 공중에서 메세지를 보여줍니다.
+    aliases: [floating, fm, display, 텍스트]
+  admin:
+    usage: /<command>
+    description: 관리자를 위한 메뉴
+    aliases: [adm, am, ㅇㄷㅁ, 관리자]
+  ench:
+    usage: /<command>
+    description: 들고있는 아이템에 인첸트를 적용합니다.
+    aliases: [enchantitem, 인첸트, ㅇㅊㅌ]
+
+permissons:
+
+  # perks
+  perks.*:
+    description: 후원 해택
+    children:
+      perks.normal: true
+      perks.plus: false
+      perks.pp: false
+      perks.ultra: false
+      perks.op: op
+  perks.normal:
+    description: 기본 유저 권한
+    default: true
+  perks.plus:
+    description: 후원 Iron 권한
+    default: false
+  perks.pp:
+    description: 후원 Gold 권한
+    default: false
+  perks.ultra:
+    description: 후원 Diamond 권한
+    default: false
+  perks.op:
+    description: OP 권한
+    default: op
+
+  # default
+  def.*:
+    description: 기본 권한
+    def.normal: true
+    def.op: op
+  def.normal:
+    description: 기본 유저 권한
+    default: true
+  def.linked:
+    description: 디스코드에 연결된 유저 권한
+    default: false
+  def.op:
+    description: OP 권한
+    default: op
