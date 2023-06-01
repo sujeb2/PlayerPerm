@@ -11,7 +11,7 @@ import org.bukkit.inventory.meta.SkullMeta;
 import java.util.ArrayList;
 import java.util.Objects;
 
-import static com.songro.Main.plugin;
+import static com.songro.PluginCore.plugin;
 
 public class KillHeadDrop implements Listener {
     @EventHandler

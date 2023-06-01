@@ -1,6 +1,6 @@
 package com.songro.commands.perks;
 
-import com.songro.Main;
+import com.songro.PluginCore;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -15,7 +15,7 @@ public class PlayerHome implements CommandExecutor {
         try {
 
         } catch (Exception ex) {
-            player.sendMessage(ChatColor.RED + Main.plugin.svname + " 플레이어의 집을 불러오는중에 오류가 발생하였습니다.");
+            player.sendMessage(ChatColor.RED + PluginCore.plugin.svname + " 플레이어의 집을 불러오는중에 오류가 발생하였습니다.");
             return false;
         }
 

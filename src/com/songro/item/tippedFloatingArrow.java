@@ -13,7 +13,7 @@ import org.bukkit.potion.PotionEffectType;
 import java.util.List;
 import java.util.logging.Logger;
 
-import static com.songro.Main.plugin;
+import static com.songro.PluginCore.plugin;
 
 public class tippedFloatingArrow {
 

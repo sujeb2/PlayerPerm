@@ -1,6 +1,6 @@
 package com.songro.commands.op;
 
-import com.songro.Main;
+import com.songro.PluginCore;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.World;
@@ -40,10 +40,10 @@ public class PlayerInfo implements CommandExecutor {
 
                 String s1 = ChatColor.DARK_GRAY + ": " + ChatColor.GRAY + "현재 위치: X: " + (Math.round(x)) + " ,Y: " + (Math.round(y)) + " ,Z: " + (Math.round(z));
                     if (target == null) {
-                        player.sendMessage(ChatColor.RED + Main.plugin.svname + " 플레이어가 존재하지 않거나, 서버에 들어온적이 없습니다.");
+                        player.sendMessage(ChatColor.RED + PluginCore.plugin.svname + " 플레이어가 존재하지 않거나, 서버에 들어온적이 없습니다.");
                     } else {
                         isOnline = Bukkit.getOnlinePlayers().contains(target);
-                        player.sendMessage(ChatColor.GREEN + Main.plugin.svname + " " + target.getDisplayName() + " 님의 정보");
+                        player.sendMessage(ChatColor.GREEN + PluginCore.plugin.svname + " " + target.getDisplayName() + " 님의 정보");
                         player.sendMessage(ChatColor.DARK_GRAY + "===============================");
                         if (!isOnline) player.sendMessage( ChatColor.DARK_GRAY + ": " + ChatColor.DARK_GRAY + "오프라인 ⏺");
                         else player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.GREEN + "온라인 ⏺");
@@ -72,18 +72,18 @@ public class PlayerInfo implements CommandExecutor {
                         String Datetime = sdf.format(date);
                         player.sendMessage(ChatColor.DARK_GRAY + ": " + "마지막 접속 시간: " + ChatColor.GRAY + Datetime);
                         player.sendMessage(ChatColor.DARK_GRAY + ": " + ChatColor.GRAY + "엔티티 ID " + target.getEntityId());
-                        player.sendMessage(ChatColor.YELLOW + Main.plugin.svname + " 현재 OP 상태로 " + target.getDisplayName() + ChatColor.YELLOW + "의 정보를 보고 있습니다.\n" + Main.plugin.svname + " 이 정보는 오직 OP만 알고 있어야합니다.");
+                        player.sendMessage(ChatColor.YELLOW + PluginCore.plugin.svname + " 현재 OP 상태로 " + target.getDisplayName() + ChatColor.YELLOW + "의 정보를 보고 있습니다.\n" + PluginCore.plugin.svname + " 이 정보는 오직 OP만 알고 있어야합니다.");
                 }
                 return true;
             } catch (Exception e) {
                 Player player = (Player) send;
-                player.sendMessage(ChatColor.RED + Main.plugin.svname + " 오류가 발생했습니다");
-                player.sendMessage(ChatColor.YELLOW + Main.plugin.svname + " 오류 로그: " + e + Main.plugin.svname + "\n 오류코드: 0x13");
+                player.sendMessage(ChatColor.RED + PluginCore.plugin.svname + " 오류가 발생했습니다");
+                player.sendMessage(ChatColor.YELLOW + PluginCore.plugin.svname + " 오류 로그: " + e + PluginCore.plugin.svname + "\n 오류코드: 0x13");
                 return false;
             }
         } else {
             Player player = (Player) send;
-            player.sendMessage(ChatColor.RED + Main.plugin.svname + " 이 명령어는 OP만 사용 가능합니다.");
+            player.sendMessage(ChatColor.RED + PluginCore.plugin.svname + " 이 명령어는 OP만 사용 가능합니다.");
         }
         return true;
     }
