@@ -1,6 +1,6 @@
 package com.songro.item;
 
-import com.songro.Main;
+import com.songro.PluginCore;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -12,7 +12,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.List;
 import java.util.logging.Logger;
 
-import static com.songro.Main.plugin;
+import static com.songro.PluginCore.plugin;
 
 public class CustomRecipeFileConfiguration {
 
@@ -23,28 +23,28 @@ public class CustomRecipeFileConfiguration {
 
     public void createItem() throws NullPointerException {
         boolean isRemovedRecipeExceptions = plugin.getCustomConfig().getBoolean("debug.removeRecipeExceptions");
-        var isSection = Main.getPlugin().getCustomRecipe().isConfigurationSection("item");
+        var isSection = PluginCore.getPlugin().getCustomRecipe().isConfigurationSection("item");
         if (!isSection) {
             log.severe("[PlayerPerms] 레시피 설정을 불러오는중 오류가 발생하였습니다.");
             log.severe("[PlayerPerms] 설정이 제대로 되어있는지 확인해주십시오.");
         } else {
-            var loc = Main.getPlugin().getCustomRecipe().getConfigurationSection("item").getKeys(false);
+            var loc = PluginCore.getPlugin().getCustomRecipe().getConfigurationSection("item").getKeys(false);
             log.info("[PlayerPerms] 확인된 아이템: " + String.valueOf(loc));
-            String itemName = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".name");
-            String itemLore1 = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".lore");
-            String itemLore2 = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".lore2");
-            item = Main.getPlugin().getCustomRecipe().getItemStack("item." + loc + ".crafted_item");
+            String itemName = PluginCore.getPlugin().getCustomRecipe().getString("item." + loc + ".name");
+            String itemLore1 = PluginCore.getPlugin().getCustomRecipe().getString("item." + loc + ".lore");
+            String itemLore2 = PluginCore.getPlugin().getCustomRecipe().getString("item." + loc + ".lore2");
+            item = PluginCore.getPlugin().getCustomRecipe().getItemStack("item." + loc + ".crafted_item");
 
             // line
-            String line1 = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line1");
-            String line2 = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line2");
-            String line3 = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line3");
-            String line4 = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line4");
-            String line5 = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line5");
-            String line6 = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line6");
-            String line7 = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line7");
-            String line8 = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line8");
-            String line9 = Main.getPlugin().getCustomRecipe().getString("item." + loc + ".line9");
+            String line1 = PluginCore.getPlugin().getCustomRecipe().getString("item." + loc + ".line1");
+            String line2 = PluginCore.getPlugin().getCustomRecipe().getString("item." + loc + ".line2");
+            String line3 = PluginCore.getPlugin().getCustomRecipe().getString("item." + loc + ".line3");
+            String line4 = PluginCore.getPlugin().getCustomRecipe().getString("item." + loc + ".line4");
+            String line5 = PluginCore.getPlugin().getCustomRecipe().getString("item." + loc + ".line5");
+            String line6 = PluginCore.getPlugin().getCustomRecipe().getString("item." + loc + ".line6");
+            String line7 = PluginCore.getPlugin().getCustomRecipe().getString("item." + loc + ".line7");
+            String line8 = PluginCore.getPlugin().getCustomRecipe().getString("item." + loc + ".line8");
+            String line9 = PluginCore.getPlugin().getCustomRecipe().getString("item." + loc + ".line9");
 
             log.info(line1);
             log.info(line2);

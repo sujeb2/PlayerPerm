@@ -3,7 +3,7 @@ package com.songro.event;
 import com.songro.handler.AFK;
 import org.bukkit.Bukkit;
 
-import static com.songro.Main.plugin;
+import static com.songro.PluginCore.plugin;
 
 public class MoveMent implements Runnable {
 

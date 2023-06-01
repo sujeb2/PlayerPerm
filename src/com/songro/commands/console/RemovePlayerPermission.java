@@ -1,6 +1,6 @@
 package com.songro.commands.console;
 
-import com.songro.Main;
+import com.songro.PluginCore;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -29,9 +29,9 @@ public class RemovePlayerPermission implements CommandExecutor {
                             player.sendMessage("removed");
                             try {
                                 if(target != null) {
-                                    target.addAttachment(Main.getPlugin(), "perks.pp", false);
-                                    target.addAttachment(Main.getPlugin(), "perks.ultra", false);
-                                    target.addAttachment(Main.getPlugin(), "perks.plus", false);
+                                    target.addAttachment(PluginCore.getPlugin(), "perks.pp", false);
+                                    target.addAttachment(PluginCore.getPlugin(), "perks.ultra", false);
+                                    target.addAttachment(PluginCore.getPlugin(), "perks.plus", false);
                                     target.recalculatePermissions();
                                     target.setDisplayName(target.getName());
                                     target.setCustomName(target.getName());
@@ -59,9 +59,9 @@ public class RemovePlayerPermission implements CommandExecutor {
                             player.sendMessage("removed");
                             try {
                                 if(target != null) {
-                                    target.addAttachment(Main.getPlugin(), "perks.pp", false);
-                                    target.addAttachment(Main.getPlugin(), "perks.ultra", false);
-                                    target.addAttachment(Main.getPlugin(), "perks.plus", false);
+                                    target.addAttachment(PluginCore.getPlugin(), "perks.pp", false);
+                                    target.addAttachment(PluginCore.getPlugin(), "perks.ultra", false);
+                                    target.addAttachment(PluginCore.getPlugin(), "perks.plus", false);
                                     target.recalculatePermissions();
                                     target.setDisplayName(target.getName());
                                     target.setCustomName(target.getName());
@@ -89,9 +89,9 @@ public class RemovePlayerPermission implements CommandExecutor {
                             player.sendMessage("removed");
                             try {
                                 if(target != null) {
-                                    target.addAttachment(Main.getPlugin(), "perks.pp", false);
-                                    target.addAttachment(Main.getPlugin(), "perks.ultra", false);
-                                    target.addAttachment(Main.getPlugin(), "perks.plus", false);
+                                    target.addAttachment(PluginCore.getPlugin(), "perks.pp", false);
+                                    target.addAttachment(PluginCore.getPlugin(), "perks.ultra", false);
+                                    target.addAttachment(PluginCore.getPlugin(), "perks.plus", false);
                                     target.recalculatePermissions();
                                     target.setDisplayName(target.getName());
                                     target.setCustomName(target.getName());

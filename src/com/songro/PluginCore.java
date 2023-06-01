@@ -31,9 +31,9 @@ import java.io.IOException;
 import java.util.Objects;
 import java.util.logging.Logger;
 
-public class Main extends JavaPlugin implements Listener {
+public class PluginCore extends JavaPlugin implements Listener {
     Logger log = getLogger();
-    public static Main plugin;
+    public static PluginCore plugin;
 
     // config
     private FileConfiguration customConfig;
@@ -161,7 +161,7 @@ public class Main extends JavaPlugin implements Listener {
         Bukkit.getConsoleSender().sendMessage("[PlayerPerms] Disabled.");
     }
 
-    public static Main getPlugin(){
+    public static PluginCore getPlugin(){
         return plugin;
     }
 

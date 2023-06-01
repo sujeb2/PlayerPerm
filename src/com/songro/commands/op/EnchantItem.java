@@ -1,6 +1,6 @@
 package com.songro.commands.op;
 
-import com.songro.Main;
+import com.songro.PluginCore;
 import com.songro.enchant.CustomEnchant;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -29,7 +29,7 @@ public class EnchantItem implements CommandExecutor {
                 // teleport
                 if(strings[0].equalsIgnoreCase("teleport")) {
                     if (playerMainHandItem.getItemMeta() == null) {
-                        player.sendMessage(ChatColor.YELLOW + Main.plugin.svname + " 인첸트할 아이템을 손에 들어주세요.");
+                        player.sendMessage(ChatColor.YELLOW + PluginCore.plugin.svname + " 인첸트할 아이템을 손에 들어주세요.");
                     } else {
                         try {
                             ItemStack item = playerMainHandItem;
@@ -47,21 +47,21 @@ public class EnchantItem implements CommandExecutor {
                             meta.setLore(lore);
                             item.setItemMeta(meta);
 
-                            player.sendMessage(ChatColor.GREEN + Main.plugin.svname + " " + playerMainHandItem + " 에 인첸트를 적용했습니다.");
+                            player.sendMessage(ChatColor.GREEN + PluginCore.plugin.svname + " " + playerMainHandItem + " 에 인첸트를 적용했습니다.");
                             return true;
                         } catch (Exception e) {
-                            player.sendMessage(ChatColor.RED + Main.plugin.svname + " 아이템에 인첸트를 적용하는중 오류가 발생했습니다.");
-                            player.sendMessage(ChatColor.YELLOW + Main.plugin.svname + " 오류 로그: " + e);
+                            player.sendMessage(ChatColor.RED + PluginCore.plugin.svname + " 아이템에 인첸트를 적용하는중 오류가 발생했습니다.");
+                            player.sendMessage(ChatColor.YELLOW + PluginCore.plugin.svname + " 오류 로그: " + e);
                         }
                     }
                 }
 
                 // null
                 if(strings[0].length() == 0) {
-                    player.sendMessage(ChatColor.GRAY + Main.plugin.svname + " /<command> (teleport/explosion)");
+                    player.sendMessage(ChatColor.GRAY + PluginCore.plugin.svname + " /<command> (teleport/explosion)");
                 }
             } else {
-                player.sendMessage(ChatColor.RED + Main.plugin.svname + " 이 명령어는 OP만 사용가능 합니다!");
+                player.sendMessage(ChatColor.RED + PluginCore.plugin.svname + " 이 명령어는 OP만 사용가능 합니다!");
             }
         } else {
             log.warning("이 명령어는 플레이어만 사용가능 합니다!");

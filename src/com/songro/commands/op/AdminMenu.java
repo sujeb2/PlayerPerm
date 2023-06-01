@@ -1,6 +1,6 @@
 package com.songro.commands.op;
 
-import com.songro.Main;
+import com.songro.PluginCore;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -30,18 +30,18 @@ public class AdminMenu implements CommandExecutor {
 
         try {
             if(!player.isOp()) {
-                player.sendMessage(ChatColor.RED + Main.plugin.svname + " 이 명령어는 관리자만 사용가능합니다.");
+                player.sendMessage(ChatColor.RED + PluginCore.plugin.svname + " 이 명령어는 관리자만 사용가능합니다.");
             } else {
                 try {
 
                 } catch (Exception e) {
-                    player.sendMessage(ChatColor.RED + Main.plugin.svname + " GUI를 여는도중 오류가 발생했습니다.");
-                    player.sendMessage(ChatColor.YELLOW + Main.plugin.svname + " 오류 로그: " + e + Main.plugin.svname + "\n 오류 코드: 0x121");
+                    player.sendMessage(ChatColor.RED + PluginCore.plugin.svname + " GUI를 여는도중 오류가 발생했습니다.");
+                    player.sendMessage(ChatColor.YELLOW + PluginCore.plugin.svname + " 오류 로그: " + e + PluginCore.plugin.svname + "\n 오류 코드: 0x121");
                 }
             }
         } catch (Exception e) {
-            player.sendMessage(ChatColor.RED + Main.plugin.svname + " GUI를 여는도중 오류가 발생했습니다.");
-            player.sendMessage(ChatColor.YELLOW + Main.plugin.svname + " 오류 로그: " + e + Main.plugin.svname + "\n 오류 코드: 0x120");
+            player.sendMessage(ChatColor.RED + PluginCore.plugin.svname + " GUI를 여는도중 오류가 발생했습니다.");
+            player.sendMessage(ChatColor.YELLOW + PluginCore.plugin.svname + " 오류 로그: " + e + PluginCore.plugin.svname + "\n 오류 코드: 0x120");
         }
 
         return true;

@@ -1,6 +1,6 @@
 package com.songro.commands.op;
 
-import com.songro.Main;
+import com.songro.PluginCore;
 import com.songro.handler.AFK;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -22,15 +22,15 @@ public class IsAFK implements CommandExecutor {
 
                 if (args.length == 0) {
                     if (AFK.isAFK(player)) {
-                        player.sendMessage(ChatColor.BLUE + Main.plugin.svname + " 현재 잠수중입니다.");
+                        player.sendMessage(ChatColor.BLUE + PluginCore.plugin.svname + " 현재 잠수중입니다.");
                     } else {
-                        player.sendMessage(ChatColor.DARK_GRAY + Main.plugin.svname + " 잠수중이 아닙니다.");
+                        player.sendMessage(ChatColor.DARK_GRAY + PluginCore.plugin.svname + " 잠수중이 아닙니다.");
                     }
                 } else {
                     if (AFK.isAFK(Bukkit.getPlayerExact(args[0]))) {
-                        player.sendMessage(ChatColor.BLUE + Main.plugin.svname + " 현재 " + args[0] + "님은 잠수중입니다, " + ChatColor.ITALIC + ChatColor.DARK_GRAY + "(건들이지 않는게 좋을수도..?)");
+                        player.sendMessage(ChatColor.BLUE + PluginCore.plugin.svname + " 현재 " + args[0] + "님은 잠수중입니다, " + ChatColor.ITALIC + ChatColor.DARK_GRAY + "(건들이지 않는게 좋을수도..?)");
                     } else {
-                        player.sendMessage(ChatColor.DARK_GRAY + Main.plugin.svname + " 현재 " + args[0] + "님은 잠수중이 아닙니다.");
+                        player.sendMessage(ChatColor.DARK_GRAY + PluginCore.plugin.svname + " 현재 " + args[0] + "님은 잠수중이 아닙니다.");
                     }
                 }
 
@@ -38,7 +38,7 @@ public class IsAFK implements CommandExecutor {
                 log.warning("이 명령어는 플레이어만 사용할수 있습니다.");
             }
         } else {
-            player.sendMessage(ChatColor.RED + Main.plugin.svname + " 이 명령어는 OP만 사용가능합니다.");
+            player.sendMessage(ChatColor.RED + PluginCore.plugin.svname + " 이 명령어는 OP만 사용가능합니다.");
         }
 
         return true;

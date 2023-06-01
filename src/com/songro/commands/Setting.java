@@ -1,6 +1,6 @@
 package com.songro.commands;
 
-import com.songro.Main;
+import com.songro.PluginCore;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -24,7 +24,7 @@ public class Setting implements CommandExecutor {
 
                 player.openInventory(settingInv);
             } catch (Exception e) {
-                player.sendMessage(Main.plugin.svname + "오류가 발생했습니다.");
+                player.sendMessage(PluginCore.plugin.svname + "오류가 발생했습니다.");
             }
         }
 
