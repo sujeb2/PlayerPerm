@@ -37,7 +37,7 @@ public class CustomRecipeFileConfiguration {
 
             // line
             try {
-            String line1 = PluginCore.getPlugin().getCustomRecipe().getIteStack("item." + loc + ".line1");
+            String line1 = PluginCore.getPlugin().getCustomRecipe().getString("item." + loc + ".line1");
             String line2 = PluginCore.getPlugin().getCustomRecipe().getString("item." + loc + ".line2");
             String line3 = PluginCore.getPlugin().getCustomRecipe().getString("item." + loc + ".line3");
             String line4 = PluginCore.getPlugin().getCustomRecipe().getString("item." + loc + ".line4");
@@ -57,7 +57,9 @@ public class CustomRecipeFileConfiguration {
             log.info(line8);
             log.info(line9);
             } except (NullPointException e) {
-                log.severe("[PlayerPerms] 아이템 " + e + "이(가) 설정 방식이 틀렸습니다.")
+                log.severe("제작 아이템 설정 방식이 틀렸습니다.");
+                log.severe("모든 로그 출력중..");
+                e.printStackTrace();
             }
 
             if (!isRemovedRecipeExceptions) {
