@@ -62,11 +62,11 @@
     "jdk.selected.JAVA_MODULE": "17",
     "jdk.selected.com.intellij.ui.dsl.builder.impl.RowImpl.sdk": "17",
     "last_opened_file_path": "D:/JavaProject/PlayerPerm/api/spigot-api-1.19.3-R0.1-20230303.220921-53-shaded.jar",
-    "project.structure.last.edited": "Artifacts",
+    "project.structure.last.edited": "Facets",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "configurable.group.language"
   },
   "keyToStringList": {
     "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
@@ -103,9 +103,7 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../../1.19 test server/server-run.cmd" />
       <option name="PARAMETERS" value="" />
       <method v="2">
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="PlayerPerm:jar" />
-        </option>
+        <option name="BuildArtifacts" enabled="true" />
       </method>
     </configuration>
   </component>
