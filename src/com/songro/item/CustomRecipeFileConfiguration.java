@@ -36,6 +36,7 @@ public class CustomRecipeFileConfiguration {
             item = PluginCore.getPlugin().getCustomRecipe().getItemStack("item." + loc + ".crafted_item");
 
             // line
+            try {
             String line1 = PluginCore.getPlugin().getCustomRecipe().getString("item." + loc + ".line1");
             String line2 = PluginCore.getPlugin().getCustomRecipe().getString("item." + loc + ".line2");
             String line3 = PluginCore.getPlugin().getCustomRecipe().getString("item." + loc + ".line3");
@@ -55,6 +56,11 @@ public class CustomRecipeFileConfiguration {
             log.info(line7);
             log.info(line8);
             log.info(line9);
+            } except (NullPointException e) {
+                log.severe("제작 아이템 설정 방식이 틀렸습니다.");
+                log.severe("모든 로그 출력중..");
+                e.printStackTrace();
+            }
 
             if (!isRemovedRecipeExceptions) {
                 try {
